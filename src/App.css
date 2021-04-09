@@ -1,38 +1,407 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,900;1,200;1,700&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-family: "Roboto", sans-serif;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* ======================
+      Page styling 
+  =======================*/
+.page-layout {
+  display: flex;
+}
+.page {
+  width: 100%;
+  min-width: 1106.65px;
+  overflow-y: scroll;
+  height: 90vh;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* ======================
+      Sidebar styling 
+  =======================*/
+/* sidebar-navigation-typography */
+.sidebar-navigation li {
+  list-style-type: none;
+}
+.navigation-links {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  letter-spacing: 0.05em;
+  color: #ffffff;
+  text-decoration: none;
+}
+/* sidebar-Layout */
+.sidebar {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  min-width: 257px;
+  min-height: 100vh;
+  background: url(./background-images/navBackground.png);
+  position: relative;
+}
+/* sidebar-navigation-layout  */
+.sidebar-navigation {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: rgba(126, 97, 83, 0.41);
+  width: 222px;
+  position: absolute;
+  left: 17px;
+  top: 120px;
+  padding: 0;
+}
+.navigation-links {
+  /* im becoming a god!! I was able to fix the issue by putting inline block */
+  display: inline-block;
+  width: 222px;
+  padding: 1em 0;
+}
+.nav-link-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-areas: "Logo Link";
+}
+.nav-icon {
+  grid-area: Logo;
+  justify-self: center;
+}
+.nav-link-text {
+  grid-area: Link;
+  align-self: center;
+  margin-left: 0.69em;
+}
+/* navigation hover effects */
+.navigation-links:hover,
+.navigation-links:focus {
+  background-color: rgba(160, 148, 142, 0.5);
+}
+.navigation-links:hover .nav-icon,
+.navigation-links:focus .nav-icon {
+  transform: scale(1.369);
+}
+
+/* ======================
+      PlayBar styling 
+  =======================*/
+/* playbar-typography */
+.song-info {
   color: white;
+  font-family: "Montserrat", sans-serif;
+}
+.song-title {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+.song-artist {
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+.song-frequency {
+  color: #251d17;
+  font-weight: 900;
+  font-style: italic;
+  font-size: 15px;
+}
+.time {
+  color: rgb(180, 180, 180);
 }
 
-.App-link {
-  color: #61dafb;
+/* playbar-layout  */
+.playbar-background {
+  position: absolute;
+  background: #4b3931;
+  bottom: 0;
+  padding: 0.5em;
+  width: 100%;
+}
+.playbar-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas: "Song-Info Media-Controls Other-Controls ";
+  align-items: center;
+}
+/* title and artist */
+.song-details-wrapper {
+  grid-area: Song-Info;
+  display: flex;
+  align-items: center;
+  margin-left: 17px;
+}
+.song-info {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 22px;
+  height: 77px;
+  align-items: center;
+  max-width: 500px;
+}
+.style-divider {
+  height: 77px;
+  border-left: 1.5px solid #ffffff;
+  margin-right: 0.75em;
+}
+.song-frequency {
+  padding: 0.4em 0.8em;
+  background: rgb(224, 171, 138);
+  border-radius: 100px;
+  margin-right: 1em;
+}
+.song-title-artist {
+  max-width: 399px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.media-controls-wrapper {
+  grid-area: Media-Controls;
+  justify-self: flex-end;
+  display: flex;
+  align-items: center;
+  width: 515px;
+  justify-content: space-evenly;
+  position: relative;
+}
+.other-controls-wrapper {
+  grid-area: Other-Controls;
+  justify-self: flex-end;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+}
+.volume-control {
+  margin-left: 44px;
+  display: flex;
+}
+.slider {
+  /* removes default browser styling */
+  -webkit-appearance: none;
+  outline: none;
+  border-radius: 11px;
+  opacity: 0.7;
+}
+.slider:hover {
+  opacity: 1;
+}
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.volume-slider {
+  height: 11px;
+  margin-top: 11px;
+  margin-left: 9px;
+}
+.volume-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  background: white;
+  border-radius: 50%;
+  cursor: pointer;
+}
+/* playbar-slider hovers */
+.volume-slider:hover.volume-slider::-webkit-slider-thumb {
+  background: #e0ab8a;
+}
+.volume-slider::-webkit-slider-thumb:hover {
+  opacity: 1;
+}
+/* playbar-icons */
+.fullscreen-icon {
+  margin-right: 50px;
+  margin-left: 44px;
+  margin-top: 5px;
+}
+
+.icon {
+  color: rgb(202, 202, 202);
+}
+.icon:hover {
+  color: #e0ab8a;
+}
+.sound-icon {
+  color: rgb(202, 202, 202);
+}
+.sound-icon:hover {
+  color: #ffffff;
+}
+
+/* playbar-seekbar */
+.playbar-decor {
+  position: absolute;
+  top: -44px;
+}
+.seekbar-wrapper {
+  position: absolute;
+  top: -39px;
+}
+.seek-slider {
+  width: 425px;
+  height: 7px;
+  opacity: 1;
+  background: rgb(222, 222, 222);
+}
+
+.seek-slider::-webkit-slider-thumb {
+  background: rgb(224, 171, 138);
+  height: 16px;
+  width: 16px;
+}
+.seek-slider::-webkit-slider-thumb:hover {
+  background: rgb(182, 130, 98);
+  height: 18px;
+  width: 18px;
+}
+
+.song-image {
+  height: 77px;
+  width: 77px;
+  background: grey;
+}
+
+/* ======================
+      SongPage styling 
+  =======================*/
+/* SongPage-typography */
+.page-title {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 36px;
+  line-height: 42px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+.page-buttons {
+  display: flex;
+}
+.btn {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 21px;
+  letter-spacing: 0.05em;
+}
+.play-btn {
+  color: #03254a;
+}
+.upload-btn {
+  color: #ffffff;
+}
+.head-title,
+.head-artist,
+.head-frequency {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 23px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.666);
+}
+
+.songName,
+.songArtist,
+.songFrequency {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  letter-spacing: 1px;
+  color: #ffffffea;
+}
+
+/* SongPage-Layout */
+.songPage-background {
+  display: flex;
+  align-items: flex-start;
+  background: #03254a;
+  padding: 0.5em 2.5em;
+}
+.song-pannel {
+  display: flex;
+  flex-direction: column;
+  background: rgba(241, 241, 241, 0.22);
+  width: 100%;
+  padding: 1em 0;
+  margin-top: 116px;
+  margin-bottom: 222px;
+}
+.pannel-header {
+  padding-left: 3em;
+  padding-right: 3em;
+  margin-bottom: 10em;
+}
+.page-title {
+  margin-bottom: 1em;
+}
+.btn {
+  display: flex;
+  align-items: center;
+  padding: 10px 44px;
+  border: none;
+  border-radius: 25px;
+  opacity: 0.88;
+  position: relative;
+}
+.play-btn {
+  padding-left: 55px;
+  padding-right: 55px;
+  background: rgb(255, 255, 255);
+  margin-right: 2em;
+}
+.upload-btn {
+  background: #03254a;
+}
+.upload-icon {
+  display: none;
+  position: absolute;
+}
+/* button hovers */
+.play-btn:hover,
+.upload-btn:hover,
+.play-btn:focus,
+.upload-btn:focus {
+  transform: scale(1.12);
+  opacity: 1;
+}
+.upload-btn:hover .upload-icon,
+.upload-btn:focus .upload-icon {
+  display: block;
+  left: 55px;
+}
+.upload-btn:hover .button-text,
+.upload-btn:focus .button-text {
+  opacity: 0;
+}
+/* Display Songs */
+.displaySong-head,
+.songCard {
+  padding: 1em 0em;
+  border-bottom: 1px solid white;
+}
+.displaySong-container {
+  display: grid;
+  padding: 0 3em;
+  grid-template-columns: 1.85fr 1.5fr 0.2fr;
+}
+.col-3 {
+  justify-self: flex-end;
 }
