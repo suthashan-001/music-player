@@ -47,10 +47,10 @@ import BlueBird_img from "../Songs/Naruto/Bluebird-img.jpg";
 import Silhouette from "../Songs/Naruto/Silhouette.mp3";
 import Silhouette_img from "../Songs/Naruto/Silhouette-img.jpg";
 
-// My Hero
-import Sora from "../Songs/My Hero/Sora.mp3";
-import Sora_img from "../Songs/My Hero/Sora-img.jpg";
+import Baku from "../Songs/Naruto/Baku.mp3";
+import Baku_img from "../Songs/Naruto/Boruto.png";
 
+// My Hero
 import No1 from "../Songs/My Hero/No.1.mp3";
 import No1_img from "../Songs/My Hero/No1-img.jpg";
 
@@ -74,7 +74,7 @@ import Ranbu_img from "../Songs/Bleach/Ranbu.png";
 
 // Other animes
 
-import Snow_Fairy from "../Songs/Snow Fairy dub.mp3";
+import Snow_Fairy from "../Songs/Snow Fairy.mp3";
 import Snow_Fairy_img from "../Songs/Snow Fairy-img.png";
 
 import Lost_in_Paradise from "../Songs/Lost in Paradise.mp3";
@@ -86,6 +86,9 @@ import Unravel_img from "../Songs/Unravel-img.jpg";
 import Daddy from "../Songs/Daddy.mp3";
 import Daddy_img from "../Songs/Love Dramatic-img.jpg";
 
+import Top from "../Songs/Top.mp3";
+import Top_img from "../Songs/Top-img.jpg";
+
 import Spectrum from "../Songs/Spectrum.mp3";
 import Spectrum_img from "../Songs/Spectrum-img.jpg";
 
@@ -95,7 +98,7 @@ let anime_sub_data = [
     songfile: Grandeur,
     id: 1,
     songImage: Grandeur_img,
-    artist: "SnowMan",
+    artist: "Black Clover",
     anime: "Black Clover",
   },
   {
@@ -104,6 +107,7 @@ let anime_sub_data = [
     id: 2,
     songImage: Beautiful_img,
     anime: "Black Clover",
+    artist: "Black Clover",
   },
   {
     name: "Haruka Mirai",
@@ -111,6 +115,7 @@ let anime_sub_data = [
     id: 3,
     songImage: Haruka_img,
     anime: "Black Clover",
+    artist: "Black Clover",
   },
   {
     name: "Black Catcher",
@@ -118,6 +123,7 @@ let anime_sub_data = [
     id: 11,
     songImage: BlackCatcher_img,
     anime: "Black Clover",
+    artist: "Black Clover",
   },
   {
     name: "Fight Together",
@@ -125,6 +131,7 @@ let anime_sub_data = [
     id: 24,
     songImage: Fight_Together_img,
     anime: "One Piece",
+    artist: "One Piece",
   },
   {
     name: "Hope",
@@ -132,26 +139,15 @@ let anime_sub_data = [
     id: 21,
     songImage: Hope_img,
     anime: "One Piece",
+    artist: "One Piece",
   },
-  {
-    name: "Memories",
-    songfile: Memories,
-    id: 33,
-    songImage: Memories_img,
-    anime: "One Piece",
-  },
-  // {
-  //   name: "We Are!",
-  //   songfile: WeAre,
-  //   id: 4,
-  //   songImage: WeAre_img,
-  // },
   {
     name: "Silhouette",
     songfile: Silhouette,
     id: 19,
     songImage: Silhouette_img,
     anime: "Naruto",
+    artist: "Naruto",
   },
   {
     name: "A World That Was Transparent",
@@ -159,6 +155,7 @@ let anime_sub_data = [
     id: 9,
     songImage: Transparent_img,
     anime: "Naruto",
+    artist: "Naruto",
   },
   {
     name: "Diver",
@@ -166,6 +163,7 @@ let anime_sub_data = [
     id: 12,
     songImage: Diver_img,
     anime: "Naruto",
+    artist: "Naruto",
   },
   {
     name: "Blue Bird",
@@ -173,6 +171,7 @@ let anime_sub_data = [
     id: 13,
     songImage: BlueBird_img,
     anime: "Naruto",
+    artist: "Naruto",
   },
   {
     name: "Sign",
@@ -180,6 +179,7 @@ let anime_sub_data = [
     id: 7,
     songImage: Sign_img,
     anime: "Naruto",
+    artist: "Naruto",
   },
   {
     name: "Whole Heart",
@@ -187,6 +187,7 @@ let anime_sub_data = [
     id: 27,
     songImage: Whole_Heart_img,
     anime: "Naruto",
+    artist: "Naruto",
   },
   {
     name: "No.1",
@@ -194,6 +195,7 @@ let anime_sub_data = [
     id: 30,
     songImage: No1_img,
     anime: "My Hero Academia",
+    artist: "My Hero Academia",
   },
   {
     name: "Odd Future",
@@ -201,13 +203,7 @@ let anime_sub_data = [
     id: 39,
     songImage: OddFuture_img,
     anime: "My Hero Academia",
-  },
-  {
-    name: "Sora ni Utaeba",
-    songfile: Sora,
-    id: 29,
-    songImage: Sora_img,
-    anime: "My Hero Academia",
+    artist: "My Hero Academia",
   },
   {
     name: "Peace Sign",
@@ -215,6 +211,7 @@ let anime_sub_data = [
     id: 31,
     songImage: PeaceSign_img,
     anime: "My Hero Academia",
+    artist: "My Hero Academia",
   },
   {
     name: "Spice",
@@ -222,6 +219,7 @@ let anime_sub_data = [
     id: 5,
     songImage: Spice_img,
     anime: "Food Wars",
+    artist: "Food Wars",
   },
   {
     name: "Kimetsu no Yaiba",
@@ -229,6 +227,7 @@ let anime_sub_data = [
     id: 6,
     songImage: DemonSlayer_img,
     anime: "Demon Slayer",
+    artist: "Demon Slayer",
   },
   {
     name: "Snow Fairy",
@@ -236,6 +235,7 @@ let anime_sub_data = [
     id: 8,
     songImage: Snow_Fairy_img,
     anime: "Fairy Tail",
+    artist: "Fairy Tail",
   },
   {
     name: "Lost In Paradise",
@@ -243,6 +243,7 @@ let anime_sub_data = [
     id: 10,
     songImage: Lost_in_Paradise_img,
     anime: "Jujutsu kaisen",
+    artist: "Jujutsu kaisen",
   },
   {
     name: "Unravel",
@@ -250,6 +251,7 @@ let anime_sub_data = [
     id: 17,
     songImage: Unravel_img,
     anime: "Tokyo Ghoul",
+    artist: "Tokyo Ghoul",
   },
   {
     name: "After Dark",
@@ -257,6 +259,7 @@ let anime_sub_data = [
     id: 22,
     songImage: After_Dark_img,
     anime: "Bleach",
+    artist: "Bleach",
   },
   {
     name: "Ranbu No Melody",
@@ -264,6 +267,7 @@ let anime_sub_data = [
     id: 23,
     songImage: Ranbu_img,
     anime: "Bleach",
+    artist: "Bleach",
   },
   {
     name: "Daddy! Daddy! Do!",
@@ -271,6 +275,15 @@ let anime_sub_data = [
     id: 26,
     songImage: Daddy_img,
     anime: "Love is War",
+    artist: "Love is War",
+  },
+  {
+    name: "Top",
+    songfile: Top,
+    id: 28,
+    songImage: Top_img,
+    anime: "Tower Of God",
+    artist: "Tower Of God",
   },
 
   {
@@ -279,6 +292,15 @@ let anime_sub_data = [
     id: 32,
     songImage: Spectrum_img,
     anime: "Seven Deadly Sins",
+    artist: "Seven Deadly Sins",
+  },
+  {
+    name: "Baku",
+    songfile: Baku,
+    id: 33,
+    songImage: Baku_img,
+    anime: "Boruto",
+    artist: "Boruto",
   },
 ];
 

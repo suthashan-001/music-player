@@ -5,6 +5,7 @@ import discovery_icon from "@iconify/icons-bi/gem";
 import songs_icon from "@iconify/icons-fluent/music-note-2-20-regular";
 import elevate_icon from "@iconify/icons-ant-design/heart-outlined";
 import upload_icon from "@iconify/icons-ant-design/cloud-upload-outlined";
+import sleep24Regular from "@iconify/icons-fluent/sleep-24-regular";
 
 const SideBar = ({ setCurrentPage }) => {
   return (
@@ -58,7 +59,7 @@ const Navigation = ({ setCurrentPage }) => {
             </a>
           </li>
           {/* MySongs tab */}
-          <li
+          {/* <li
             className="Songs-li sidebar-tab"
             onClick={() => {
               //remove previous current page class
@@ -75,7 +76,7 @@ const Navigation = ({ setCurrentPage }) => {
                 <p className="nav-link-text">Songs</p>
               </div>
             </a>
-          </li>
+          </li> */}
           {/* Elevate tab */}
           <li
             className="Elevate-li sidebar-tab"
@@ -112,15 +113,20 @@ const Navigation = ({ setCurrentPage }) => {
               </div>
             </a>
           </li>
-          <li className="Blog-li sidebar-tab">
+          <li
+            className="Blog-li sidebar-tab"
+            onClick={() => {
+              setCurrentPage("Sleep");
+            }}
+          >
             <a className="navigation-links" href="#">
               <div className="nav-link-container">
                 <Icon
                   className="nav-icon"
-                  icon={upload_icon}
+                  icon={sleep24Regular}
                   style={{ color: "#fff9f9", fontSize: "31px" }}
                 />
-                <p className="nav-link-text">Blog</p>
+                <p className="nav-link-text">Sleep</p>
               </div>
             </a>
           </li>

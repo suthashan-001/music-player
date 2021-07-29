@@ -51,9 +51,6 @@ import Silhouette from "./Songs/Naruto/Silhouette.mp3";
 import Silhouette_img from "./Songs/Naruto/Silhouette-img.jpg";
 
 // My Hero
-import Sora from "./Songs/My Hero/Sora.mp3";
-import Sora_img from "./Songs/My Hero/Sora-img.jpg";
-
 import No1 from "./Songs/My Hero/No.1.mp3";
 import No1_img from "./Songs/My Hero/No1-img.jpg";
 
@@ -95,6 +92,9 @@ import Top_img from "./Songs/Top-img.jpg";
 
 import Spectrum from "./Songs/Spectrum.mp3";
 import Spectrum_img from "./Songs/Spectrum-img.jpg";
+
+import Baku from "./Songs/Naruto/Baku.mp3";
+import Baku_img from "./Songs/Naruto/Boruto.png";
 
 const data = [
   {
@@ -245,12 +245,6 @@ const data = [
     songImage: Whole_Heart_img,
   },
   {
-    name: "Sora ni Utaeba",
-    songfile: Sora,
-    id: 29,
-    songImage: Sora_img,
-  },
-  {
     name: "No.1",
     songfile: No1,
     id: 30,
@@ -273,6 +267,14 @@ const data = [
     songfile: Memories,
     songImage: Memories_img,
     id: 36,
+  },
+  {
+    name: "Baku",
+    songfile: Baku,
+    id: 37,
+    songImage: Baku_img,
+    anime: "Boruto",
+    artist: "Boruto",
   },
   {
     name: "Gratitude",

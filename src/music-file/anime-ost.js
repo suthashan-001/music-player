@@ -13,7 +13,7 @@ let Ost_data = [
     songfile: PerfectTime,
     id: 1,
     songImage: PerfectTime_img,
-    artist: "SnowMan",
+    artist: "Seven Deadly Sins ",
     anime: "Seven Deadly Sins",
   },
   {
@@ -21,7 +21,7 @@ let Ost_data = [
     songfile: Rengoku_OST,
     id: 2,
     songImage: Rengoku_img,
-    artist: "SnowMan",
+    artist: "Demon Slayer",
     anime: "Demon Slayer",
   },
   {
@@ -29,7 +29,7 @@ let Ost_data = [
     songfile: Clavar,
     id: 3,
     songImage: Clavar_img,
-    artist: "SnowMan",
+    artist: "Bleach",
     anime: "Bleach",
   },
 ];

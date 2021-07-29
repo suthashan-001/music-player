@@ -1058,3 +1058,10 @@ body {
 .sub-card:hover .play-hoverEffect-sub {
   display: block;
 }
+
+/* Sleep Page */
+.music-link {
+  display: inline-block;
+  background: white;
+  margin: 0.5em;
+}

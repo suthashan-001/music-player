@@ -8,12 +8,6 @@ import OneLove_img from "../Songs/elevate/Elevate Images/One Love.jpg";
 import Changes from "../Songs/elevate/Changes.mp3";
 import Changes_img from "../Songs/elevate/Elevate Images/Change-jcole.jpg";
 
-import LoveYourz from "../Songs/elevate/Love Yourz.mp3";
-import LoveYourz_img from "../Songs/elevate/Elevate Images/ForestHillsDrive.jpg";
-
-import Over from "../Songs/elevate/Over.mp3";
-import Over_img from "../Songs/elevate/Elevate Images/Drake-Over.jpg";
-
 import TooMuch from "../Songs/elevate/Too Much.mp3";
 import TooMuch_img from "../Songs/elevate/Elevate Images/TooMuch.jpg";
 
@@ -47,14 +41,6 @@ let elevate_data = [
     songfile: Changes,
     id: 3,
     songImage: Changes_img,
-    artist: "J Cole",
-    freq: "432hz",
-  },
-  {
-    name: "Love Yourz",
-    songfile: LoveYourz,
-    id: 4,
-    songImage: LoveYourz_img,
     artist: "J Cole",
     freq: "432hz",
   },
