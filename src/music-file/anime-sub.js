@@ -95,8 +95,6 @@ import Top_img from "../Songs/Top-img.jpg";
 import Spectrum from "../Songs/Spectrum.mp3";
 import Spectrum_img from "../Songs/Spectrum-img.jpg";
 
-import Pleasure from "../Songs/Pleasure.mp3";
-
 let anime_sub_data = [
   {
     name: "Grandeur",
