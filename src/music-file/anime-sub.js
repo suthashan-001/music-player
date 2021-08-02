@@ -11,6 +11,9 @@ import Haruka_img from "../Songs/black clover/Mirai-img.png";
 import BlackCatcher from "../Songs/black clover/Black Catcher.mp3";
 import BlackCatcher_img from "../Songs/black clover/Noelle.jpg";
 
+import Hana from "../Songs/black clover/Hana ga Saku Michi.mp3";
+import Nacht from "../Songs/black clover/Nacht.jpeg";
+
 //food wars
 import Spice from "../Songs/food wars/Spice.mp3";
 import Spice_img from "../Songs/food wars/Spice-img.png";
@@ -92,6 +95,8 @@ import Top_img from "../Songs/Top-img.jpg";
 import Spectrum from "../Songs/Spectrum.mp3";
 import Spectrum_img from "../Songs/Spectrum-img.jpg";
 
+import Pleasure from "../Songs/Pleasure.mp3";
+
 let anime_sub_data = [
   {
     name: "Grandeur",
@@ -125,6 +130,15 @@ let anime_sub_data = [
     anime: "Black Clover",
     artist: "Black Clover",
   },
+  {
+    name: "Hana ga Saku Michi",
+    songfile: Hana,
+    id: 34,
+    songImage: Nacht,
+    anime: "Black Clover",
+    artist: "Black Clover",
+  },
+
   {
     name: "Fight Together",
     songfile: Fight_Together,
