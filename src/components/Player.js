@@ -124,10 +124,6 @@ const PlayerOn = ({
     }
   }
 
-  function handleVolume(e) {
-    setVolume(e.target.value / 100);
-  }
-
   //song play useEffect
   React.useEffect(() => {
     audioRef.current.src = songQueue[queueIndex].songfile;
@@ -160,7 +156,7 @@ const PlayerOn = ({
       // we only want this useEffect to trigger if the user makes a playback request
       setPlaybackTriggered(false);
     }
-  }, [pause]);
+  }, [pause, setNewRequest, songQueue]);
 
   // loop useEffect
   React.useEffect(() => {
@@ -169,7 +165,7 @@ const PlayerOn = ({
     } else {
       audioRef.current.loop = false;
     }
-  }, [repeatSong]);
+  }, [repeatSong, playBackTriggered]);
 
   React.useEffect(() => {
     // volume useEffect
@@ -251,10 +247,6 @@ const MediaControls = (props) => {
   var fs_repeatIcon = document.querySelector(".fs-repeat-icon");
   var fs_repeatCircle = document.querySelector(".fs-repeat-circle");
   var fs_repeatInfinite = document.querySelector(".fs-repeat-infinite");
-
-  //shuffle icons
-  var playerShuffleIcon = document.querySelector(".shuffle-icon");
-  var fs_playerShuffleIcon = document.querySelector(".fs-shuffle-icon");
 
   return (
     <div className="media-controls-wrapper">
@@ -363,23 +355,23 @@ const SeekBar = ({
 
     //change colour of slider on hover
     if (sliderHover === true) {
-      var color =
+      var color_e =
         "linear-gradient(90deg, rgb(224, 171, 138)" +
         adjustedPercentage +
         "% , rgb(255, 255, 255)" +
         adjustedPercentage +
         "%)";
-      SeekSlider.current.style.background = color;
+      SeekSlider.current.style.background = color_e;
     } else {
-      var color =
+      var color_f =
         "linear-gradient(90deg, rgb(224, 171, 138)" +
         adjustedPercentage +
         "% , rgb(180, 180, 180)" +
         adjustedPercentage +
         "%)";
-      SeekSlider.current.style.background = color;
+      SeekSlider.current.style.background = color_f;
     }
-  }, [currentTime, sliderHover]);
+  }, [currentTime, sliderHover, duration]);
 
   //during seek mode
   if (isSeeking === true) {
@@ -456,21 +448,21 @@ const OtherControls = ({ volume, handleVolume }) => {
   React.useEffect(() => {
     //change colour of slider on hover
     if (sliderHover === true) {
-      var color =
+      var color_g =
         "linear-gradient(90deg, rgb(224, 171, 138)" +
         volume * 100 +
         "% , rgb(180, 180, 180)" +
         volume * 100 +
         "%)";
-      volumeSlider.current.style.background = color;
+      volumeSlider.current.style.background = color_g;
     } else {
-      var color =
+      var color_h =
         "linear-gradient(90deg, rgb(255,255,255)" +
         volume * 100 +
         "% , rgb(180, 180, 180)" +
         volume * 100 +
         "%)";
-      volumeSlider.current.style.background = color;
+      volumeSlider.current.style.background = color_h;
     }
   }, [volume, sliderHover]);
 

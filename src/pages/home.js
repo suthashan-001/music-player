@@ -1,5 +1,5 @@
 import React from "react";
-import { Icon, InlineIcon } from "@iconify/react";
+import { Icon } from "@iconify/react";
 import playButtonIcon from "@iconify/icons-gg/play-button-o";
 import elevateSongs from "../music-file/elevate-home";
 import animeDubSongs from "../music-file/anime-dub-home";
@@ -20,7 +20,7 @@ const Home = ({ isPlaying, setIsPlaying, setNewRequest, setSongQueue }) => {
         setPlayCardSong([]);
       }
     }
-  }, [playCardSong]);
+  }, [playCardSong, isPlaying, setIsPlaying, setNewRequest, setSongQueue]);
 
   return (
     <div className="page homePage-background">

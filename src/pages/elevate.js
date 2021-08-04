@@ -1,10 +1,9 @@
 import React from "react";
 import ElevateSongs from "../music-file/elevate-music";
-import MultiDimensional from "../music-file/multi-dimensional";
+import multiDimensional from "../music-file/multi-dimensional";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
-import { Icon, InlineIcon } from "@iconify/react";
+import { Icon } from "@iconify/react";
 import shuffleIcon from "@iconify/icons-bi/shuffle";
-import searchIcon from "@iconify/icons-clarity/search-line";
 import playButtonIcon from "@iconify/icons-gg/play-button-o";
 
 const ElevatePage = (props) => {
@@ -62,9 +61,9 @@ const ElevatePage = (props) => {
       <h1 className="pannel-title dub-title">Under Rated</h1>
       <div className="page-pannel dub-pannel">
         <div className="dub-container">
-          {MultiDimensional.map((song) => {
+          {multiDimensional.map((song) => {
             return (
-              <Multi_Dimensional
+              <MultiDimensional
                 key={song.id}
                 song={song}
                 playDimensionalSong={playDimensionalSong}
@@ -95,11 +94,6 @@ const ElevatePage = (props) => {
             />
           </button>
         </div>
-        {/* Search Bar */}
-        {/* <FilterOpenings
-          formInput={state.searchinput}
-          handleSearchInput={handleSearchInput}
-        /> */}
 
         <div className="sub-heading">
           <p className="heading-style anime-heading-title">TITLE</p>
@@ -150,15 +144,7 @@ const DisplayElevateSongs = (props) => {
   );
 };
 
-function ArtistSong({
-  name,
-  index,
-  songID,
-  PlayClickedSong,
-  addQueue,
-  picture,
-  artist,
-}) {
+function ArtistSong({ name, index, songID, PlayClickedSong, picture, artist }) {
   return (
     <Draggable index={index} draggableId={`song-${songID}`}>
       {(provided) => (
@@ -194,7 +180,7 @@ function ArtistSong({
   );
 }
 
-function Multi_Dimensional({ song, playDimensionalSong }) {
+function MultiDimensional({ song, playDimensionalSong }) {
   return (
     // English Covers
     <div className="Dub-card">
@@ -228,46 +214,6 @@ function ElevatePage_reducer(state, action) {
 
       return {
         ...state,
-      };
-    }
-
-    case "USER_INPUT": {
-      // empty search bar and the user has a specific playOrder
-      if (action.input === "" && state.playOrder.length !== 0) {
-        // don't lose the ordering that the user created
-        return {
-          ...state,
-          songs: state.playOrder,
-          searchInput: action.payload,
-        };
-      }
-
-      // empty search bar
-      if (action.input === "") {
-        return {
-          ...state,
-          songs: ElevateSongs,
-          searchInput: action.payload,
-        };
-      }
-
-      // filter songs based on user input
-      let re = new RegExp(`${action.input}`);
-      let array = state.songs;
-      let filteredSongs = array.filter((songObject) => {
-        let { name } = songObject;
-        let matchLower = re.test(name.toLowerCase());
-        let matchUpper = re.test(name.toUpperCase());
-
-        if (matchLower || matchUpper) {
-          return songObject;
-        }
-      });
-
-      return {
-        ...state,
-        songs: filteredSongs,
-        searchInput: action.input,
       };
     }
 

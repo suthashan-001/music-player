@@ -1,6 +1,5 @@
 import React from "react";
-import { Icon, InlineIcon } from "@iconify/react";
-import shuffleIcon from "@iconify/icons-bi/shuffle";
+import { Icon } from "@iconify/react";
 import skipBackIcon from "@iconify/icons-ph/skip-back";
 import playButtonIcon from "@iconify/icons-gg/play-button-o";
 import skipForwardIcon from "@iconify/icons-ph/skip-forward";
@@ -177,13 +176,13 @@ const FullScreenVolume = ({ volume, handleVolume }) => {
         "%)";
       FullScreenVolume.current.style.background = color;
     } else {
-      var color =
+      var color_a =
         "linear-gradient(90deg, rgb(222,222,222)" +
         volume * 100 +
         "% , rgb(180, 180, 180)" +
         volume * 100 +
         "%)";
-      FullScreenVolume.current.style.background = color;
+      FullScreenVolume.current.style.background = color_a;
     }
   }, [volume, volumeHover]);
 
@@ -232,23 +231,23 @@ const FullScreenSeekBar = (props) => {
 
     //change colour of slider on hover
     if (SeekBarHover === true) {
-      var color =
+      var color_b =
         "linear-gradient(90deg, rgb(224, 171, 138)" +
         adjustedPercentage +
         "% , rgb(255, 255, 255)" +
         adjustedPercentage +
         "%)";
-      SeekBar.current.style.background = color;
+      SeekBar.current.style.background = color_b;
     } else {
-      var color =
+      var color_c =
         "linear-gradient(90deg, rgb(224, 171, 138)" +
         adjustedPercentage +
         "% , rgb(180, 180, 180)" +
         adjustedPercentage +
         "%)";
-      SeekBar.current.style.background = color;
+      SeekBar.current.style.background = color_c;
     }
-  }, [props.currentTime, SeekBarHover]);
+  }, [props.currentTime, SeekBarHover, props.duration]);
 
   //during seek mode
   if (props.isSeeking === true) {

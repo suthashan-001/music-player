@@ -1,5 +1,5 @@
 import React from "react";
-import { Icon, InlineIcon } from "@iconify/react";
+import { Icon } from "@iconify/react";
 import playButtonIcon from "@iconify/icons-gg/play-button-o";
 
 const Queue = ({ songQueue, queueIndex, setQueueIndex }) => {
@@ -23,6 +23,8 @@ const Queue = ({ songQueue, queueIndex, setQueueIndex }) => {
                       setQueueIndex={setQueueIndex}
                     />
                   );
+                } else {
+                  return null;
                 }
               })}
             </div>
@@ -33,7 +35,7 @@ const Queue = ({ songQueue, queueIndex, setQueueIndex }) => {
   );
 };
 
-const DisplayQueueSongs = ({ song, index }) => {
+const DisplayQueueSongs = ({ song }) => {
   return (
     <div className="queue-song-container">
       <div className="queue-image-container">

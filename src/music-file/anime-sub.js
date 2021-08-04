@@ -19,17 +19,11 @@ import Spice from "../Songs/food wars/Spice.mp3";
 import Spice_img from "../Songs/food wars/Spice-img.png";
 
 //One Piece
-import WeAre from "../Songs/One Piece/We Are.mp3";
-import WeAre_img from "../Songs/One Piece/we-are-img.png";
-
 import Hope from "../Songs/One Piece/Hope.mp3";
 import Hope_img from "../Songs/One Piece/Hope-img.png";
 
 import Fight_Together from "../Songs/One Piece/Fight Together.mp3";
 import Fight_Together_img from "../Songs/One Piece/fight-together-image.png";
-
-import Memories from "../Songs/One Piece/Memories.mp3";
-import Memories_img from "../Songs/One Piece/Memories-img.png";
 
 // Naruto
 import Sign from "../Songs/Naruto/Sign.mp3";

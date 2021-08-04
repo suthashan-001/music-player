@@ -2,8 +2,6 @@ import "./App.css";
 import React from "react";
 import SideBar from "./components/SideBar";
 import Player from "./components/Player";
-import SongPage from "./pages/songs";
-import FullScreen from "./components/FullScreen";
 import Page from "./components/Page";
 
 /* 

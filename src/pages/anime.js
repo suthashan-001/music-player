@@ -3,7 +3,7 @@ import animeDubSongs from "../music-file/anime-dub-home";
 import animeSubSongs from "../music-file/anime-sub";
 import animeOst from "../music-file/anime-ost";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
-import { Icon, InlineIcon } from "@iconify/react";
+import { Icon } from "@iconify/react";
 import shuffleIcon from "@iconify/icons-bi/shuffle";
 import searchIcon from "@iconify/icons-clarity/search-line";
 import playButtonIcon from "@iconify/icons-gg/play-button-o";
@@ -28,9 +28,7 @@ const AnimePage = (props) => {
   function shuffleSongs(e) {
     dispatch({ type: "SHUFFLE_SONGS" });
   }
-  function handleSearchInput(e) {
-    dispatch({ type: "USER_INPUT", input: e.target.value });
-  }
+
   function handleSongDrag(e) {
     const position = { start: e.source, end: e.destination };
     dispatch({ type: "HANDLE_DRAG", position: position });
@@ -213,26 +211,6 @@ const DisplayAnimeDubCard = ({ song, playDubSong }) => {
   );
 };
 
-const FilterOpenings = ({ formInput, handleSearchInput }) => {
-  return (
-    <form className="filterSongs">
-      <Icon
-        className="search-Icon"
-        icon={searchIcon}
-        style={{ fontSize: "22px" }}
-      />
-      <input
-        type="text"
-        name="song-search"
-        id="filterSearch"
-        value={formInput}
-        onChange={handleSearchInput}
-        placeholder="filter"
-      />
-    </form>
-  );
-};
-
 const DisplayOpenings = (props) => {
   return (
     <>
@@ -266,15 +244,7 @@ const DisplayOpenings = (props) => {
   );
 };
 
-function Opening({
-  name,
-  index,
-  songID,
-  PlayClickedSong,
-  addQueue,
-  picture,
-  anime,
-}) {
+function Opening({ name, index, songID, PlayClickedSong, picture, anime }) {
   return (
     <Draggable index={index} draggableId={`song-${songID}`}>
       {(provided) => (
@@ -399,46 +369,6 @@ function AnimePage_reducer(state, action) {
 
       return {
         ...state,
-      };
-    }
-
-    case "USER_INPUT": {
-      // empty search bar and the user has a specific playOrder
-      if (action.input === "" && state.playOrder.length !== 0) {
-        // don't lose the ordering that the user created
-        return {
-          ...state,
-          songs: state.playOrder,
-          searchInput: action.payload,
-        };
-      }
-
-      // empty search bar
-      if (action.input === "") {
-        return {
-          ...state,
-          songs: animeSubSongs,
-          searchInput: action.payload,
-        };
-      }
-
-      // filter songs based on user input
-      let re = new RegExp(`${action.input}`);
-      let array = state.songs;
-      let filteredSongs = array.filter((songObject) => {
-        let { name } = songObject;
-        let matchLower = re.test(name.toLowerCase());
-        let matchUpper = re.test(name.toUpperCase());
-
-        if (matchLower || matchUpper) {
-          return songObject;
-        }
-      });
-
-      return {
-        ...state,
-        songs: filteredSongs,
-        searchInput: action.input,
       };
     }
 

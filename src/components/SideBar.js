@@ -2,9 +2,7 @@ import React from "react";
 import { Icon } from "@iconify/react";
 import home_icon from "@iconify/icons-fluent/home-12-regular";
 import discovery_icon from "@iconify/icons-bi/gem";
-import songs_icon from "@iconify/icons-fluent/music-note-2-20-regular";
 import elevate_icon from "@iconify/icons-ant-design/heart-outlined";
-import upload_icon from "@iconify/icons-ant-design/cloud-upload-outlined";
 import sleep24Regular from "@iconify/icons-fluent/sleep-24-regular";
 
 const SideBar = ({ setCurrentPage }) => {
@@ -47,7 +45,7 @@ const Navigation = ({ setCurrentPage }) => {
               setCurrentPage("Home");
             }}
           >
-            <a className="navigation-links" href="#">
+            <button className="navigation-links">
               <div className="nav-link-container">
                 <Icon
                   className="nav-icon"
@@ -56,7 +54,7 @@ const Navigation = ({ setCurrentPage }) => {
                 />
                 <p className="nav-link-text">Home</p>
               </div>
-            </a>
+            </button>
           </li>
           {/* MySongs tab */}
           {/* <li
@@ -84,7 +82,7 @@ const Navigation = ({ setCurrentPage }) => {
               setCurrentPage("Elevate");
             }}
           >
-            <a className="navigation-links" href="#">
+            <button className="navigation-links">
               <div className="nav-link-container">
                 <Icon
                   className="nav-icon"
@@ -93,7 +91,7 @@ const Navigation = ({ setCurrentPage }) => {
                 />
                 <p className="nav-link-text">Elevate</p>
               </div>
-            </a>
+            </button>
           </li>
           {/* Anime-tab */}
           <li
@@ -102,7 +100,7 @@ const Navigation = ({ setCurrentPage }) => {
               setCurrentPage("Anime");
             }}
           >
-            <a className="navigation-links" href="#">
+            <button className="navigation-links">
               <div className="nav-link-container">
                 <Icon
                   className="nav-icon"
@@ -111,7 +109,7 @@ const Navigation = ({ setCurrentPage }) => {
                 />
                 <p className="nav-link-text">Anime</p>
               </div>
-            </a>
+            </button>
           </li>
           <li
             className="Blog-li sidebar-tab"
@@ -119,7 +117,7 @@ const Navigation = ({ setCurrentPage }) => {
               setCurrentPage("Sleep");
             }}
           >
-            <a className="navigation-links" href="#">
+            <button className="navigation-links">
               <div className="nav-link-container">
                 <Icon
                   className="nav-icon"
@@ -128,7 +126,7 @@ const Navigation = ({ setCurrentPage }) => {
                 />
                 <p className="nav-link-text">Sleep</p>
               </div>
-            </a>
+            </button>
           </li>
         </ul>
       </nav>

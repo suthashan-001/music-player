@@ -11,7 +11,6 @@ const Page = (props) => {
     return (
       <QueuePage
         songQueue={props.songQueue}
-        songQueue={props.songQueue}
         queueIndex={props.queueIndex}
         setQueueIndex={props.setQueueIndex}
       ></QueuePage>

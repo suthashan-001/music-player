@@ -1,9 +1,8 @@
 import React from "react";
-import { Icon, InlineIcon } from "@iconify/react";
+import { Icon } from "@iconify/react";
 import shuffleIcon from "@iconify/icons-bi/shuffle";
 import searchIcon from "@iconify/icons-clarity/search-line";
 import playButtonIcon from "@iconify/icons-gg/play-button-o";
-import addQueueIcon from "@iconify/icons-carbon/query-queue";
 
 import data from "../mySongs";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
@@ -205,46 +204,6 @@ function songPanelreducer(state, action) {
 
       return {
         ...state,
-      };
-    }
-
-    case "USER_INPUT": {
-      // empty search bar and the user has a specific playOrder
-      if (action.input === "" && state.playOrder.length !== 0) {
-        // don't lose the ordering that the user created
-        return {
-          ...state,
-          songs: state.playOrder,
-          searchInput: action.payload,
-        };
-      }
-
-      // empty search bar
-      if (action.input === "") {
-        return {
-          ...state,
-          songs: data,
-          searchInput: action.payload,
-        };
-      }
-
-      // filter songs based on user input
-      let re = new RegExp(`${action.input}`);
-      let array = state.songs;
-      let filteredSongs = array.filter((songObject) => {
-        let { name } = songObject;
-        let matchLower = re.test(name.toLowerCase());
-        let matchUpper = re.test(name.toUpperCase());
-
-        if (matchLower || matchUpper) {
-          return songObject;
-        }
-      });
-
-      return {
-        ...state,
-        songs: filteredSongs,
-        searchInput: action.input,
       };
     }
 
