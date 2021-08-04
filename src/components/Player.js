@@ -143,7 +143,7 @@ const PlayerOn = ({
     setTimeout(() => {
       audioRef.current.play();
     }, 2000);
-  }, [queueIndex, newRequest]);
+  }, [queueIndex, newRequest, setNewRequest, songQueue]);
 
   //playback useEffect
   React.useEffect(() => {
@@ -156,7 +156,7 @@ const PlayerOn = ({
       // we only want this useEffect to trigger if the user makes a playback request
       setPlaybackTriggered(false);
     }
-  }, [pause, setNewRequest, songQueue]);
+  }, [pause, setNewRequest, songQueue, playBackTriggered]);
 
   // loop useEffect
   React.useEffect(() => {
@@ -604,13 +604,13 @@ const OtherControlsOFF = () => {
         "%)";
       volumeSlider.current.style.background = color;
     } else {
-      var color =
+      var color_i =
         "linear-gradient(90deg, rgb(255,255,255)" +
         soundValue +
         "% , rgb(180, 180, 180)" +
         soundValue +
         "%)";
-      volumeSlider.current.style.background = color;
+      volumeSlider.current.style.background = color_i;
     }
   }, [soundValue, sliderHover]);
 

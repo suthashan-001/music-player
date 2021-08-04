@@ -17,9 +17,7 @@ const ElevatePage = (props) => {
   function shuffleSongs(e) {
     dispatch({ type: "SHUFFLE_SONGS" });
   }
-  function handleSearchInput(e) {
-    dispatch({ type: "USER_INPUT", input: e.target.value });
-  }
+
   function handleSongDrag(e) {
     const position = { start: e.source, end: e.destination };
     dispatch({ type: "HANDLE_DRAG", position: position });

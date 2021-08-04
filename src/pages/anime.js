@@ -5,7 +5,6 @@ import animeOst from "../music-file/anime-ost";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import { Icon } from "@iconify/react";
 import shuffleIcon from "@iconify/icons-bi/shuffle";
-import searchIcon from "@iconify/icons-clarity/search-line";
 import playButtonIcon from "@iconify/icons-gg/play-button-o";
 
 const AnimePage = (props) => {
