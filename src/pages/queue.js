@@ -7,7 +7,12 @@ const Queue = ({ songQueue, queueIndex, setQueueIndex }) => {
     <div className="page page-background">
       <div className="queue-container">
         <div className="pannel-header">
-          <h1 className="page-title">Queue</h1>
+          <div className="queuePage-message">
+            <h1 className="page-title queue-title">Queue</h1>
+            <span>
+              <i>(click queue icon again to exit)</i>
+            </span>
+          </div>
 
           <div className="displaySongsContainer">
             <h3 className="now-playing">Now Playing</h3>

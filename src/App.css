@@ -629,6 +629,15 @@ body {
   background-color: #9fb9dba2;
 }
 
+.queuePage-message {
+  display: flex;
+  align-items: baseline;
+}
+
+.queue-title {
+  margin-right: 1em;
+}
+
 /* ===================
     FullScreen Mode Small Screens
 ====================== */
