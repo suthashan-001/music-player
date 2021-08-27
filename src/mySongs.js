@@ -11,6 +11,13 @@ import Haruka_img from "./Songs/black clover/Mirai-img.png";
 import BlackCatcher from "./Songs/black clover/Black Catcher.mp3";
 import BlackCatcher_img from "./Songs/black clover/Noelle.jpg";
 
+import Tenjou from "./Songs/black clover/Tenjou.mp3";
+import NewPage from "./Songs/black clover/New Page.mp3";
+import RightNow from "./Songs/black clover/Right Now.mp3";
+
+import Hana from "./Songs/black clover/Hana ga Saku Michi.mp3";
+import Nacht from "./Songs/black clover/Nacht.jpeg";
+
 import Gratitude from "./Songs/elevate/Gratitude.mp3";
 import Gratitude_img from "./Songs/elevate/Elevate Images/Gratitude.png";
 
@@ -27,9 +34,6 @@ import Hope_img from "./Songs/One Piece/Hope-img.png";
 
 import Fight_Together from "./Songs/One Piece/Fight Together.mp3";
 import Fight_Together_img from "./Songs/One Piece/fight-together-image.png";
-
-import Memories from "./Songs/One Piece/Memories.mp3";
-import Memories_img from "./Songs/One Piece/Memories-img.png";
 
 // Naruto
 import Sign from "./Songs/Naruto/Sign.mp3";
@@ -96,6 +100,12 @@ import Spectrum_img from "./Songs/Spectrum-img.jpg";
 import Baku from "./Songs/Naruto/Baku.mp3";
 import Baku_img from "./Songs/Naruto/Boruto.png";
 
+// Foster Ebbay
+import fifth_Dimension from "./Songs/elevate/5th Dimension.mp3";
+import good_vibes from "./Songs/elevate/Good Vibes.mp3";
+import etherics from "./Songs/elevate/Etherics.mp3";
+import Ebayy from "./Songs/elevate/Elevate Images/Ebayy.jpg";
+
 const data = [
   {
     name: "One Love",
@@ -122,6 +132,32 @@ const data = [
     name: "Haruka Mirai",
     songfile: Haruka,
     id: 3,
+    songImage: Haruka_img,
+  },
+  {
+    name: "Hana ga Saku Michi",
+    songfile: Hana,
+    id: 34,
+    songImage: Nacht,
+    anime: "Black Clover",
+    artist: "Black Clover",
+  },
+  {
+    name: "Tenjou",
+    songfile: Tenjou,
+    id: 38,
+    songImage: Haruka_img,
+  },
+  {
+    name: "New Page",
+    songfile: NewPage,
+    id: 39,
+    songImage: Haruka_img,
+  },
+  {
+    name: "Right Now",
+    songfile: RightNow,
+    id: 1111,
     songImage: Haruka_img,
   },
   {
@@ -263,12 +299,6 @@ const data = [
     songImage: Spectrum_img,
   },
   {
-    name: "Memories",
-    songfile: Memories,
-    songImage: Memories_img,
-    id: 36,
-  },
-  {
     name: "Baku",
     songfile: Baku,
     id: 37,
@@ -277,9 +307,33 @@ const data = [
     artist: "Boruto",
   },
   {
+    name: "Etherics",
+    songfile: etherics,
+    id: 222,
+    songImage: Ebayy,
+    artist: "Foster Ebayy",
+    freq: "432hz",
+  },
+  {
+    name: "Good Vibes",
+    songfile: good_vibes,
+    id: 333,
+    songImage: Ebayy,
+    artist: "Foster Ebayy",
+    freq: "432hz",
+  },
+  {
+    name: "5th Dimension",
+    songfile: fifth_Dimension,
+    id: 444,
+    songImage: Ebayy,
+    artist: "Foster Ebayy",
+    freq: "432hz",
+  },
+  {
     name: "Gratitude",
     songfile: Gratitude,
-    id: 28,
+    id: 999,
     songImage: Gratitude_img,
     artist: "Lordelle",
   },

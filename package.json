@@ -49,6 +49,7 @@
     "@iconify/icons-clarity": "^1.1.0",
     "@iconify/icons-fluent": "^1.1.10",
     "@iconify/icons-gg": "^1.1.0",
+    "@iconify/icons-iconoir": "^1.1.1",
     "@iconify/icons-ph": "^1.1.2",
     "@iconify/react": "^1.1.4"
   }

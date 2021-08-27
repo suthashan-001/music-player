@@ -5,6 +5,7 @@ import ElevatePage from "../pages/elevate";
 import AnimePage from "../pages/anime";
 import QueuePage from "../pages/queue";
 import SleepPage from "../pages/sleep";
+import DocsPage from "../pages/docs";
 
 const Page = (props) => {
   if (props.displayQueue === true) {
@@ -63,6 +64,10 @@ const Page = (props) => {
 
   if (props.currentPage === "Sleep") {
     return <SleepPage></SleepPage>;
+  }
+
+  if (props.currentPage === "Docs") {
+    return <DocsPage></DocsPage>;
   }
 
   return <div></div>;

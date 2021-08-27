@@ -95,6 +95,8 @@ const AnimePage = (props) => {
 
   return (
     <div className="page page-background">
+      <br />
+      <br />
       {/* English Covers */}
       <h1 className="pannel-title dub-title">English Cover's</h1>
       <div className="page-pannel dub-pannel">

@@ -55,6 +55,8 @@ const ElevatePage = (props) => {
 
   return (
     <div className="page page-background">
+      <br />
+      <br />
       {/* Under-ratted Covers */}
       <h1 className="pannel-title dub-title">Under Rated</h1>
       <div className="page-pannel dub-pannel">

@@ -4,6 +4,7 @@ import home_icon from "@iconify/icons-fluent/home-12-regular";
 import discovery_icon from "@iconify/icons-bi/gem";
 import elevate_icon from "@iconify/icons-ant-design/heart-outlined";
 import sleep24Regular from "@iconify/icons-fluent/sleep-24-regular";
+import googleDocs from "@iconify/icons-iconoir/google-docs";
 
 const SideBar = ({ setCurrentPage }) => {
   return (
@@ -68,7 +69,7 @@ const Navigation = ({ setCurrentPage }) => {
               <div className="nav-link-container">
                 <Icon
                   className="nav-icon"
-                  icon={songs_icon}
+                  icon={home_icon}
                   style={{ color: "#ffffff", fontSize: "28px" }}
                 />
                 <p className="nav-link-text">Songs</p>
@@ -111,6 +112,7 @@ const Navigation = ({ setCurrentPage }) => {
               </div>
             </button>
           </li>
+          {/* Sleep Tab */}
           <li
             className="Blog-li sidebar-tab"
             onClick={() => {
@@ -125,6 +127,24 @@ const Navigation = ({ setCurrentPage }) => {
                   style={{ color: "#fff9f9", fontSize: "31px" }}
                 />
                 <p className="nav-link-text">Sleep</p>
+              </div>
+            </button>
+          </li>
+          {/* Docs Tab */}
+          <li
+            className="Blog-li sidebar-tab"
+            onClick={() => {
+              setCurrentPage("Docs");
+            }}
+          >
+            <button className="navigation-links">
+              <div className="nav-link-container">
+                <Icon
+                  className="nav-icon"
+                  icon={googleDocs}
+                  style={{ color: "#fff9f9", fontSize: "31px" }}
+                />
+                <p className="nav-link-text">Docs</p>
               </div>
             </button>
           </li>

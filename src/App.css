@@ -1076,3 +1076,26 @@ body {
   background: white;
   margin: 0.5em;
 }
+
+/* Sleep page */
+.sleep-card {
+  background: white;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  text-align: center;
+}
+.sleep-img {
+  height: 222px;
+  width: 222px;
+  margin-bottom: 0.5em;
+}
+.music-link {
+  font-size: 22px;
+}
+.sleep-pannel {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
