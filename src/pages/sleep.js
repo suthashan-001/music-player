@@ -1,8 +1,8 @@
 import React from "react";
-import spongebob from "../Songs/Sleep/spongebob.png";
-import gumball from "../Songs/Sleep/gumball.png";
-import stewie from "../Songs/Sleep/stewie.png";
-import bart from "../Songs/Sleep/bart-sleep.png";
+import spongebob from "../Songs/Sleep/spongebob.jpg";
+import gumball from "../Songs/Sleep/gumball.jpg";
+import stewie from "../Songs/Sleep/stewie.jpg";
+import bart from "../Songs/Sleep/bart-sleep.jpg";
 
 const Sleep = () => {
   return (

@@ -1087,12 +1087,12 @@ body {
   text-align: center;
 }
 .sleep-img {
-  height: 200px;
-  width: 200px;
+  height: 169px;
+  width: 169px;
   margin-bottom: 0.5em;
 }
 .music-link {
-  font-size: 22px;
+  font-size: 16px;
 }
 .sleep-pannel {
   display: flex;

@@ -14,6 +14,12 @@ import BlackCatcher_img from "../Songs/black clover/Noelle.jpg";
 import Hana from "../Songs/black clover/Hana ga Saku Michi.mp3";
 import Nacht from "../Songs/black clover/Nacht.jpeg";
 
+import Tenjou from "../Songs/black clover/Tenjou.mp3";
+import Julius from "../Songs/black clover/Julius.jpg";
+
+import NewPage from "../Songs/black clover/New Page.mp3";
+import Yami from "../Songs/black clover/Yami-2.jpg";
+
 //food wars
 import Spice from "../Songs/food wars/Spice.mp3";
 import Spice_img from "../Songs/food wars/Spice-img.png";
@@ -129,6 +135,22 @@ let anime_sub_data = [
     songImage: Nacht,
     anime: "Black Clover",
     artist: "Black Clover",
+  },
+  {
+    name: "Tenjou Tenge",
+    songfile: Tenjou,
+    id: 38,
+    songImage: Julius,
+    artist: "Black Clover",
+    anime: "Black Clover",
+  },
+  {
+    name: "New Page",
+    songfile: NewPage,
+    id: 39,
+    songImage: Yami,
+    artist: "Black Clover",
+    anime: "Black Clover",
   },
 
   {
