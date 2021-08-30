@@ -11,6 +11,9 @@ import Haruka_img from "./Songs/black clover/Mirai-img.png";
 import BlackCatcher from "./Songs/black clover/Black Catcher.mp3";
 import BlackCatcher_img from "./Songs/black clover/Noelle.jpg";
 
+import skyblue from "./Songs/black clover/skyblue.mp3";
+import Charmy from "./Songs/black clover/Charmy.jpg";
+
 import Tenjou from "./Songs/black clover/Tenjou.mp3";
 import NewPage from "./Songs/black clover/New Page.mp3";
 import RightNow from "./Songs/black clover/Right Now.mp3";
@@ -151,8 +154,16 @@ const data = [
   {
     name: "New Page",
     songfile: NewPage,
-    id: 39,
+    id: 396,
     songImage: Haruka_img,
+  },
+  {
+    name: "sky & blue",
+    songfile: skyblue,
+    id: 40,
+    songImage: Charmy,
+    artist: "Black Clover",
+    anime: "Black Clover",
   },
   {
     name: "Right Now",

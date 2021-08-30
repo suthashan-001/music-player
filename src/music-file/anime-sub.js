@@ -20,6 +20,9 @@ import Julius from "../Songs/black clover/Julius.jpg";
 import NewPage from "../Songs/black clover/New Page.mp3";
 import Yami from "../Songs/black clover/Yami-2.jpg";
 
+import skyblue from "../Songs/black clover/skyblue.mp3";
+import Charmy from "../Songs/black clover/Charmy.jpg";
+
 //food wars
 import Spice from "../Songs/food wars/Spice.mp3";
 import Spice_img from "../Songs/food wars/Spice-img.png";
@@ -145,14 +148,21 @@ let anime_sub_data = [
     anime: "Black Clover",
   },
   {
+    name: "sky & blue",
+    songfile: skyblue,
+    id: 40,
+    songImage: Charmy,
+    artist: "Black Clover",
+    anime: "Black Clover",
+  },
+  {
     name: "New Page",
     songfile: NewPage,
-    id: 39,
+    id: 396,
     songImage: Yami,
     artist: "Black Clover",
     anime: "Black Clover",
   },
-
   {
     name: "Fight Together",
     songfile: Fight_Together,
