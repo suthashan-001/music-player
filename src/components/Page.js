@@ -63,7 +63,14 @@ const Page = (props) => {
   }
 
   if (props.currentPage === "Sleep") {
-    return <SleepPage></SleepPage>;
+    return (
+      <SleepPage
+        isPlaying={props.isPlaying}
+        setNewRequest={props.setNewRequest}
+        setIsPlaying={props.setIsPlaying}
+        setSongQueue={props.setSongQueue}
+      ></SleepPage>
+    );
   }
 
   if (props.currentPage === "Docs") {

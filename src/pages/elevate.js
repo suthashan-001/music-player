@@ -72,7 +72,6 @@ const ElevatePage = (props) => {
           })}
         </div>
       </div>
-
       <h1 className="pannel-title dub-title">Elevate</h1>
       {/* Anime Openings */}
       <div className="page-pannel">

@@ -56,6 +56,9 @@ import Silhouette_img from "../Songs/Naruto/Silhouette-img.jpg";
 import Baku from "../Songs/Naruto/Baku.mp3";
 import Baku_img from "../Songs/Naruto/Boruto.png";
 
+import Who from "../Songs/Naruto/Who Are You.mp3";
+import Who_img from "../Songs/Naruto/who-img.jpg";
+
 // My Hero
 import No1 from "../Songs/My Hero/No.1.mp3";
 import No1_img from "../Songs/My Hero/No1-img.jpg";
@@ -100,42 +103,18 @@ import Spectrum_img from "../Songs/Spectrum-img.jpg";
 
 let anime_sub_data = [
   {
-    name: "Grandeur",
-    songfile: Grandeur,
-    id: 1,
-    songImage: Grandeur_img,
-    artist: "Black Clover",
+    name: "Hana ga Saku Michi",
+    songfile: Hana,
+    id: 34,
+    songImage: Nacht,
     anime: "Black Clover",
+    artist: "Black Clover",
   },
   {
     name: "Beautiful",
     songfile: Beautiful,
     id: 2,
     songImage: Beautiful_img,
-    anime: "Black Clover",
-    artist: "Black Clover",
-  },
-  {
-    name: "Haruka Mirai",
-    songfile: Haruka,
-    id: 3,
-    songImage: Haruka_img,
-    anime: "Black Clover",
-    artist: "Black Clover",
-  },
-  {
-    name: "Black Catcher",
-    songfile: BlackCatcher,
-    id: 11,
-    songImage: BlackCatcher_img,
-    anime: "Black Clover",
-    artist: "Black Clover",
-  },
-  {
-    name: "Hana ga Saku Michi",
-    songfile: Hana,
-    id: 34,
-    songImage: Nacht,
     anime: "Black Clover",
     artist: "Black Clover",
   },
@@ -156,12 +135,36 @@ let anime_sub_data = [
     anime: "Black Clover",
   },
   {
+    name: "Haruka Mirai",
+    songfile: Haruka,
+    id: 3,
+    songImage: Haruka_img,
+    anime: "Black Clover",
+    artist: "Black Clover",
+  },
+  {
     name: "New Page",
     songfile: NewPage,
     id: 396,
     songImage: Yami,
     artist: "Black Clover",
     anime: "Black Clover",
+  },
+  {
+    name: "Grandeur",
+    songfile: Grandeur,
+    id: 1,
+    songImage: Grandeur_img,
+    artist: "Black Clover",
+    anime: "Black Clover",
+  },
+  {
+    name: "Black Catcher",
+    songfile: BlackCatcher,
+    id: 11,
+    songImage: BlackCatcher_img,
+    anime: "Black Clover",
+    artist: "Black Clover",
   },
   {
     name: "Fight Together",
@@ -331,6 +334,14 @@ let anime_sub_data = [
     songImage: Spectrum_img,
     anime: "Seven Deadly Sins",
     artist: "Seven Deadly Sins",
+  },
+  {
+    name: "Who Are You",
+    songfile: Who,
+    id: 34,
+    songImage: Who_img,
+    anime: "Boruto",
+    artist: "Boruto",
   },
   {
     name: "Baku",

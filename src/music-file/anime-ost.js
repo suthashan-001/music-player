@@ -12,20 +12,20 @@ import shanksBuggy from "../Songs/One Piece/shanksbuggy.jpg";
 
 let Ost_data = [
   {
-    name: "Binks no Sake",
-    songfile: Binke,
-    id: 4,
-    songImage: shanksBuggy,
-    artist: "One Piece",
-    anime: "One Piece",
-  },
-  {
     name: "Perfect Time (Now)",
     songfile: PerfectTime,
     id: 1,
     songImage: PerfectTime_img,
     artist: "Seven Deadly Sins ",
     anime: "Seven Deadly Sins",
+  },
+  {
+    name: "Binks no Sake",
+    songfile: Binke,
+    id: 4,
+    songImage: shanksBuggy,
+    artist: "One Piece",
+    anime: "One Piece",
   },
   {
     name: "Rengoku vs Akaza",
