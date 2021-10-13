@@ -3,6 +3,7 @@ import { Icon } from "@iconify/react";
 import playButtonIcon from "@iconify/icons-gg/play-button-o";
 import elevateSongs from "../music-file/elevate-home";
 import animeDubSongs from "../music-file/anime-dub-home";
+import recentSongs from "../music-file/recent-home";
 
 const Home = ({ isPlaying, setIsPlaying, setNewRequest, setSongQueue }) => {
   const [playCardSong, setPlayCardSong] = React.useState([]);
@@ -24,6 +25,20 @@ const Home = ({ isPlaying, setIsPlaying, setNewRequest, setSongQueue }) => {
 
   return (
     <div className="page homePage-background">
+      {/* Recent cover */}
+      <h1 className="section-title">Can't Skip</h1>
+      <div className="section-container">
+        {recentSongs.map((song) => {
+          return (
+            <DisplayHomeSongCards
+              key={song.id}
+              song={song}
+              setPlayCardSong={setPlayCardSong}
+            />
+          );
+        })}
+      </div>
+
       {/* Elevate Songs */}
       <h1 className="section-title">Elevate</h1>
       <div className="section-container">
@@ -37,10 +52,6 @@ const Home = ({ isPlaying, setIsPlaying, setNewRequest, setSongQueue }) => {
           );
         })}
       </div>
-
-      {/* Sleep Music
-      <h1 className="section-title">Sleep Melodies</h1>
-      <div className="section-container"></div> */}
 
       {/* Anime English cover */}
       <h1 className="section-title">English Cover's</h1>

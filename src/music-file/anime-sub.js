@@ -42,7 +42,6 @@ import Transparent from "../Songs/Naruto/A World That Was Transparent.mp3";
 import Transparent_img from "../Songs/Naruto/Transparent-img.png";
 
 import Whole_Heart from "../Songs/Naruto/Whole Heart.mp3";
-import Whole_Heart_img from "../Songs/Naruto/Whole Heart-img.png";
 
 import Diver from "../Songs/Naruto/Diver.mp3";
 import Diver_img from "../Songs/Naruto/Diver-img.jpg";
@@ -88,9 +87,6 @@ import Snow_Fairy_img from "../Songs/Snow Fairy-img.png";
 
 import Lost_in_Paradise from "../Songs/Lost in Paradise.mp3";
 import Lost_in_Paradise_img from "../Songs/Lost in Paradise-img.png";
-
-import Unravel from "../Songs/Unravel.mp3";
-import Unravel_img from "../Songs/Unravel-img.jpg";
 
 import Daddy from "../Songs/Daddy.mp3";
 import Daddy_img from "../Songs/Love Dramatic-img.jpg";
@@ -226,7 +222,7 @@ let anime_sub_data = [
     name: "Whole Heart",
     songfile: Whole_Heart,
     id: 27,
-    songImage: Whole_Heart_img,
+    songImage: Who_img,
     anime: "Naruto",
     artist: "Naruto",
   },
@@ -286,14 +282,14 @@ let anime_sub_data = [
     anime: "Jujutsu kaisen",
     artist: "Jujutsu kaisen",
   },
-  {
-    name: "Unravel",
-    songfile: Unravel,
-    id: 17,
-    songImage: Unravel_img,
-    anime: "Tokyo Ghoul",
-    artist: "Tokyo Ghoul",
-  },
+  // {
+  //   name: "Unravel",
+  //   songfile: Unravel,
+  //   id: 17,
+  //   songImage: Unravel_img,
+  //   anime: "Tokyo Ghoul",
+  //   artist: "Tokyo Ghoul",
+  // },
   {
     name: "After Dark",
     songfile: After_Dark,
@@ -338,7 +334,7 @@ let anime_sub_data = [
   {
     name: "Who Are You",
     songfile: Who,
-    id: 34,
+    id: 35,
     songImage: Who_img,
     anime: "Boruto",
     artist: "Boruto",
