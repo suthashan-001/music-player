@@ -124,6 +124,13 @@ const PlayerOn = ({
     }
   }
 
+  // 4 useEffects, when unmounted "what does that mean" they still run which causes memory
+  // leaks which leads to bugs
+
+  /* The memory leak will happen if the API server or host took some time to respond 
+  and the component was unmounted before the response was received. 
+  (why songQueue became undefined) because of a memory leak */
+
   //song play useEffect
   React.useEffect(() => {
     audioRef.current.src = songQueue[queueIndex].songfile;
@@ -140,9 +147,21 @@ const PlayerOn = ({
     }
 
     // play song after a delay
-    setTimeout(() => {
+    let playSongDelay = setTimeout(() => {
       audioRef.current.play();
     }, 2000);
+
+    return function cleanUp() {
+      // unmount eventlisteners and async functions to avoid memory leaks
+      // memory leaks happen when component was unmounted before a response was received [dive further in this]
+      console.log("cleanup code executed!");
+      /* every time I click a new song I was adding a new event listener so stacking event listeners */
+      audioRef.current.removeEventListener("timeupdate", (e) => {
+        setCurrentTime(0);
+        setDuration(null);
+      });
+      clearTimeout(playSongDelay);
+    };
   }, [queueIndex, newRequest, setNewRequest, songQueue]);
 
   //playback useEffect

@@ -8,8 +8,8 @@ import OneLove_img from "../Songs/elevate/Elevate Images/One Love.jpg";
 import Changes from "../Songs/elevate/Changes.mp3";
 import Changes_img from "../Songs/elevate/Elevate Images/Change-jcole.jpg";
 
-import NotAfraid from "../Songs/elevate/Not Afraid.mp3";
-import NotAfraid_img from "../Songs/elevate/Elevate Images/NotAfraid.jpg";
+import TooMuch from "../Songs/elevate/Too Much.mp3";
+import TooMuch_img from "../Songs/elevate/Elevate Images/TooMuch.jpg";
 
 let elevate_data = [
   {
@@ -37,11 +37,11 @@ let elevate_data = [
     freq: "432hz",
   },
   {
-    name: "Not Afraid",
-    songfile: NotAfraid,
+    name: "Too Much",
+    songfile: TooMuch,
     id: 4,
-    songImage: NotAfraid_img,
-    artist: "Eminem",
+    songImage: TooMuch_img,
+    artist: "Drake",
     freq: "432hz",
   },
 ];

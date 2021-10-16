@@ -144,7 +144,7 @@ const Navigation = ({ setCurrentPage }) => {
                   icon={googleDocs}
                   style={{ color: "#fff9f9", fontSize: "31px" }}
                 />
-                <p className="nav-link-text">Docs</p>
+                <p className="nav-link-text">About 432hz</p>
               </div>
             </button>
           </li>

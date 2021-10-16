@@ -6,7 +6,7 @@ import Beautiful from "../Songs/black clover/Beautiful.mp3";
 import Beautiful_img from "../Songs/black clover/Asta.jpeg";
 
 import Haruka from "../Songs/black clover/Haruka Mirai.mp3";
-import Haruka_img from "../Songs/black clover/Mirai-img.png";
+import Haruka_img from "../Songs/black clover/Asta1.jpg";
 
 import BlackCatcher from "../Songs/black clover/Black Catcher.mp3";
 import BlackCatcher_img from "../Songs/black clover/Noelle.jpg";

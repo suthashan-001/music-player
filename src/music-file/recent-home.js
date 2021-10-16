@@ -1,14 +1,14 @@
 import Who from "../Songs/Naruto/Who Are You.mp3";
 import Who_img from "../Songs/Naruto/who-img.jpg";
 
-import Hana from "../Songs/black clover/Hana ga Saku Michi.mp3";
-import Nacht from "../Songs/black clover/Nacht.jpeg";
+import Haruka from "../Songs/black clover/Haruka Mirai.mp3";
+import Haruka_img from "../Songs/black clover/Asta1.jpg";
 
 import Fight_Together from "../Songs/One Piece/Fight Together.mp3";
 import Fight_Together_img from "../Songs/One Piece/fight-together-image.png";
 
-import PeaceSign from "../Songs/My Hero/PeaceSign.mp3";
-import PeaceSign_img from "../Songs/My Hero/PeaceSign-img.jpg";
+import Ranbu from "../Songs/Bleach/Ranbu no Melody.mp3";
+import Ranbu_img from "../Songs/Bleach/Ranbu.png";
 
 let recent_data = [
   {
@@ -20,10 +20,10 @@ let recent_data = [
     artist: "Boruto",
   },
   {
-    name: "Hana ga Saku Michi",
-    songfile: Hana,
-    id: 2,
-    songImage: Nacht,
+    name: "Haruka Mirai",
+    songfile: Haruka,
+    id: 3,
+    songImage: Haruka_img,
     anime: "Black Clover",
     artist: "Black Clover",
   },
@@ -36,12 +36,12 @@ let recent_data = [
     artist: "One Piece",
   },
   {
-    name: "Peace Sign",
-    songfile: PeaceSign,
-    id: 4,
-    songImage: PeaceSign_img,
-    anime: "My Hero Academia",
-    artist: "My Hero Academia",
+    name: "Ranbu No Melody",
+    songfile: Ranbu,
+    id: 23,
+    songImage: Ranbu_img,
+    anime: "Bleach",
+    artist: "Bleach",
   },
 ];
 
