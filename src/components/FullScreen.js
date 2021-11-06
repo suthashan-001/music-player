@@ -35,24 +35,28 @@ const FullScreen = (props) => {
               <p className="fs-songTitle">{props.songname}</p>
               <p className="fs-songArtist">{props.songartist}</p>
             </div>
-
-            <div className="fs-songTime">
-              <p className="fs-Time">{props.convertTime(props.currentTime)}</p>
-              <p className="fs-Time">{props.convertTime(props.duration)}</p>
-            </div>
           </div>
 
           <div className="fs-media-controls">
-            <FullScreenSeekBar
-              currentTime={props.currentTime}
-              seekTime={props.seekTime}
-              setSeekTime={props.setSeekTime}
-              duration={props.duration}
-              convertTime={props.convertTime}
-              isSeeking={props.isSeeking}
-              setIsSeeking={props.setIsSeeking}
-              foundSeekTime={props.foundSeekTime}
-            ></FullScreenSeekBar>
+            <div className="fs-seekbar-container">
+              <FullScreenSeekBar
+                currentTime={props.currentTime}
+                seekTime={props.seekTime}
+                setSeekTime={props.setSeekTime}
+                duration={props.duration}
+                convertTime={props.convertTime}
+                isSeeking={props.isSeeking}
+                setIsSeeking={props.setIsSeeking}
+                foundSeekTime={props.foundSeekTime}
+              ></FullScreenSeekBar>
+
+              <div className="fs-songTime">
+                <p className="fs-Time">
+                  {props.convertTime(props.currentTime)}
+                </p>
+                <p className="fs-Time">{props.convertTime(props.duration)}</p>
+              </div>
+            </div>
 
             <div className="fs-icons">
               <Icon
@@ -136,16 +140,12 @@ const FullScreen = (props) => {
         {/* column 3 */}
         <div className="fs-col-3">
           <div
-            className="fullscreen-exit icon-background"
+            className="icon-background"
             onClick={() => {
               fullscreenPannel.classList.remove("show");
             }}
           >
-            <Icon
-              icon={fullscreenExitIcon}
-              className="fs-exit-icon"
-              style={{ fontSize: "33px" }}
-            />
+            <Icon icon={fullscreenExitIcon} className="fs-exit-icon" />
           </div>
 
           <FullScreenVolume
@@ -206,15 +206,13 @@ const FullScreenVolume = ({ volume, handleVolume }) => {
         />
       </div>
 
-      <div className="icon-background">
-        <Icon
-          className="fs-sound-icon"
-          icon={soundOnIcon}
-          style={{ fontSize: "33px" }}
-          onClick={() => {
-            soundSlider.classList.toggle("show");
-          }}
-        />
+      <div
+        className="icon-background"
+        onClick={() => {
+          soundSlider.classList.toggle("show");
+        }}
+      >
+        <Icon className="fs-sound-icon" icon={soundOnIcon} />
       </div>
     </div>
   );

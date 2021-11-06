@@ -55,10 +55,46 @@ const ElevatePage = (props) => {
 
   return (
     <div className="page page-background">
-      <br />
-      <br />
+      <h1 className="pannel-title elevate-title dub-title">Elevate</h1>
+      {/* Elevate Songs */}
+      <div className="page-pannel elevate-page-pannel">
+        <div className="page-buttons anime-page-buttons">
+          {/* play songs */}
+          <button className="play-btn btn" onClick={playSongs}>
+            <p className="button-text">Play</p>
+            <Icon
+              className="play-icon"
+              icon={playButtonIcon}
+              style={{ fontSize: "36px" }}
+            />
+          </button>
+
+          {/* shuffle playlist */}
+          <button className="upload-btn btn" onClick={shuffleSongs}>
+            <p className="button-text">Shuffle</p>
+            <Icon
+              className="upload-icon"
+              icon={shuffleIcon}
+              style={{ color: "#fff9f9", fontSize: "36px" }}
+            />
+          </button>
+        </div>
+
+        {/* display playlist */}
+        <div className="sub-heading">
+          <p className="heading-style anime-heading-title">TITLE</p>
+          <p className="heading-style anime-heading-anime">ARTIST</p>
+        </div>
+
+        <DisplayElevateSongs
+          songs={state.songs}
+          handleSongDrag={handleSongDrag}
+          PlayClickedSong={PlayClickedSong}
+        />
+      </div>
+
       {/* Under-ratted Covers */}
-      <h1 className="pannel-title dub-title">Under Rated</h1>
+      <h1 className="pannel-title">Under Rated</h1>
       <div className="page-pannel dub-pannel">
         <div className="dub-container">
           {multiDimensional.map((song) => {
@@ -71,40 +107,6 @@ const ElevatePage = (props) => {
             );
           })}
         </div>
-      </div>
-      <h1 className="pannel-title dub-title">Elevate</h1>
-      {/* Anime Openings */}
-      <div className="page-pannel">
-        <div className="page-buttons anime-page-buttons">
-          <button className="play-btn btn" onClick={playSongs}>
-            <p className="button-text">Play</p>
-            <Icon
-              className="play-icon"
-              icon={playButtonIcon}
-              style={{ fontSize: "36px" }}
-            />
-          </button>
-          <button className="upload-btn btn" onClick={shuffleSongs}>
-            <p className="button-text">Shuffle</p>
-            <Icon
-              className="upload-icon"
-              icon={shuffleIcon}
-              style={{ color: "#fff9f9", fontSize: "36px" }}
-            />
-          </button>
-        </div>
-
-        <div className="sub-heading">
-          <p className="heading-style anime-heading-title">TITLE</p>
-          <p className="heading-style anime-heading-anime">ARTIST</p>
-        </div>
-
-        {/* Draggable Openings */}
-        <DisplayElevateSongs
-          songs={state.songs}
-          handleSongDrag={handleSongDrag}
-          PlayClickedSong={PlayClickedSong}
-        />
       </div>
     </div>
   );
@@ -188,9 +190,11 @@ function MultiDimensional({ song, playDimensionalSong }) {
         alt="Not Found"
         className="card-image anime-dub-img"
       />
-      <p className="card-name song-dub-title">{song.name}</p>
+      <p className="dubcard-name">{song.name}</p>
+
+      {/*  black tint on hover to play song  */}
       <div
-        className="play-hoverEffect-dub"
+        className="dubCard-hoverEffect"
         onClick={() => {
           playDimensionalSong(song);
         }}

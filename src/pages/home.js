@@ -74,19 +74,21 @@ const DisplayHomeSongCards = ({ song, setPlayCardSong }) => {
   return (
     <div className="card-container">
       <img src={song.songImage} alt="Not Found" className="card-image" />
-      <div className="home-song-card-info">
+      <div className="songCard-info">
         <p className="card-name">{song.name}</p>
         <p className="card-artist">{song.artist}</p>
       </div>
+
+      {/* black tint that shows play icon */}
       <div className="hoverEffect">
-        <div className="hover-container"></div>
-        <Icon
-          className="songCard_PlayIcon"
-          icon={playButtonIcon}
+        <div
+          className="hover-container"
           onClick={() => {
             setPlayCardSong(song);
           }}
-        />
+        >
+          <Icon className="songCard_PlayIcon" icon={playButtonIcon} />
+        </div>
       </div>
     </div>
   );

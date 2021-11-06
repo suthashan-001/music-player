@@ -134,7 +134,7 @@ const PlayerOn = ({
   //song play useEffect
   React.useEffect(() => {
     audioRef.current.src = songQueue[queueIndex].songfile;
-    let copy_node = audioRef;
+    // let copy_node = audioRef;
 
     // add eventListener to player that will fire everytime current time of an audio is updated
     audioRef.current.addEventListener("timeupdate", (e) => {
@@ -148,20 +148,21 @@ const PlayerOn = ({
     }
 
     // play song after a delay
-    let playSongDelay = setTimeout(() => {
+    setTimeout(() => {
       audioRef.current.play();
     }, 2000);
 
-    return function cleanUp() {
-      // unmount eventlisteners and async functions to avoid memory leaks
-      // memory leaks happen when component was unmounted before a response was received [dive further in this]
-      /* every time I click a new song I was adding a new event listener so stacking event listeners */
-      copy_node.current.removeEventListener("timeupdate", (e) => {
-        setCurrentTime(0);
-        setDuration(null);
-      });
-      clearTimeout(playSongDelay);
-    };
+    // return function cleanUp() {
+    //   console.log(copy_node);
+    //   // unmount eventlisteners and async functions to avoid memory leaks
+    //   // memory leaks happen when component was unmounted before a response was received [dive further in this]
+    //   /* every time I click a new song I was adding a new event listener so stacking event listeners */
+    //   copy_node.current.removeEventListener("timeupdate", (e) => {
+    //     setCurrentTime(0);
+    //     setDuration(null);
+    //   });
+    //   clearTimeout(playSongDelay);
+    // };
   }, [queueIndex, newRequest, setNewRequest, songQueue]);
 
   //playback useEffect

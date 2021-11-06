@@ -94,11 +94,9 @@ const AnimePage = (props) => {
   }
 
   return (
-    <div className="page page-background">
-      <br />
-      <br />
+    <div className="page page-background anime-page">
       {/* English Covers */}
-      <h1 className="pannel-title dub-title">English Cover's</h1>
+      <h1 className="pannel-title">English Cover's</h1>
       <div className="page-pannel dub-pannel">
         <div className="dub-container">
           {animeDubSongs.map((song) => {
@@ -114,7 +112,7 @@ const AnimePage = (props) => {
       </div>
 
       {/* Anime Openings */}
-      <h1 className="dub-title">Openings</h1>
+      <h1 className="pannel-title">Openings</h1>
       <div className="page-pannel anime-opening-pannel">
         <div className="page-buttons anime-page-buttons">
           <button className="play-btn btn" onClick={playSongs}>
@@ -154,7 +152,7 @@ const AnimePage = (props) => {
       </div>
 
       {/* OST's */}
-      <h1 className="dub-title">Ost</h1>
+      <h1 className="pannel-title">Ost</h1>
       <div className="page-pannel">
         <div className="page-buttons anime-page-buttons">
           <button className="play-btn btn" onClick={playOST}>
@@ -192,16 +190,17 @@ const AnimePage = (props) => {
 
 const DisplayAnimeDubCard = ({ song, playDubSong }) => {
   return (
-    // English Covers
     <div className="Dub-card">
       <img
         src={song.songImage}
         alt="Not Found"
         className="card-image anime-dub-img"
       />
-      <p className="card-name song-dub-title">{song.name}</p>
+      <p className="dubcard-name">{song.name}</p>
+
+      {/*  black tint on hover to play song  */}
       <div
-        className="play-hoverEffect-dub"
+        className="dubCard-hoverEffect"
         onClick={() => {
           playDubSong(song);
         }}

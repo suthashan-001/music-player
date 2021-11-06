@@ -4,6 +4,11 @@ import SideBar from "./components/SideBar";
 import Player from "./components/Player";
 import Page from "./components/Page";
 
+/* ======================
+    GOAL: Mobile Version
+   ======================
+*/
+
 /* 
   Don't be afraid of trying, you are gonna fail but you are gonna learn! 
   Don't let failure get to your heart and success get to your head 

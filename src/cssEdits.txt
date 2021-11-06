@@ -1,0 +1,52 @@
+css edits new
+
+
+/* Elevate page */
+.elevate-title {
+  font-size: 30px;
+  margin: 1.4em 0;
+}
+
+.elevate-page-pannel {
+  margin-bottom: 4.4em;
+}
+
+/* =====================
+    Viewport edits
+  ======================*/
+
+/* large screen edits: pixel range (1500) */
+@media screen and (min-width: 1500px) {
+  /* home page */
+  .section-container {
+    margin-bottom: 4em;
+    justify-content: space-around;
+  }
+  /* front card edits */
+  .card-image {
+    height: 169px;
+    width: 169px;
+  }
+  .card-name {
+    font-size: 22px;
+  }
+  .card-artist {
+    font-size: 18px;
+  }
+  .home-song-card-info {
+    height: 99px;
+    justify-content: space-evenly;
+  }
+
+  /* playbar */
+  .playbar-wrapper {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .other-controls-wrapper {
+    justify-content: flex-end;
+    margin-right: 3em;
+  }
+  .fullscreen-icon {
+    margin-left: 30px;
+  }
+}

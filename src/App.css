@@ -1,6 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,900;1,200;1,700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Heebo:wght@400;700;900&display=swap");
+
+/* ======================
+      Patch Fixes
+  =======================*/
+/*  -> player goes behind the navbar at 444px (make player overlay the navbar) */
+
+/* ======================
+      Notices
+  =======================*/
+/*  -> the player is completly different */
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -10,6 +21,7 @@ body {
   font-family: "Roboto", sans-serif;
   overflow-y: hidden;
   overflow-x: hidden;
+  color: white;
 }
 
 /* ======================
@@ -24,15 +36,16 @@ body {
     "Player  Player";
   height: 100vh;
   min-height: 444px;
+  /* not sure why I put the min-height but the height 100vh is so there is no overflow y */
+  /* min-height is so it doesn't get smaller than 444px duhhh xD */
+  /* the player moves along the bottom but stops shrinking at 444px */
 }
-
 .sidebar {
   grid-area: SideBar;
 }
 .playbar {
   grid-area: Player;
 }
-
 .page {
   grid-area: App;
   min-width: 777px;
@@ -51,12 +64,19 @@ body {
   box-shadow: inset rgba(255, 255, 255, 1) 0 0 2px 1px;
 }
 
+/* mobile layout */
+/* Lesson: I am doing this the wrong way, I am just doing trial and error... 
+the mobile layout has to be planned first and I need to understand the styling of the webplayer
+before I can adjust for the mobile version. Study how you styled the webplayer (master css), 
+Take it one step at a time, There are level's to this shit! 
+You Are gonna fail but you are gonna learn 
+Learn it properly, have fun with it */
+
 /* ======================
       Sidebar styling 
   =======================*/
 /* sidebar-navigation-typography */
 .logo-title {
-  color: white;
   letter-spacing: 0.666px;
   font-size: 22px;
   font-family: "Heebo", sans-serif;
@@ -76,9 +96,10 @@ body {
   color: #ffffff;
   text-decoration: none;
 }
-/* Logo */
 
-/* sidebar-Layout */
+/* -= sidebar-Layout =- */
+
+/* Logo */
 .resonate-logo {
   padding: 0.33em 0.66em;
   border-radius: 16px;
@@ -104,7 +125,6 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  /* background: rgba(126, 97, 83, 0.41); */
   width: 186px;
   position: absolute;
   left: 20px;
@@ -141,7 +161,6 @@ body {
 .navigation-links:focus .nav-icon {
   transform: scale(1.369);
 }
-
 .active-page {
   background: rgb(109, 94, 88);
 }
@@ -151,7 +170,6 @@ body {
   =======================*/
 /* playbar-typography */
 .song-info {
-  color: white;
   font-family: "Montserrat", sans-serif;
 }
 .song-title {
@@ -182,7 +200,7 @@ body {
 }
 .playbar-wrapper {
   display: grid;
-  grid-template-columns: 2fr 2fr 0.5fr;
+  grid-template-columns: 1fr 2fr 1fr;
   grid-template-areas: "Song-Info Media-Controls Other-Controls ";
   align-items: center;
 }
@@ -220,7 +238,7 @@ body {
   justify-self: flex-end;
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-end;
   position: relative;
 }
 /* playbar-icons */
@@ -282,7 +300,7 @@ body {
 }
 /* playbar-icons */
 .fullscreen-icon {
-  margin-left: 10px;
+  margin-left: 22px;
   margin-right: 10px;
   margin-top: 5px;
 }
@@ -419,14 +437,7 @@ body {
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.666);
 }
-#filterSearch {
-  font-style: normal;
-  font-weight: normal;
-  font-size: 20px;
-  line-height: 23px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-}
+
 .songName,
 .songArtist,
 .songFrequency {
@@ -507,25 +518,6 @@ body {
 .play-btn:focus .button-text {
   opacity: 0;
 }
-/* filter-song search bar */
-.filterSongs {
-  margin: 3em 0;
-  position: relative;
-}
-#filterSearch {
-  background: none;
-  border: none;
-  margin-left: 2em;
-}
-#filterSearch::placeholder {
-  color: white;
-  opacity: 0.666;
-}
-.search-Icon {
-  position: absolute;
-  color: rgba(255, 255, 255, 0.666);
-  margin-right: 0.7em;
-}
 
 /* Display Songs */
 .displaySong-head,
@@ -567,7 +559,6 @@ body {
 ====================== */
 /* typograghy */
 .queue-container {
-  color: white;
 }
 .now-playing {
   letter-spacing: 1px;
@@ -581,7 +572,6 @@ body {
   margin-top: 2em;
 }
 .queue-song-container {
-  /* change to grid */
   display: grid;
   grid-template-columns: 77px 2.5fr 2.5fr 0.5fr;
   grid-template-areas: "SongImage SongName SongArtist Frequency";
@@ -727,6 +717,7 @@ body {
 /* col-2 styling */
 .fs-title-artist {
   margin-bottom: 4em;
+  text-align: center;
 }
 .fs-songTitle {
   margin-bottom: 16px;
@@ -738,13 +729,14 @@ body {
   width: 444px;
 }
 .fs-seek-slider {
-  position: absolute;
-  top: -10px;
   margin-bottom: 4.4em;
   width: 444px;
 }
 .fs-media-controls {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .fs-songTime {
   width: 444px;
@@ -753,12 +745,16 @@ body {
   justify-content: space-between;
   margin-bottom: 5px;
 }
+.fs-seekbar-container {
+  display: flex;
+  justify-content: center;
+}
 /* col-3 styling */
 .icon-background {
+  display: flex;
+  justify-content: center;
   background: rgba(255, 255, 255, 0.222);
-  padding: 0.22em;
   color: rgb(222, 222, 222);
-  margin-right: 3.3em;
 }
 .icon-background:hover,
 .icon-background:focus {
@@ -785,16 +781,18 @@ body {
 .fs-volume-slider-box.show {
   display: block;
 }
-.fullscreen-exit {
+.fullscreen-icon-background {
   background: rgba(255, 255, 255, 0.222);
-  padding: 0.22em;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   color: rgb(222, 222, 222);
 }
+.fs-exit-icon {
+  font-size: 33px;
+}
+.fs-sound-icon {
+  font-size: 33px;
+}
 
-@media screen and (min-width: 1500px) {
+/* @media screen and (min-width: 1500px) {
   .fs-songImage {
     width: 444px;
     height: 416px;
@@ -802,20 +800,20 @@ body {
   .fs-col-2 {
     margin-left: 5em;
   }
-}
+} */
 
 /* ========================
   FullScreen Large Screens
   =========================*/
 
-@media screen and (min-height: 666px) {
+/* @media screen and (min-height: 666px) {
   .fs-songImage {
     width: 404px;
     height: 404px;
   }
-}
+} */
 
-@media screen and (min-height: 777px) {
+/* @media screen and (min-height: 777px) {
   .fs-background {
     padding: 2em;
   }
@@ -844,7 +842,6 @@ body {
   .fs-col-2 {
     margin-left: 0em;
   }
-  /* large screen icons */
   .fullscreen-exit {
     top: -50px;
     right: -33px;
@@ -857,12 +854,12 @@ body {
     right: -33px;
     top: -250px;
   }
-}
-@media screen and (min-height: 800px) {
+} */
+/* @media screen and (min-height: 800px) {
   .fs-col-2 {
     margin-top: 3.3em;
   }
-}
+} */
 
 /* ========================
       Home Page
@@ -872,12 +869,11 @@ body {
 
 .section-title {
   font-size: 33px;
-  color: white;
 }
 .card-name,
 .card-artist,
 .card-frequency {
-  color: white;
+  font-size: 16px;
 }
 /* layout */
 .homePage-background {
@@ -905,7 +901,7 @@ body {
   height: 123px;
   object-fit: cover;
 }
-.home-song-card-info {
+.songCard-info {
   display: flex;
   flex-direction: column;
   height: 66px;
@@ -914,10 +910,6 @@ body {
 .songCard_PlayIcon {
   color: white;
   font-size: 55px;
-  position: absolute;
-  top: 77px;
-  left: 50px;
-  display: none;
 }
 .hover-container {
   width: 100%;
@@ -930,17 +922,20 @@ body {
   display: none;
 }
 
-.card-container:hover .hover-container,
+/* card hover effect */
+.card-container:hover .hover-container {
+  display: flex;
+  justify-content: center;
+}
 .card-container:hover .songCard_PlayIcon {
-  display: block;
+  margin-top: 40%;
 }
 
 /* =====================
     Anime Page
   ======================*/
 /* typography */
-.dub-title {
-  color: white;
+.pannel-title {
   font-size: 22px;
 }
 .sub-heading {
@@ -949,10 +944,12 @@ body {
 }
 .opening-name,
 .opening-anime {
-  color: white;
   font-weight: 400;
 }
-/* layout */
+/* anime-page layout */
+.anime-page {
+  padding-top: 3.3em;
+}
 .dub-pannel {
   margin-bottom: 55px;
 }
@@ -960,44 +957,51 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+  align-items: center;
+  padding: 1em 0;
 }
 .Dub-card {
   position: relative;
+  padding: 2em;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding-bottom: 1em;
 }
-.song-dub-title {
+.dubcard-name {
+  font-size: 22px;
   text-align: center;
-  padding: 0.5em 0;
+  padding-top: 1.1em;
 }
 
 .anime-dub-img {
   height: 144px;
   width: 144px;
 }
-.Dub-card:hover .play-hoverEffect-dub {
-  display: block;
-}
-.Dub-card:hover .play-dub-song {
-  display: block;
-}
 
-.play-hoverEffect-dub {
+.dubCard-hoverEffect {
   position: absolute;
   background: black;
-  height: 215px;
-  width: 192px;
-  top: -16px;
-  left: -27px;
+  height: 100%;
+  width: 100%;
+  top: -1px;
+  left: -1px;
   opacity: 0.7;
   display: none;
 }
 .play-dub-song {
-  position: absolute;
   width: 66px;
   height: 66px;
   color: white;
-  right: 66px;
-  bottom: 77px;
   display: none;
+}
+.Dub-card:hover .dubCard-hoverEffect {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Dub-card:hover .play-dub-song {
+  display: block;
 }
 .sub-card {
   display: flex;
@@ -1035,7 +1039,6 @@ body {
 }
 .sub-heading {
   display: flex;
-  color: white;
   padding: 1em 0em;
   border-bottom: 1px solid white;
   margin: 2em 0;
@@ -1099,3 +1102,123 @@ body {
   flex-direction: row;
   justify-content: space-evenly;
 }
+
+/* Elevate page */
+.elevate-title {
+  font-size: 30px;
+  margin: 1.4em 0;
+}
+
+.elevate-page-pannel {
+  margin-bottom: 4.4em;
+}
+
+/* =====================
+    Viewport edits
+  ======================*/
+
+/* large screen edits: pixel range (1500) */
+@media screen and (min-width: 1500px) {
+  /* adjusts the width and height of the sidebar and player (they take up full space of grid column/row) */
+  .page-layout {
+    grid-template-columns: 240px auto;
+    grid-template-rows: auto 101px;
+  }
+
+  /* sidebar */
+  .sidebar-navigation {
+    width: 322px;
+    margin-top: 1.5em;
+  }
+  .navigation-links {
+    width: 200px;
+    padding: 1em;
+    font-size: 20px;
+  }
+  .logo-title {
+    font-size: 27px;
+  }
+  /* nav icon adjustments */
+  .home-icon,
+  .elevate-icon,
+  .anime-icon {
+    font-size: 33px;
+  }
+  .sleep-icon,
+  .docs-icon {
+    font-size: 36px;
+  }
+
+  /* home page */
+  .section-container {
+    margin-bottom: 4em;
+    justify-content: space-around;
+  }
+  /* front card edits */
+  .card-image {
+    height: 169px;
+    width: 169px;
+  }
+  .card-name {
+    font-size: 22px;
+  }
+  .card-artist {
+    font-size: 18px;
+  }
+  .songCard-info {
+    height: 99px;
+    justify-content: space-evenly;
+  }
+
+  /* playbar */
+  .playbar-wrapper {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .other-controls-wrapper {
+    justify-content: flex-end;
+    margin-right: 3em;
+  }
+  .fullscreen-icon {
+    margin-left: 30px;
+  }
+
+  /* fullscreen edits  */
+  .fs-songImage {
+    width: 444px;
+    height: 444px;
+    margin-left: 4.4em;
+  }
+  .fs-songTitle {
+    font-size: 44px;
+  }
+  .fs-songArtist {
+    font-size: 20px;
+  }
+  .fs-col-3 {
+    padding: 5em 4em;
+  }
+  .icon-background {
+    padding: 1em;
+  }
+  .fs-exit-icon {
+    font-size: 44px;
+  }
+  .fs-sound-icon {
+    font-size: 44px;
+  }
+}
+
+/* viewport: 67% zoom */
+/* @media screen and (min-width: 1800px) {
+  .fs-songImage {
+    width: 666px;
+    height: 555px;
+    margin-top: 3.3em;
+  }
+  .fs-songTitle {
+    font-size: 55px;
+  }
+  .fs-songArtist {
+    font-size: 22.5px;
+  }
+} */

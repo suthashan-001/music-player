@@ -6,23 +6,20 @@ import elevate_icon from "@iconify/icons-ant-design/heart-outlined";
 import sleep24Regular from "@iconify/icons-fluent/sleep-24-regular";
 import googleDocs from "@iconify/icons-iconoir/google-docs";
 
-const SideBar = ({ setCurrentPage }) => {
+const SideBar = ({ currentPage, setCurrentPage }) => {
   return (
     <div className="sidebar">
       {/* Resonate Logo */}
 
-      <Navigation setCurrentPage={setCurrentPage} />
+      <Navigation setCurrentPage={(currentPage, setCurrentPage)} />
 
       {/* Playlists */}
     </div>
   );
 };
 
-const Navigation = ({ setCurrentPage }) => {
-  // deleted code of useEffect and magically sidebar started behaving how I planned it to without coding, jut deleting code.
-
-  // #edit never mind have to code it LOL
-
+const Navigation = ({ currentPage, setCurrentPage }) => {
+  // use conditional rendering for active page
   return (
     <div className="nav-wrapper">
       {/* Logo */}
@@ -35,10 +32,9 @@ const Navigation = ({ setCurrentPage }) => {
         </h1>
       </div>
 
-      <nav className>
+      <nav>
         {/* ul always have default paddings, it likes to catch you of guard*/}
 
-        {/* Home tab */}
         <ul className="sidebar-navigation">
           <li
             className="Home-li sidebar-tab"
@@ -49,7 +45,7 @@ const Navigation = ({ setCurrentPage }) => {
             <button className="navigation-links">
               <div className="nav-link-container">
                 <Icon
-                  className="nav-icon"
+                  className="nav-icon home-icon"
                   icon={home_icon}
                   style={{ color: "#ffffff", fontSize: "28px" }}
                 />
@@ -86,7 +82,7 @@ const Navigation = ({ setCurrentPage }) => {
             <button className="navigation-links">
               <div className="nav-link-container">
                 <Icon
-                  className="nav-icon"
+                  className="nav-icon elevate-icon"
                   icon={elevate_icon}
                   style={{ color: "#ffffff", fontSize: "28px" }}
                 />
@@ -104,7 +100,7 @@ const Navigation = ({ setCurrentPage }) => {
             <button className="navigation-links">
               <div className="nav-link-container">
                 <Icon
-                  className="nav-icon"
+                  className="nav-icon anime-icon"
                   icon={discovery_icon}
                   style={{ color: "#ffffff", fontSize: "28px" }}
                 />
@@ -122,7 +118,7 @@ const Navigation = ({ setCurrentPage }) => {
             <button className="navigation-links">
               <div className="nav-link-container">
                 <Icon
-                  className="nav-icon"
+                  className="nav-icon sleep-icon"
                   icon={sleep24Regular}
                   style={{ color: "#fff9f9", fontSize: "31px" }}
                 />
@@ -140,7 +136,7 @@ const Navigation = ({ setCurrentPage }) => {
             <button className="navigation-links">
               <div className="nav-link-container">
                 <Icon
-                  className="nav-icon"
+                  className="nav-icon docs-icon"
                   icon={googleDocs}
                   style={{ color: "#fff9f9", fontSize: "31px" }}
                 />
