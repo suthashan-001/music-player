@@ -2,6 +2,251 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,900;1,200;1,700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Heebo:wght@400;700;900&display=swap");
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  color: white;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+/* ==================
+Mobile Version CSS  
+=====================*/
+.mobile-container {
+  /* main app container */
+  position: relative;
+  height: 100vh;
+  min-height: 50vh;
+  display: grid;
+  /* grid layout for app */
+  grid-template-rows: auto 108px 98px;
+}
+/* mobile page */
+.mobilePage {
+  width: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+/* mobile player */
+/* typography */
+/* layout */
+.mob-player-background {
+  background: rgb(201, 168, 148);
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  padding: 0.5em 1em;
+  align-items: center;
+  grid-column-gap: 2.2em;
+  color: rgb(39, 29, 25);
+}
+.mob-songImg-wrapper {
+  justify-self: center;
+}
+.mob-songImg {
+  width: 88px;
+  height: 88px;
+  object-fit: cover;
+}
+.play-button-div {
+  justify-self: center;
+}
+/* seekbar */
+.mob-seek-slider {
+  position: absolute;
+  top: 0;
+  width: 120%;
+}
+
+/* mobile nav */
+/* typography */
+.mob-nav-icon {
+  font-size: 44px;
+}
+.mob-sleep-icon {
+  font-size: 47px;
+}
+/* layout */
+.mob-player-nav-container {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+.mob-nav-container {
+  background: #4b3931;
+  width: 100%;
+}
+.mob-nav ul {
+  display: flex;
+  padding: 0;
+  list-style: none;
+  justify-content: space-around;
+}
+.mob-nav-link-container {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1em 2em;
+}
+.mob-nav-link-container.mob-active-page {
+  color: #ffb588;
+}
+.mob-nav-link-container:hover,
+.mob-nav-link-container:focus {
+  background: rgba(127, 97, 83, 0.7);
+}
+
+/* mobile homepage */
+/* typography */
+.learn-about-btn {
+  color: black;
+  font-weight: 700;
+  font-size: 22px;
+}
+/* layout */
+.mob-home-bg {
+  background: url(./background-images/mob-homepage-background.png);
+  min-height: 100%;
+  background-size: cover;
+  padding: 1em;
+}
+.learn-about-container {
+  width: 100%;
+  padding: 2em 1em;
+  display: flex;
+  justify-content: center;
+}
+.learn-about-btn {
+  display: inline-block;
+  font-family: inherit;
+  background: rgb(149, 247, 2);
+  border: none;
+  padding: 1em 2em;
+  border-radius: 12px;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+.learn-about-btn:hover,
+.learn-about-btn:focus {
+  background: rgb(149, 247, 2);
+  transform: scale(1.1);
+}
+
+/* display mobile songs */
+/* layout */
+.display-song-wrapper {
+  margin-bottom: 22px;
+}
+/* There is a grid technique that will display the maximum number of cards
+  based on the view port width */
+.mob-song-container {
+  overflow-x: scroll;
+  display: flex;
+  margin-top: 11px;
+}
+.mob-song-img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  box-shadow: rgb(253, 245, 238) 0px 5px 8px;
+}
+.mob-song-card {
+  padding: 1em;
+  padding-bottom: 1.5em;
+  background: #251d17;
+  margin-right: 33px;
+  text-align: center;
+  border-radius: 11px;
+}
+.mobcard-info-container {
+  height: 100%;
+}
+.mobcard-song-info {
+  height: 88px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+  padding: 0.5em;
+  padding-top: 1.5em;
+  border-radius: 5px;
+}
+.mobcard-song-name {
+  font-size: 18px;
+  letter-spacing: 1px;
+  margin-bottom: 11px;
+  font-weight: bolder;
+  color: greenyellow;
+}
+
+/* mobile full screen */
+/* layout */
+.mob-fs-bg {
+  background: url(./background-images/mob-homepage-background.png);
+  min-height: 100vh;
+  background-size: cover;
+  padding: 1em;
+  overflow-x: hidden;
+  position: absolute;
+  top: -707px;
+  width: 100%;
+  left: 0;
+  z-index: 100;
+}
+.mob-song-img-container {
+  display: flex;
+  justify-content: center;
+  padding: 3.33em 0;
+}
+.mob-fs-songImg {
+  display: inline-block;
+  width: 333px;
+  height: 333px;
+  box-shadow: rgb(253, 245, 238) 0px 5px 15px;
+  object-fit: cover;
+}
+.mob-media-controls {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+/* about 432hz page */
+.mob-about-bg {
+  background: #03254a;
+  min-height: 100%;
+  padding: 1.5em;
+}
+.mob-about-container {
+  margin-bottom: 55px;
+}
+.about-underline {
+  background: white;
+  width: 100%;
+  height: 1px;
+  margin-bottom: 15px;
+}
+.about-links-container {
+  margin-bottom: 15px;
+}
+.about-link {
+  letter-spacing: 1px;
+}
+.about-link.lightblue {
+  color: rgb(99, 235, 255);
+}
+.about-link.green {
+  color: rgb(0, 255, 133);
+}
+.about-link.red {
+  color: rgb(255, 184, 0);
+}
+
 /* ======================
       Patch Fixes
   =======================*/
@@ -11,18 +256,6 @@
       Notices
   =======================*/
 /*  -> the player is completly different */
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-}
-
-body {
-  font-family: "Roboto", sans-serif;
-  overflow-y: hidden;
-  overflow-x: hidden;
-  color: white;
-}
 
 /* ======================
       General Page styling 
@@ -558,8 +791,7 @@ Learn it properly, have fun with it */
     Queue Page
 ====================== */
 /* typograghy */
-.queue-container {
-}
+
 .now-playing {
   letter-spacing: 1px;
   margin-bottom: 1em;
@@ -1208,17 +1440,42 @@ Learn it properly, have fun with it */
   }
 }
 
-/* viewport: 67% zoom */
-/* @media screen and (min-width: 1800px) {
-  .fs-songImage {
-    width: 666px;
-    height: 555px;
-    margin-top: 3.3em;
-  }
-  .fs-songTitle {
-    font-size: 55px;
-  }
-  .fs-songArtist {
-    font-size: 22.5px;
-  }
-} */
+/* =============
+  Pop up message
+  ==============*/
+.dark-overlay {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.66);
+  z-index: 100;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Popup-container {
+  background: white;
+  color: black;
+  font-size: 22px;
+  font-weight: bold;
+  padding: 2em;
+  z-index: 100;
+  width: 85%;
+  position: relative;
+}
+.popup-x {
+  position: absolute;
+  font-size: 44px;
+  color: white;
+  top: -28px;
+  right: -28px;
+}
+.chibi-asta {
+  position: absolute;
+  height: 333px;
+  top: -260px;
+  left: 0;
+}
+.popup-highlight {
+  color: rgb(81, 124, 6);
+}

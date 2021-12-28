@@ -34,6 +34,12 @@ import Hope_img from "../Songs/One Piece/Hope-img.png";
 import Fight_Together from "../Songs/One Piece/Fight Together.mp3";
 import Fight_Together_img from "../Songs/One Piece/fight-together-image.png";
 
+// import One_Day from "../Songs/One Piece/One Day.mp3";
+// import One_Day_img from "../Songs/One Piece/one-day.png";
+
+// import we_are from "../Songs/One Piece/We are.mp3";
+// import we_are_img from "../Songs/One Piece/we-are.jpg";
+
 // Naruto
 import Sign from "../Songs/Naruto/Sign.mp3";
 import Sign_img from "../Songs/Naruto/Sign-img.png";
