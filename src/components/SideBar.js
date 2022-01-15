@@ -26,11 +26,12 @@ const Navigation = ({ currentPage, setCurrentPage }) => {
       <div className="resonate-logo">
         <h1 className="logo-title">
           Resonate <span className="logo-colour-change">432</span>hz{" "}
-          <div className="beta-div">
-            <em>Beta</em>
-          </div>
         </h1>
       </div>
+
+      <a href="https://www.gazersuthy.com" className="built-by">
+        created by <span className="logo-colour-change">GazerSuthy</span>
+      </a>
 
       <nav>
         {/* ul always have default paddings, it likes to catch you of guard*/}

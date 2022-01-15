@@ -34,11 +34,8 @@ import Hope_img from "../Songs/One Piece/Hope-img.png";
 import Fight_Together from "../Songs/One Piece/Fight Together.mp3";
 import Fight_Together_img from "../Songs/One Piece/fight-together-image.png";
 
-// import One_Day from "../Songs/One Piece/One Day.mp3";
-// import One_Day_img from "../Songs/One Piece/one-day.png";
-
-// import we_are from "../Songs/One Piece/We are.mp3";
-// import we_are_img from "../Songs/One Piece/we-are.jpg";
+import Sanka from "../Songs/Demon Slayer/Zankyou Sanka.mp3";
+import Sanka_img from "../Songs/Demon Slayer/Sanka.jpeg";
 
 // Naruto
 import Sign from "../Songs/Naruto/Sign.mp3";
@@ -269,6 +266,14 @@ let anime_sub_data = [
     songfile: DemonSlayer,
     id: 6,
     songImage: DemonSlayer_img,
+    anime: "Demon Slayer",
+    artist: "Demon Slayer",
+  },
+  {
+    name: "Zankyou Sanka",
+    songfile: Sanka,
+    id: 222,
+    songImage: Sanka_img,
     anime: "Demon Slayer",
     artist: "Demon Slayer",
   },

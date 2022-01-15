@@ -26,7 +26,7 @@ const Home = ({ isPlaying, setIsPlaying, setNewRequest, setSongQueue }) => {
   return (
     <div className="page homePage-background">
       {/* Recent cover */}
-      <h1 className="section-title">Can't Skip</h1>
+      <h1 className="section-title">My Favorites</h1>
       <div className="section-container">
         {recentSongs.map((song) => {
           return (

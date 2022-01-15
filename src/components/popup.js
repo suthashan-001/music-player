@@ -20,7 +20,10 @@ const Popup = ({ setMessageToggled, setDesktopMode }) => {
           Web Player is currently only supported for{" "}
           <span className="popup-highlight">desktop</span>. The mobile version
           is on it's way!
-          <br></br>- GazerSuthy
+          <br></br>-{" "}
+          <a href="https://www.gazersuthy.com" className="gazersuthy-link">
+            GazerSuthy
+          </a>
         </p>
       </div>
     </div>

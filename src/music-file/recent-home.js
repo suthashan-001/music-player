@@ -4,20 +4,20 @@ import Who_img from "../Songs/Naruto/who-img.jpg";
 import Haruka from "../Songs/black clover/Haruka Mirai.mp3";
 import Haruka_img from "../Songs/black clover/Asta1.jpg";
 
-import Fight_Together from "../Songs/One Piece/Fight Together.mp3";
-import Fight_Together_img from "../Songs/One Piece/fight-together-image.png";
+import Sanka from "../Songs/Demon Slayer/Zankyou Sanka.mp3";
+import Sanka_img from "../Songs/Demon Slayer/Sanka.jpeg";
 
 import Ranbu from "../Songs/Bleach/Ranbu no Melody.mp3";
 import Ranbu_img from "../Songs/Bleach/Ranbu.png";
 
 let recent_data = [
   {
-    name: "Who Are You",
-    songfile: Who,
-    id: 1,
-    songImage: Who_img,
-    anime: "Boruto",
-    artist: "Boruto",
+    name: "Zankyou Sanka",
+    songfile: Sanka,
+    id: 2,
+    songImage: Sanka_img,
+    anime: "Demon Slayer",
+    artist: "Demon Slayer",
   },
   {
     name: "Haruka Mirai",
@@ -28,12 +28,12 @@ let recent_data = [
     artist: "Black Clover",
   },
   {
-    name: "Fight Together",
-    songfile: Fight_Together,
-    id: 3,
-    songImage: Fight_Together_img,
-    anime: "One Piece",
-    artist: "One Piece",
+    name: "Who Are You",
+    songfile: Who,
+    id: 1,
+    songImage: Who_img,
+    anime: "Boruto",
+    artist: "Boruto",
   },
   {
     name: "Ranbu No Melody",

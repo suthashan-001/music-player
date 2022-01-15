@@ -397,6 +397,25 @@ Learn it properly, have fun with it */
 .active-page {
   background: rgb(109, 94, 88);
 }
+.built-by {
+  position: absolute;
+  bottom: 234px;
+  padding: 0.5em 1em;
+  font-weight: bold;
+  letter-spacing: 1px;
+  font-size: 20px;
+  border: 1px solid white;
+  color: white;
+  width: 186px;
+  text-align: center;
+  display: inline-block;
+  text-decoration: none;
+}
+.built-by:hover,
+.built-by:focus {
+  background: #664e43dc;
+  transform: scale(1.1);
+}
 
 /* ======================
       PlayBar styling 
@@ -1478,4 +1497,18 @@ Learn it properly, have fun with it */
 }
 .popup-highlight {
   color: rgb(81, 124, 6);
+}
+.gazersuthy-link {
+  display: inline-block;
+  padding: 0.5em 1em;
+  background: black;
+  text-decoration: none;
+  color: white;
+  margin-top: 22px;
+  border-radius: 5px;
+}
+.gazersuthy-link:focus,
+.gazersuthy-link:hover {
+  background: rgb(81, 124, 6);
+  color: black;
 }
