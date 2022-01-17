@@ -23,14 +23,17 @@ const Navigation = ({ currentPage, setCurrentPage }) => {
   return (
     <div className="nav-wrapper">
       {/* Logo */}
-      <div className="resonate-logo">
-        <h1 className="logo-title">
-          Resonate <span className="logo-colour-change">432</span>hz{" "}
-        </h1>
-      </div>
-
-      <a href="https://www.gazersuthy.com" className="built-by">
-        created by <span className="logo-colour-change">GazerSuthy</span>
+      <a href="https://www.gazersuthy.com" className="logo-link">
+        <div className="resonate-logo">
+          <h1 className="logo-title">
+            Resonate <span className="logo-colour-change">432</span>hz{" "}
+          </h1>
+          <h5>
+            <em>
+              by <span className="logo-colour-change">GazerSuthy</span>
+            </em>
+          </h5>
+        </div>
       </a>
 
       <nav>

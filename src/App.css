@@ -397,24 +397,17 @@ Learn it properly, have fun with it */
 .active-page {
   background: rgb(109, 94, 88);
 }
-.built-by {
-  position: absolute;
-  bottom: 111.1px;
-  padding: 0.5em 1em;
-  font-weight: bold;
-  letter-spacing: 1px;
-  font-size: 20px;
-  border: 1px solid white;
+
+/* logo link */
+.logo-link {
   color: white;
-  width: 186px;
-  text-align: center;
-  display: inline-block;
   text-decoration: none;
+  text-align: center;
 }
-.built-by:hover,
-.built-by:focus {
-  background: #664e43dc;
-  transform: scale(1.1);
+.logo-link:hover .resonate-logo,
+.logo-link:focus .resonate-logo {
+  background: #4b3931;
+  transform: scale(1.05);
 }
 
 /* ======================
@@ -1511,4 +1504,30 @@ Learn it properly, have fun with it */
 .gazersuthy-link:hover {
   background: rgb(81, 124, 6);
   color: black;
+}
+
+/* About 432hz */
+.doc-head {
+  margin-left: 9px;
+  color: cyan;
+}
+.doc-blog-link {
+  color: white;
+  padding: 1em;
+}
+.doc-link {
+  background: white;
+  width: fit-content;
+}
+.doc-card {
+  align-items: center;
+}
+.doc-img {
+  width: 222px;
+}
+.video-doc-head {
+  color: yellow;
+  display: flex;
+  align-items: center;
+  font-size: 33px;
 }

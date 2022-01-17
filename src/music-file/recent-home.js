@@ -12,7 +12,7 @@ import Ranbu_img from "../Songs/Bleach/Ranbu.png";
 
 let recent_data = [
   {
-    name: "Zankyou Sanka",
+    name: "Thankyou Sanka",
     songfile: Sanka,
     id: 2,
     songImage: Sanka_img,
