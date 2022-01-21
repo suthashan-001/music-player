@@ -9,6 +9,8 @@ import playButtonIcon from "@iconify/icons-gg/play-button-o";
 
 const AnimePage = (props) => {
   // state management
+  /* Since the sub and ost are on the same page we need different reducers to keep 
+      track of changes to playorder, etc */
   const [state, dispatch] = React.useReducer(AnimePage_reducer, {
     searchInput: "",
     songs: animeSubSongs,
@@ -21,13 +23,9 @@ const AnimePage = (props) => {
     playOrder: [],
   });
 
-  /* Since the sub and ost are on the same page we need different reducers to keep 
-      track of changes to playorder, etc */
-
-  function shuffleSongs(e) {
+  function shuffleSongs() {
     dispatch({ type: "SHUFFLE_SONGS" });
   }
-
   function handleSongDrag(e) {
     const position = { start: e.source, end: e.destination };
     dispatch({ type: "HANDLE_DRAG", position: position });

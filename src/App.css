@@ -52,8 +52,13 @@ Mobile Version CSS
   height: 88px;
   object-fit: cover;
 }
+
 .play-button-div {
   justify-self: center;
+  position: absolute;
+  right: 15px;
+  top: 18px;
+  color: #4b3931;
 }
 /* seekbar */
 .mob-seek-slider {
@@ -99,6 +104,36 @@ Mobile Version CSS
 .mob-nav-link-container:hover,
 .mob-nav-link-container:focus {
   background: rgba(127, 97, 83, 0.7);
+}
+.mob-play-btn {
+  font-size: 55px;
+}
+.play-button-div {
+  top: 28px;
+  right: 22px;
+}
+
+/* screen size adjustments */
+@media screen and (max-width: 380px) {
+  .mob-nav-icon {
+    font-size: 22px;
+  }
+  .mob-songImg {
+    width: 55px;
+    height: 55px;
+  }
+  .mob-play-btn {
+    font-size: 44px;
+  }
+  .mob-song-name {
+    font-size: 22px;
+    letter-spacing: 1px;
+    max-width: 111px;
+  }
+  .mob-song-artist {
+    font-size: 15px;
+    max-width: 111px;
+  }
 }
 
 /* mobile homepage */
@@ -155,6 +190,7 @@ Mobile Version CSS
   object-fit: cover;
   box-shadow: rgb(253, 245, 238) 0px 5px 8px;
 }
+
 .mob-song-card {
   padding: 1em;
   padding-bottom: 1.5em;
@@ -192,16 +228,33 @@ Mobile Version CSS
   background-size: cover;
   padding: 1em;
   overflow-x: hidden;
-  position: absolute;
-  top: -707px;
+  position: fixed;
   width: 100%;
   left: 0;
   z-index: 100;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  top: 0;
+  display: block;
 }
+
 .mob-song-img-container {
   display: flex;
   justify-content: center;
   padding: 3.33em 0;
+  padding-bottom: 2.2em;
+}
+.mobile-fs-exit-icon-container {
+  background: rgba(255, 254, 254, 0.333);
+  padding: 0.1em;
+  width: fit-content;
+  position: fixed;
+  right: 18px;
+}
+.mobile-fs-exit-icon {
+  color: white;
+  font-size: 33px;
 }
 .mob-fs-songImg {
   display: inline-block;
@@ -257,6 +310,12 @@ Mobile Version CSS
   =======================*/
 /*  -> the player is completly different */
 
+/* $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+    DESKTOP Version
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$*/
+
 /* ======================
       General Page styling 
   =======================*/
@@ -269,9 +328,6 @@ Mobile Version CSS
     "Player  Player";
   height: 100vh;
   min-height: 444px;
-  /* not sure why I put the min-height but the height 100vh is so there is no overflow y */
-  /* min-height is so it doesn't get smaller than 444px duhhh xD */
-  /* the player moves along the bottom but stops shrinking at 444px */
 }
 .sidebar {
   grid-area: SideBar;
@@ -365,7 +421,6 @@ Learn it properly, have fun with it */
   padding: 0;
 }
 .navigation-links {
-  /* im becoming a god!! I was able to fix the issue by putting inline block */
   width: 186px;
   padding: 1em;
   background: #4b3931;
@@ -406,7 +461,7 @@ Learn it properly, have fun with it */
 }
 .logo-link:hover .resonate-logo,
 .logo-link:focus .resonate-logo {
-  background: #4b3931;
+  background: rgb(75, 57, 49);
   transform: scale(1.05);
 }
 
@@ -437,7 +492,9 @@ Learn it properly, have fun with it */
   color: rgb(180, 180, 180);
 }
 
-/* playbar-layout  */
+/* ===========
+playbar-layout  
+===============*/
 .playbar {
   background: #4b3931;
   padding: 0.5em;
@@ -464,11 +521,9 @@ Learn it properly, have fun with it */
   align-items: center;
   max-width: 500px;
 }
-
 .song-title-artist {
   max-width: 399px;
 }
-
 .media-controls-wrapper {
   grid-area: Media-Controls;
   justify-self: flex-end;
@@ -573,7 +628,6 @@ Learn it properly, have fun with it */
 .show-repeat {
   color: #d1a081;
 }
-
 .fs-repeat-circle,
 .fs-repeat-infinite,
 .repeat-circle,
@@ -787,13 +841,11 @@ Learn it properly, have fun with it */
 .playSong-icon:hover {
   transform: scale(1.2);
 }
-
 .displaySong-container {
   display: grid;
   padding: 0 5.5em;
   grid-template-columns: 1.85fr 1.5fr 0.2fr;
 }
-
 .add-toQueue {
   position: absolute;
   right: 22px;
@@ -1036,81 +1088,11 @@ Learn it properly, have fun with it */
   font-size: 33px;
 }
 
-/* @media screen and (min-width: 1500px) {
-  .fs-songImage {
-    width: 444px;
-    height: 416px;
-  }
-  .fs-col-2 {
-    margin-left: 5em;
-  }
-} */
-
-/* ========================
-  FullScreen Large Screens
-  =========================*/
-
-/* @media screen and (min-height: 666px) {
-  .fs-songImage {
-    width: 404px;
-    height: 404px;
-  }
-} */
-
-/* @media screen and (min-height: 777px) {
-  .fs-background {
-    padding: 2em;
-  }
-  .fs-small-view-wrapper {
-    grid-template-columns: auto;
-    grid-template-areas:
-      "Col-1"
-      "Col-2"
-      "Col-3";
-    min-width: none;
-  }
-  .fs-songImage {
-    width: 555px;
-    height: 416px;
-    margin-left: 33px;
-  }
-  .fs-col-2 {
-    margin-top: 2em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .fs-title-artist {
-    text-align: center;
-  }
-  .fs-col-2 {
-    margin-left: 0em;
-  }
-  .fullscreen-exit {
-    top: -50px;
-    right: -33px;
-  }
-  .fs-queue-icon-largescreen {
-    right: -33px;
-    top: -150px;
-  }
-  .fs-sound-button {
-    right: -33px;
-    top: -250px;
-  }
-} */
-/* @media screen and (min-height: 800px) {
-  .fs-col-2 {
-    margin-top: 3.3em;
-  }
-} */
-
 /* ========================
       Home Page
   =========================*/
 
 /* typography */
-
 .section-title {
   font-size: 33px;
 }
@@ -1317,13 +1299,6 @@ Learn it properly, have fun with it */
   display: block;
 }
 
-/* Sleep Page */
-.music-link {
-  display: inline-block;
-  background: white;
-  margin: 0.5em;
-}
-
 /* Sleep page */
 .sleep-card {
   background: white;
@@ -1339,6 +1314,9 @@ Learn it properly, have fun with it */
   margin-bottom: 0.5em;
 }
 .music-link {
+  display: inline-block;
+  background: white;
+  margin: 0.5em;
   font-size: 16px;
 }
 .sleep-pannel {
@@ -1515,7 +1493,7 @@ Learn it properly, have fun with it */
   color: white;
   padding: 1em;
 }
-.doc-link {
+d .doc-link {
   background: white;
   width: fit-content;
 }
@@ -1530,4 +1508,162 @@ Learn it properly, have fun with it */
   display: flex;
   align-items: center;
   font-size: 33px;
+}
+
+/* ================
+  Mobile Styles
+====================*/
+/* mobile fullscreen song name and artist */
+.mobile-song-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  margin-top: 11.11px;
+  margin-bottom: 44.44px;
+}
+.mobile-song-name {
+  font-size: 33px;
+  max-width: 333px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  padding-bottom: 0.5em;
+}
+.mobile-song-artist {
+  letter-spacing: 0.25px;
+}
+/* Mobile Seek Slider */
+.mob-seekbar-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 22px;
+}
+.mobile-seek-slider {
+  margin-top: 22px;
+  height: 22px;
+}
+.mobile-seek-slider::-webkit-slider-thumb {
+  background: rgb(224, 171, 138);
+  height: 33px;
+  width: 33px;
+}
+.mobile-seek-slider::-webkit-slider-thumb:hover {
+  background: rgb(182, 130, 98);
+  height: 44px;
+  width: 44px;
+}
+.display-mobile-time {
+  display: flex;
+  width: 425px;
+  justify-content: space-between;
+  margin-top: 11.11px;
+}
+.mobile-time {
+  color: rgb(44, 44, 44);
+  font-size: 22px;
+}
+.mob-player-icon:hover,
+.mob-player-icon:focus {
+  color: white;
+  transform: scale(1.1);
+}
+.mob-fs-exit-icon {
+  color: white;
+  font-size: 33px;
+  background: rgba(255, 255, 255, 0.222);
+  position: absolute;
+  right: 22px;
+  z-index: 1000;
+  top: -699.3px;
+}
+
+/* Task is to fix the mobile viewports */
+@media screen and (max-width: 500px) {
+  .mob-fs-songImg {
+    width: 222px;
+    height: 222px;
+  }
+  .mob-song-img-container {
+    padding-bottom: 11px;
+  }
+  .mobile-song-name {
+    padding-bottom: 0.333em;
+  }
+  .mobile-seek-slider {
+    width: 285px;
+  }
+  .display-mobile-time {
+    width: 285px;
+  }
+}
+
+@media screen and (max-width: 345px) {
+  .mobile-song-details {
+    margin-bottom: 11px;
+  }
+  .mob-seekbar-wrapper {
+    margin-top: 0;
+  }
+  .mob-song-img-container {
+    padding-top: 2.2em;
+  }
+}
+
+/* mobile anime page */
+.mob-animepg-bg {
+  background: #03254a;
+  min-height: 100vh;
+  padding: 0.5em;
+  padding-top: 2em;
+}
+.mob-anime-head {
+  margin-bottom: 22px;
+}
+.mob-page-pannel {
+  background: rgba(255, 255, 255, 0.233);
+  padding: 1em;
+}
+.anime-page-btns {
+  display: flex;
+  margin-bottom: 11px;
+}
+
+@media screen and (max-width: 380px) {
+  .btn {
+    width: 111px;
+  }
+  .button-text {
+    margin-left: -18px;
+  }
+  .mob-anime-icon {
+    font-size: 33px;
+    margin-left: -11px;
+  }
+}
+
+/* sleep page */
+.mobile-sleep-card {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 22px;
+}
+.mobile-music-link {
+  display: inline-block;
+}
+.mob-sleep-pannel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.mobile-logo-link {
+  display: inline-block;
+  margin-bottom: 33px;
+}
+.mobile-logo-link-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.281);
+  margin-bottom: 33px;
 }
