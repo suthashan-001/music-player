@@ -20,6 +20,14 @@ let Ost_data = [
     anime: "Seven Deadly Sins",
   },
   {
+    name: "Clavar La Espada",
+    songfile: Clavar,
+    id: 3,
+    songImage: Clavar_img,
+    artist: "Bleach",
+    anime: "Bleach",
+  },
+  {
     name: "Binks no Sake",
     songfile: Binke,
     id: 4,
@@ -34,14 +42,6 @@ let Ost_data = [
     songImage: Rengoku_img,
     artist: "Demon Slayer",
     anime: "Demon Slayer",
-  },
-  {
-    name: "Clavar La Espada",
-    songfile: Clavar,
-    id: 3,
-    songImage: Clavar_img,
-    artist: "Bleach",
-    anime: "Bleach",
   },
 ];
 

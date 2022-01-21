@@ -3,6 +3,7 @@ import React from "react";
 import mobElevateSongs from "../../music-file/elevate-music";
 import mobAnimeDubSongs from "../../music-file/anime-dub-home";
 import mobRecentSongs from "../../music-file/recent-home";
+import mobAnimeOst from "../../music-file/anime-ost";
 
 const MobileHome = ({
   isPlaying,
@@ -50,13 +51,19 @@ const MobileHome = ({
       <DisplayMobileSongs
         data={mobAnimeDubSongs}
         setPlayCardSong={setPlayCardSong}
-        title={"Dub"}
+        title={"English Covers"}
       ></DisplayMobileSongs>
 
       <DisplayMobileSongs
         data={mobRecentSongs}
         setPlayCardSong={setPlayCardSong}
         title={"Can't Skip"}
+      ></DisplayMobileSongs>
+
+      <DisplayMobileSongs
+        data={mobAnimeOst}
+        setPlayCardSong={setPlayCardSong}
+        title={"Anime Sound Tracks"}
       ></DisplayMobileSongs>
       {/* <DisplayMobileSongs data={Elevate_data}></DisplayMobileSongs>
       <DisplayMobileSongs data={Ost_data}></DisplayMobileSongs>

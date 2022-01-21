@@ -31,6 +31,7 @@ Mobile Version CSS
   width: 100%;
   overflow-y: scroll;
   overflow-x: hidden;
+  min-height: 100vh;
 }
 /* mobile player */
 /* typography */
@@ -149,6 +150,7 @@ Mobile Version CSS
   min-height: 100%;
   background-size: cover;
   padding: 1em;
+  padding-bottom: 22.22em;
 }
 .learn-about-container {
   width: 100%;

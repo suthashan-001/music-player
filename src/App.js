@@ -79,17 +79,21 @@ function App() {
             setIsPlaying={setIsPlaying}
           ></MobilePage>
           <section className="mob-player-nav-container">
-            <MobilePlayer
-              isPlaying={isPlaying}
-              newRequest={newRequest}
-              setNewRequest={setNewRequest}
-              setIsPlaying={setIsPlaying}
-              songQueue={songQueue}
-              displayQueue={displayQueue}
-              setDisplayQueue={setDisplayQueue}
-              queueIndex={queueIndex}
-              setQueueIndex={setQueueIndex}
-            ></MobilePlayer>
+            {isPlaying === true ? (
+              <MobilePlayer
+                isPlaying={isPlaying}
+                newRequest={newRequest}
+                setNewRequest={setNewRequest}
+                setIsPlaying={setIsPlaying}
+                songQueue={songQueue}
+                displayQueue={displayQueue}
+                setDisplayQueue={setDisplayQueue}
+                queueIndex={queueIndex}
+                setQueueIndex={setQueueIndex}
+              ></MobilePlayer>
+            ) : (
+              ""
+            )}
             <MobileNav
               currentPage={currentPage}
               setCurrentPage={setCurrentPage}
