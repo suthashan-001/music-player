@@ -15,7 +15,7 @@ const MobAnimePage = (props) => {
   function shuffleSongs() {
     dispatch({ type: "SHUFFLE_SONGS" });
   }
-  function handleSongDrag(e) {
+  function handleMobileSongDrag(e) {
     const position = { start: e.source, end: e.destination };
     dispatch({ type: "HANDLE_DRAG", position: position });
   }
@@ -63,12 +63,12 @@ const MobAnimePage = (props) => {
         </div>
 
         {/* page songs */}
-        <DragDropContext onDragEnd={handleSongDrag}>
+        <DragDropContext onDragEnd={handleMobileSongDrag}>
           <Droppable droppableId="mobSongsArea">
             {(provided) => (
               <section ref={provided.innerRef} {...provided.droppableProps}>
                 {/* map each song to a song component */}
-                {animeSongs.map((song, index) => {
+                {state.songs.map((song, index) => {
                   let { name, id, songImage, anime } = song;
                   return (
                     <Opening
@@ -142,6 +142,8 @@ function mobileAnime_Reducer(state, action) {
     case "HANDLE_DRAG": {
       let { start, end } = action.position;
       let { songs } = state;
+
+      console.log(songs, ": ", start, " : ", end);
 
       //dragging a song has two distinct motions either being dragged 'down' or 'up'
       if (end !== null) {

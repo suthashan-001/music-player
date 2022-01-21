@@ -1550,6 +1550,12 @@ d .doc-link {
   height: 33px;
   width: 33px;
 }
+@media screen and (max-width: 444px) {
+  .mobile-seek-slider::-webkit-slider-thumb {
+    display: none;
+    background: transparent;
+  }
+}
 .mobile-seek-slider::-webkit-slider-thumb:hover {
   background: rgb(182, 130, 98);
   height: 44px;
