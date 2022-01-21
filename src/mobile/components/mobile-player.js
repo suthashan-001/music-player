@@ -48,10 +48,9 @@ const MobilePlayerOn = ({
   const [pause, setPause] = React.useState(false);
   const [currentTime, setCurrentTime] = React.useState(0);
   const [duration, setDuration] = React.useState(null);
-  const [volume, setVolume] = React.useState(0.5);
+  // const [volume, setVolume] = React.useState(0.5);
   const [isSeeking, setIsSeeking] = React.useState(false);
   const [seekTime, setSeekTime] = React.useState(0);
-  const [repeatQueue, setRepeatQueue] = React.useState(false);
 
   const mobAudioRef = React.useRef();
 
@@ -70,9 +69,9 @@ const MobilePlayerOn = ({
       return "--:--";
     }
   }
-  function handleVolume(e) {
-    setVolume(e.target.value / 100);
-  }
+  // function handleVolume(e) {
+  //   setVolume(e.target.value / 100);
+  // }
   // handle seek
   function foundSeekTime(time) {
     mobAudioRef.current.currentTime = time;
@@ -81,7 +80,7 @@ const MobilePlayerOn = ({
   function nextQueueSong() {
     if (queueIndex !== songQueue.length - 1) {
       setQueueIndex(queueIndex + 1);
-    } else if (queueIndex === songQueue.length - 1 && repeatQueue === true) {
+    } else if (queueIndex === songQueue.length - 1) {
       setQueueIndex(0);
     } else {
       setIsPlaying(false);
@@ -139,10 +138,10 @@ const MobilePlayerOn = ({
     }
   }, [pause, setNewRequest, songQueue, playBackTriggered]);
 
-  React.useEffect(() => {
-    // volume useEffect
-    mobAudioRef.current.volume = volume;
-  }, [volume]);
+  // React.useEffect(() => {
+  //   // volume useEffect
+  //   mobAudioRef.current.volume = volume;
+  // }, [volume]);
 
   return (
     <div className="mob-player-wrapper">

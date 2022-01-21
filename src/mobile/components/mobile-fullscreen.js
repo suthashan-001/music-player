@@ -35,7 +35,7 @@ const MobileFullScreen = ({
       toggleFullScreen(false);
       setExitFullScreenClicked(false);
     }
-  }, [exitFullScreenClicked]);
+  }, [exitFullScreenClicked, toggleFullScreen]);
 
   return (
     <div className="mob-fs-bg">

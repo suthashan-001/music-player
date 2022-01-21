@@ -74,7 +74,6 @@ function App() {
             songQueue={songQueue}
             setSongQueue={setSongQueue}
             queueIndex={queueIndex}
-            queueIndex={queueIndex}
             setQueueIndex={setQueueIndex}
             setNewRequest={setNewRequest}
             setIsPlaying={setIsPlaying}
