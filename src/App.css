@@ -150,7 +150,7 @@ Mobile Version CSS
   min-height: 100%;
   background-size: cover;
   padding: 1em;
-  padding-bottom: 22.22em;
+  padding-bottom: 11.11em;
 }
 .learn-about-container {
   width: 100%;
@@ -1674,4 +1674,64 @@ d .doc-link {
   justify-content: center;
   background: rgba(255, 255, 255, 0.281);
   margin-bottom: 33px;
+}
+
+/* mobile about page */
+.mob-about-bg {
+  padding-bottom: 11em;
+}
+.resonate-logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid white;
+  border-radius: 22.22px;
+  padding: 11px;
+  color: white;
+  text-decoration: none;
+}
+.resonate-logo-container:hover,
+.resonate-logo-container:focus {
+  background: rgba(255, 255, 255, 0.11);
+}
+.mobile-logo {
+  width: 111.1px;
+  margin-right: 11px;
+}
+.mob-highlight {
+  color: gold;
+}
+.video-link-container {
+  display: flex;
+  flex-direction: column;
+}
+.video-link-title {
+  margin-top: 33px;
+  color: gold;
+}
+.about-underline {
+  background: gold;
+}
+.mobile-link-container {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.178);
+  margin-top: 22px;
+  text-align: center;
+  color: gold;
+  margin: 22px auto;
+}
+.mobile-link-container:hover,
+.mobile-link-container:focus {
+  background: rgba(255, 255, 255, 0.333);
+}
+.mob-chibiluffy {
+  width: 333px;
+}
+@media screen and (max-width: 444px) {
+  .mob-chibiluffy {
+    width: 222px;
+  }
+}
+.mob-animepg-bg {
+  padding-bottom: 11em;
 }
