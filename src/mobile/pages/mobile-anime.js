@@ -1,5 +1,6 @@
 import React from "react";
 import { Icon } from "@iconify/react";
+import { useEffect } from "react";
 import playButtonIcon from "@iconify/icons-gg/play-button-o";
 import shuffleIcon from "@iconify/icons-bi/shuffle";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
@@ -7,10 +8,34 @@ import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import animeSongs from "../../music-file/anime-sub";
 
 const MobAnimePage = (props) => {
+  // since we are accessing the dom to store the songs it is a sideeffect because Dom is seperate from react
+  // window.localStorage.setItem('mobile-anime-songs', JSON.stringify(animeSongs))
+
+  // retrieve data from local storage
+  let localStorageData = localStorage.getItem("mobile-anime-songs");
+  let convertedLocalData = JSON.parse(localStorageData);
+
+  // local storage data was null the first time, but then stored the songs array
+  // new users will have null
+  let animeSongData;
+
+  // old users will have their custom playlist
+  if (convertedLocalData === null) {
+    animeSongData = animeSongs;
+  } else {
+    animeSongData = convertedLocalData;
+  }
+
   const [state, dispatch] = React.useReducer(mobileAnime_Reducer, {
-    songs: animeSongs,
+    songs: animeSongData,
     playlistOrder: [],
   });
+
+  useEffect(() => {
+    // create a localstorage object in browser Dom
+    // this is a side effect because react doesn't keep track of local storage, the browser does
+    localStorage.setItem("mobile-anime-songs", JSON.stringify(state.songs));
+  }, [state.songs]);
 
   function shuffleSongs() {
     dispatch({ type: "SHUFFLE_SONGS" });
@@ -142,8 +167,6 @@ function mobileAnime_Reducer(state, action) {
     case "HANDLE_DRAG": {
       let { start, end } = action.position;
       let { songs } = state;
-
-      console.log(songs, ": ", start, " : ", end);
 
       //dragging a song has two distinct motions either being dragged 'down' or 'up'
       if (end !== null) {
