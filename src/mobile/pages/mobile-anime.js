@@ -16,10 +16,10 @@ const MobAnimePage = (props) => {
   let convertedLocalData = JSON.parse(localStorageData);
 
   // local storage data was null the first time, but then stored the songs array
-  // new users will have null
+  // new users will have null the first time
   let animeSongData;
 
-  // old users will have their custom playlist
+  // old users will have their custom playlist saved
   if (convertedLocalData === null) {
     animeSongData = animeSongs;
   } else {
