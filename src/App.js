@@ -8,6 +8,8 @@ import MobilePage from "./mobile/components/mobile-page";
 import MobilePlayer from "./mobile/components/mobile-player";
 import MobileNav from "./mobile/components/mobile-nav";
 
+import { ErrorBoundary } from "./errorBoundary";
+
 /* ======================
     GOAL: Mobile Version
    ======================
@@ -65,72 +67,74 @@ function App() {
 
   return (
     <>
-      {desktopMode === false ? (
-        // ==== Mobile Version ====
-        <div className="mobile-container">
-          <MobilePage
-            currentPage={currentPage}
-            setCurrentPage={setCurrentPage}
-            songQueue={songQueue}
-            setSongQueue={setSongQueue}
-            queueIndex={queueIndex}
-            setQueueIndex={setQueueIndex}
-            setNewRequest={setNewRequest}
-            setIsPlaying={setIsPlaying}
-          ></MobilePage>
-          <section className="mob-player-nav-container">
-            {isPlaying === true ? (
-              <MobilePlayer
-                isPlaying={isPlaying}
-                newRequest={newRequest}
-                setNewRequest={setNewRequest}
-                setIsPlaying={setIsPlaying}
-                songQueue={songQueue}
-                displayQueue={displayQueue}
-                setDisplayQueue={setDisplayQueue}
-                queueIndex={queueIndex}
-                setQueueIndex={setQueueIndex}
-              ></MobilePlayer>
-            ) : (
-              ""
-            )}
-            <MobileNav
+      <ErrorBoundary>
+        {desktopMode === false ? (
+          // ==== Mobile Version ====
+          <div className="mobile-container">
+            <MobilePage
               currentPage={currentPage}
               setCurrentPage={setCurrentPage}
-            ></MobileNav>
-          </section>
-        </div>
-      ) : (
-        // ==== Desktop Version ====
-        <div className="page-layout">
-          <SideBar
-            currentPage={currentPage}
-            setCurrentPage={setCurrentPage}
-          ></SideBar>
-          <Page
-            currentPage={currentPage}
-            isPlaying={isPlaying}
-            setNewRequest={setNewRequest}
-            setIsPlaying={setIsPlaying}
-            setSongQueue={setSongQueue}
-            displayQueue={displayQueue}
-            songQueue={songQueue}
-            queueIndex={queueIndex}
-            setQueueIndex={setQueueIndex}
-          ></Page>
-          <Player
-            isPlaying={isPlaying}
-            newRequest={newRequest}
-            setNewRequest={setNewRequest}
-            setIsPlaying={setIsPlaying}
-            songQueue={songQueue}
-            displayQueue={displayQueue}
-            setDisplayQueue={setDisplayQueue}
-            queueIndex={queueIndex}
-            setQueueIndex={setQueueIndex}
-          ></Player>
-        </div>
-      )}
+              songQueue={songQueue}
+              setSongQueue={setSongQueue}
+              queueIndex={queueIndex}
+              setQueueIndex={setQueueIndex}
+              setNewRequest={setNewRequest}
+              setIsPlaying={setIsPlaying}
+            ></MobilePage>
+            <section className="mob-player-nav-container">
+              {isPlaying === true ? (
+                <MobilePlayer
+                  isPlaying={isPlaying}
+                  newRequest={newRequest}
+                  setNewRequest={setNewRequest}
+                  setIsPlaying={setIsPlaying}
+                  songQueue={songQueue}
+                  displayQueue={displayQueue}
+                  setDisplayQueue={setDisplayQueue}
+                  queueIndex={queueIndex}
+                  setQueueIndex={setQueueIndex}
+                ></MobilePlayer>
+              ) : (
+                ""
+              )}
+              <MobileNav
+                currentPage={currentPage}
+                setCurrentPage={setCurrentPage}
+              ></MobileNav>
+            </section>
+          </div>
+        ) : (
+          // ==== Desktop Version ====
+          <div className="page-layout">
+            <SideBar
+              currentPage={currentPage}
+              setCurrentPage={setCurrentPage}
+            ></SideBar>
+            <Page
+              currentPage={currentPage}
+              isPlaying={isPlaying}
+              setNewRequest={setNewRequest}
+              setIsPlaying={setIsPlaying}
+              setSongQueue={setSongQueue}
+              displayQueue={displayQueue}
+              songQueue={songQueue}
+              queueIndex={queueIndex}
+              setQueueIndex={setQueueIndex}
+            ></Page>
+            <Player
+              isPlaying={isPlaying}
+              newRequest={newRequest}
+              setNewRequest={setNewRequest}
+              setIsPlaying={setIsPlaying}
+              songQueue={songQueue}
+              displayQueue={displayQueue}
+              setDisplayQueue={setDisplayQueue}
+              queueIndex={queueIndex}
+              setQueueIndex={setQueueIndex}
+            ></Player>
+          </div>
+        )}
+      </ErrorBoundary>
     </>
   );
 }
