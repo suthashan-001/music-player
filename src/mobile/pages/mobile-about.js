@@ -30,7 +30,7 @@ const MobileAbout = () => {
           <div className="about-underline"></div>
         </div>
         <a
-          href="https://www.youtube.com/watch?v=dL1UMZjNlqU"
+          href="https://www.youtube.com/watch?v=8yWgsyp8DMc"
           className="mobile-link-container"
         >
           <img src={chibiLuffy} alt="" className="mob-chibiluffy" />

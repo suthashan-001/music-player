@@ -29,7 +29,7 @@ const Docs = () => {
 
             <a
               className="music-link"
-              href="https://www.youtube.com/watch?v=dL1UMZjNlqU&t=0s"
+              href="https://www.youtube.com/watch?v=8yWgsyp8DMc"
             >
               Truth About Music by Infinite Waters
             </a>
