@@ -10,8 +10,6 @@
 body {
   font-family: "Roboto", sans-serif;
   color: white;
-  overflow-x: hidden;
-  overflow-y: hidden;
 }
 
 /* ==================
@@ -1734,4 +1732,358 @@ d .doc-link {
 }
 .mob-animepg-bg {
   padding-bottom: 11em;
+}
+
+/* ====================
+  Resonate Intro Page
+=======================*/
+/* ==================
+  Header Style
+=====================*/
+/* header typography */
+.intro-title {
+  font-size: 26px;
+}
+/* header layout */
+header {
+  position: relative;
+}
+.intro-logo {
+  position: absolute;
+}
+.intro-title {
+  position: absolute;
+  top: 5.5px;
+  left: 26px;
+}
+.intro-logo-shape {
+  width: 303px;
+}
+.cover-art {
+  width: 100%;
+  height: 303px;
+}
+.intro-gazersuthy-logo {
+  position: absolute;
+  bottom: 11px;
+  right: 5px;
+  width: 55px;
+}
+/* mobile header style */
+@media screen and (max-width: 380px) {
+  .intro-logo-shape {
+    width: 250px;
+  }
+  .intro-title {
+    font-size: 22px;
+    left: 22px;
+    top: 4.4px;
+  }
+  .cover-art {
+    height: 202px;
+    object-fit: fill;
+  }
+  .intro-gazersuthy-logo {
+    width: 44px;
+  }
+}
+@media screen and (min-width: 1500px) {
+  /* .cover-art {
+    object-fit: cover;
+  } */
+  .intro-logo-shape {
+    width: 333px;
+  }
+  .intro-title {
+    font-size: 33px;
+  }
+}
+
+/* ================
+  Web player section
+===================*/
+/* typography */
+.web-player-description {
+  color: black;
+  font-size: 44px;
+}
+.intro-description p {
+  color: rgb(194, 194, 194);
+}
+/* word highlight effect */
+.highlight1 {
+  color: rgb(128, 128, 128);
+}
+.highlight2 {
+  color: rgb(122, 122, 122);
+}
+.highlight3 {
+  color: rgb(94, 94, 94);
+}
+.highlight4 {
+  color: rgb(54, 54, 54);
+}
+.highlight5 {
+  color: rgb(0, 0, 0);
+}
+/* layout */
+.webplayer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.webplayer-flex {
+  display: flex;
+  padding: 0em 3em;
+}
+.appImg {
+  width: 444px;
+  margin-top: -44px;
+  object-fit: cover;
+}
+.music-note-design {
+  display: none;
+}
+.web-player-description {
+  margin-top: -55px;
+  margin-left: -55px;
+}
+.intro-button {
+  position: absolute;
+  background: black;
+  margin-top: -11px;
+  margin-left: -22px;
+  padding: 0.8em 1.6em;
+  font-size: 26px;
+  border-radius: 33px;
+  background: url(./intro-page/intro-imgs/button-background.png) center;
+  font-weight: 900;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  width: 222px;
+  background-position-x: -55px;
+  color: white;
+  text-decoration: none;
+}
+.intro-button:hover,
+.intro-button:focus {
+  transform: scale(1.1);
+  background-position-x: -10px;
+}
+.intro-button:hover .btn-logo,
+.intro-button:focus .btn-logo {
+  color: white;
+}
+.intro-button-link {
+  text-decoration: none;
+}
+.btn-logo {
+  font-size: 44px;
+  margin-left: 22px;
+  color: black;
+}
+/* phone screen sizes */
+@media screen and (max-width: 468px) {
+  .appImg {
+    width: 303px;
+    margin-top: -22px;
+  }
+  .web-player-description {
+    font-size: 33px;
+    margin-top: -22px;
+    margin-left: -11px;
+  }
+  .intro-button {
+    font-size: 24px;
+    width: 155px;
+  }
+}
+
+/* Desktop view */
+@media screen and (min-width: 1500px) {
+  .webplayer-container {
+    flex-direction: row;
+    padding: 0 63.9px;
+    justify-content: space-between;
+  }
+  .appImg {
+    width: 555px;
+    margin-left: -22px;
+  }
+  .webplayer-btn-container {
+    position: relative;
+  }
+  .music-note-design {
+    display: block;
+  }
+  /* music note designs */
+  .music-note-container-1 {
+    position: absolute;
+    transform: rotate(10deg);
+    bottom: -99px;
+    left: -99px;
+  }
+  .music-note-container-2 {
+    position: absolute;
+    bottom: 144px;
+    left: 99px;
+  }
+  .music-note-container-3 {
+    position: absolute;
+    transform: rotate(-10deg);
+    bottom: -111px;
+    right: -77px;
+  }
+  .music-note-1 {
+    color: #ce394a;
+    font-size: 77px;
+  }
+  .music-note-2 {
+    color: #436b33;
+    font-size: 88px;
+  }
+  .music-note-3 {
+    color: #286a7a;
+    font-size: 88px;
+  }
+  .intro-button {
+    position: initial;
+    width: 303px;
+    background-position-x: -111.1px;
+    background-size: cover;
+    display: flex;
+    justify-content: space-between;
+    font-size: 33px;
+  }
+  .btn-logo {
+    font-size: 55px;
+  }
+  .web-player-description {
+    margin: 0;
+    border-left: 3.3px solid black;
+    padding-left: 1em;
+  }
+  .web-player-description p {
+    color: black;
+  }
+  .highlight1,
+  .highlight2,
+  .highlight3,
+  .highlight4,
+  .highlight5 {
+    color: black;
+  }
+}
+@media screen and (min-width: 1800px) {
+  .appImg {
+    width: 777px;
+  }
+  .webplayer-container {
+    padding: 0 4.4em;
+    margin-top: -22px;
+  }
+}
+
+/* info cards */
+/* typography */
+.info-card .card-title {
+  font-size: 33px;
+}
+.giveHeart-icon {
+  font-size: 44px;
+}
+.money-icon {
+  font-size: 33px;
+}
+.cantskip-icon {
+  font-size: 33px;
+}
+.cantskip-icon::before {
+  content: "";
+}
+/* layout */
+.cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 66px;
+}
+.info-card {
+  background: #eeeeee;
+  width: 444px;
+  padding: 1.5em 2em;
+  margin-bottom: 44px;
+}
+.info-card .card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 22px;
+}
+.info-card p {
+  font-size: 20px;
+  text-align: left;
+  line-height: 1.6;
+}
+.card-1 {
+  border-top: 5px solid #ce394a;
+  color: #ce394a;
+}
+.card-1 p {
+  color: #9e2a37;
+}
+.card-2 {
+  border-top: 5px solid #45a81e;
+  color: #45a81e;
+}
+.card-2 p {
+  color: #348315;
+}
+.card-3 {
+  border-top: 5px solid #1492b0;
+  color: #1492b0;
+}
+.card-3 p {
+  color: #0f6c83;
+}
+.gazer-link {
+  color: #1f4b0d;
+}
+@media screen and (max-width: 500px) {
+  .info-card {
+    width: 295px;
+  }
+  .info-card .card-head {
+    align-items: flex-end;
+  }
+  .info-card .card-title {
+    font-size: 28px;
+  }
+  .giveHeart-icon {
+    font-size: 39.6px;
+  }
+  .money-icon {
+    font-size: 30px;
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  .cards {
+    flex-direction: row;
+    padding: 0 63.9px;
+    justify-content: space-between;
+    margin-top: 0;
+    align-items: flex-start;
+    margin-top: 44px;
+  }
+  .info-card {
+    height: 280px;
+  }
+}
+
+@media screen and (min-width: 1800px) {
+  .cards {
+    margin-top: 22px;
+  }
 }

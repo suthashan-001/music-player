@@ -9,6 +9,9 @@ import MobilePlayer from "./mobile/components/mobile-player";
 import MobileNav from "./mobile/components/mobile-nav";
 
 import { ErrorBoundary } from "./errorBoundary";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+
+import IntroPage from "./intro-page/introPage";
 
 /* ======================
     GOAL: Mobile Version
@@ -23,6 +26,24 @@ import { ErrorBoundary } from "./errorBoundary";
 */
 
 function App() {
+  return (
+    <>
+      {/* routing to either intro page or app based on url */}
+      <BrowserRouter>
+        <Switch>
+          <Route path="/player">
+            <MusicApp></MusicApp>
+          </Route>
+          <Route path="/">
+            <IntroPage></IntroPage>
+          </Route>
+        </Switch>
+      </BrowserRouter>
+    </>
+  );
+}
+
+function MusicApp() {
   // states
   const [isPlaying, setIsPlaying] = React.useState(false);
   // new request is when user click's a new song while a song is already playing

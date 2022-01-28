@@ -12,7 +12,10 @@ const Popup = () => {
           GazerSuthy@outlook.com or direct message on instagram @gazersuthy.
           Thank you for your cooperation!
           <br></br>-{" "}
-          <a href="https://www.resonate432hz.com" className="gazersuthy-link">
+          <a
+            href="https://www.resonate432hz.com/player"
+            className="gazersuthy-link"
+          >
             Back to Web Player
           </a>
         </p>
