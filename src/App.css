@@ -334,12 +334,14 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$*/
 }
 .playbar {
   grid-area: Player;
+  z-index: 100;
 }
 .page {
   grid-area: App;
   min-width: 777px;
   overflow-y: scroll;
 }
+/* custom scrollbar style */
 .page::-webkit-scrollbar {
   width: 15px;
 }
@@ -395,13 +397,6 @@ Learn it properly, have fun with it */
   background: #251d17;
   margin-top: 2.2em;
 }
-.beta-div {
-  font-size: 15px;
-  display: flex;
-  justify-content: center;
-  font-family: "Montserrat", sans-serif;
-  color: #e0ab8a;
-}
 .sidebar {
   display: flex;
   flex-direction: column;
@@ -414,17 +409,21 @@ Learn it properly, have fun with it */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 186px;
+  width: 11.625rem;
   position: absolute;
   left: 20px;
   top: 125px;
   padding: 0;
+  z-index: 1;
 }
 .navigation-links {
-  width: 186px;
+  width: 11.625rem;
   padding: 1em;
   background: #4b3931;
   border: none;
+}
+.active-button-link {
+  background: #866754;
 }
 .nav-link-container {
   display: grid;
@@ -473,12 +472,12 @@ Learn it properly, have fun with it */
   font-family: "Montserrat", sans-serif;
 }
 .song-title {
-  font-size: 22px;
+  font-size: 1.375rem;
   font-weight: 700;
   letter-spacing: 1.5px;
 }
 .song-artist {
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 400;
   letter-spacing: 0.5px;
 }
@@ -486,7 +485,7 @@ Learn it properly, have fun with it */
   color: #251d17;
   font-weight: 900;
   font-style: italic;
-  font-size: 15px;
+  font-size: 0.938px;
 }
 .time {
   color: rgb(180, 180, 180);
@@ -661,8 +660,6 @@ playbar-layout
   justify-content: center;
   align-items: center;
 }
-
-/* shuffle animation */
 .playerOffShuffle.highlight {
   color: #d1a081;
 }
@@ -692,7 +689,6 @@ playbar-layout
   height: 18px;
   width: 18px;
 }
-
 .song-image {
   height: 66px;
   width: 66px;
@@ -707,7 +703,7 @@ playbar-layout
   font-family: Roboto;
   font-style: normal;
   font-weight: 900;
-  font-size: 36px;
+  font-size: 2.25rem;
   line-height: 42px;
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -717,7 +713,7 @@ playbar-layout
   font-family: Roboto;
   font-style: normal;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 1.125rem;
   line-height: 21px;
   letter-spacing: 0.05em;
 }
@@ -730,7 +726,7 @@ playbar-layout
 .heading-style {
   font-style: normal;
   font-weight: normal;
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 23px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -742,20 +738,26 @@ playbar-layout
 .songFrequency {
   font-style: normal;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 1.25rem;
   letter-spacing: 1px;
   color: #ffffffea;
 }
 
-/* SongPage-Layout */
-.page-background {
+/* SongPage-Layout (My custom page hehe)*/
+
+/* display flex */
+.page-background,
+.page-pannel,
+.page-buttons,
+.btn {
   display: flex;
+}
+.page-background {
   align-items: flex-start;
   background: #03254a;
   padding: 0.5em 2.5em;
 }
 .page-pannel {
-  display: flex;
   flex-direction: column;
   background: rgba(241, 241, 241, 0.22);
   width: 100%;
@@ -766,14 +768,10 @@ playbar-layout
 .pannel-header {
   padding: 0 3em 3em 3em;
 }
-.page-buttons {
-  display: flex;
-}
 .page-title {
   margin-bottom: 1em;
 }
 .btn {
-  display: flex;
   align-items: center;
   padding: 10px 44px;
   border: none;
@@ -1348,10 +1346,6 @@ playbar-layout
   }
 
   /* sidebar */
-  .sidebar-navigation {
-    width: 322px;
-    margin-top: 1.5em;
-  }
   .navigation-links {
     width: 200px;
     padding: 1em;

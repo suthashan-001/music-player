@@ -51,7 +51,7 @@ const PlayerOn = ({
   shuffle,
   setShuffle,
 }) => {
-  //music-player states
+  //music player states
   const [playBackTriggered, setPlaybackTriggered] = React.useState(false);
   const [pause, setPause] = React.useState(false);
   const [currentTime, setCurrentTime] = React.useState(0);
@@ -65,13 +65,16 @@ const PlayerOn = ({
   /* 
         https://reactjs.org/docs/refs-and-the-dom.html
         we want a ref for the audio because audio element is part of the DOM, media playbacks 
-        (when a song pauses "timestamps" and continues where it was paused) are kept seperatly from React,
+        (such as timestamps "where the song is paused") are kept seperatly from React,
         and we don't want to rerender everytime user hits pause and play. 
     */
 
   const audioRef = React.useRef();
 
-  // audio functions
+  /* ======
+  Audio Functions
+  =========*/
+  // user invokes a playback request
   function setPlayback() {
     setPlaybackTriggered(true);
     setPause(!pause);
@@ -90,12 +93,12 @@ const PlayerOn = ({
     setVolume(e.target.value / 100);
   }
 
-  // handle seek
   function foundSeekTime(time) {
     audioRef.current.currentTime = time;
     setIsSeeking(false);
   }
 
+  // in a playlist, the player will automatically go to next song
   function nextQueueSong() {
     if (queueIndex !== songQueue.length - 1) {
       setQueueIndex(queueIndex + 1);
@@ -106,7 +109,7 @@ const PlayerOn = ({
     }
   }
 
-  //user manually wants next song in queue
+  //user manually wants to skip to next song
   function nextSong() {
     if (queueIndex === songQueue.length - 1) {
       setQueueIndex(0);
@@ -114,7 +117,6 @@ const PlayerOn = ({
       setQueueIndex(queueIndex + 1);
     }
   }
-
   //user manually wants preivous song in queue
   function previousSong() {
     if (queueIndex !== 0) {
@@ -131,12 +133,13 @@ const PlayerOn = ({
   and the component was unmounted before the response was received. 
   (why songQueue became undefined) because of a memory leak */
 
-  //song play useEffect
+  /* =============
+  Manipulating Dom Audio element
+  ================*/
   React.useEffect(() => {
     audioRef.current.src = songQueue[queueIndex].songfile;
-    // let copy_node = audioRef;
 
-    // add eventListener to player that will fire everytime current time of an audio is updated
+    //eventlistener updates the time
     audioRef.current.addEventListener("timeupdate", (e) => {
       setCurrentTime(e.target.currentTime);
       setDuration(e.target.duration);
@@ -147,10 +150,12 @@ const PlayerOn = ({
       setNewRequest(false);
     }
 
-    // play song after a delay
+    // delay to playing song
     setTimeout(() => {
       audioRef.current.play();
     }, 2000);
+
+    /* goal is to clean up this useEffect to prevent memory leaks {Work in Progress} */
 
     // return function cleanUp() {
     //   console.log(copy_node);
@@ -178,7 +183,7 @@ const PlayerOn = ({
     }
   }, [pause, setNewRequest, songQueue, playBackTriggered]);
 
-  // loop useEffect
+  // loop a song
   React.useEffect(() => {
     if (repeatSong === true) {
       audioRef.current.loop = true;
@@ -187,8 +192,8 @@ const PlayerOn = ({
     }
   }, [repeatSong, playBackTriggered]);
 
+  // change volume
   React.useEffect(() => {
-    // volume useEffect
     audioRef.current.volume = volume;
   }, [volume]);
 
@@ -227,6 +232,8 @@ const PlayerOn = ({
           songQueue={songQueue}
         />
       </div>
+      {/* Fullscreen is going to be hidden, and displayed when user clicks fullscreen button */}
+      {/* Needs to be rendered with player to be in sync */}
       <FullScreen
         songname={songQueue[queueIndex].name}
         songartist={songQueue[queueIndex].artist}
@@ -370,7 +377,7 @@ const SeekBar = ({
 
   //update gui colour postition of seek bar
   React.useEffect(() => {
-    // thank you higher self!!!!
+    // percent of seekbar in relation to the currentTime of the song
     var adjustedPercentage = (currentTime / duration) * 100;
 
     //change colour of slider on hover
@@ -393,7 +400,7 @@ const SeekBar = ({
     }
   }, [currentTime, sliderHover, duration]);
 
-  //during seek mode
+  //during seek mode (When user wants to move to a new time stamp in song)
   if (isSeeking === true) {
     return (
       <div className="seekbar-wrapper">
@@ -416,7 +423,7 @@ const SeekBar = ({
       </div>
     );
   }
-  //pressing mouse down on time slider to activate seek
+  //pressing mouse down on time slider to activate seek (User Wants to interact with the slider)
   return (
     <div className="seekbar-wrapper">
       <input
@@ -460,7 +467,6 @@ const SongDetails = (props) => {
 const OtherControls = ({ volume, handleVolume }) => {
   var fullscreenPannel = document.querySelector(".fs-background");
 
-  // temp states to get Gui of sound bar working
   const volumeSlider = React.useRef(null);
   const [sliderHover, setSliderHover] = React.useState(false);
 
@@ -531,7 +537,6 @@ const OtherControls = ({ volume, handleVolume }) => {
 const PlayerOff = () => {
   return (
     <div className="playbar">
-      {/* wrapper -> grid that mimics auto layout spacing of player */}
       <div className="playbar-wrapper">
         <SongDetailsOFF />
         <MediaControlsOFF />
@@ -607,7 +612,6 @@ const MediaControlsOFF = () => {
 };
 
 const OtherControlsOFF = () => {
-  // temp states to get Gui of sound bar working
   const volumeSlider = React.useRef(null);
   const [soundValue, setSoundValue] = React.useState(50);
   const [sliderHover, setSliderHover] = React.useState(false);

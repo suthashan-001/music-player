@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 // cover art img
 import coverArt from "./intro-imgs/cover-art.jpg";
 import logoDesign from "./intro-imgs/logo-design.png";
-import gazerLogo from "../background-images/gazersuthy_logo.png";
+import gazerLogo from "./intro-imgs/gazersuthy_logo.png";
 
 // appImg
 import appImg from "./intro-imgs/appImg.png";

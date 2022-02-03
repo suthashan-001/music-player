@@ -9,9 +9,9 @@ import MobilePlayer from "./mobile/components/mobile-player";
 import MobileNav from "./mobile/components/mobile-nav";
 
 import { ErrorBoundary } from "./errorBoundary";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import IntroPage from "./intro-page/introPage";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 /* ======================
     GOAL: Mobile Version
