@@ -1,11 +1,8 @@
 import React from "react";
-import SongPage from "../pages/songs";
+// import SongPage from "../pages/songs";
 import HomePage from "../pages/home";
-import ElevatePage from "../pages/elevate";
 import AnimePage from "../pages/anime";
 import QueuePage from "../pages/queue";
-import SleepPage from "../pages/sleep";
-import DocsPage from "../pages/docs";
 
 const Page = (props) => {
   if (props.displayQueue === true) {
@@ -18,16 +15,16 @@ const Page = (props) => {
     );
   }
 
-  if (props.currentPage === "Songs") {
-    return (
-      <SongPage
-        isPlaying={props.isPlaying}
-        setNewRequest={props.setNewRequest}
-        setIsPlaying={props.setIsPlaying}
-        setSongQueue={props.setSongQueue}
-      ></SongPage>
-    );
-  }
+  // if (props.currentPage === "Songs") {
+  //   return (
+  //     <SongPage
+  //       isPlaying={props.isPlaying}
+  //       setNewRequest={props.setNewRequest}
+  //       setIsPlaying={props.setIsPlaying}
+  //       setSongQueue={props.setSongQueue}
+  //     ></SongPage>
+  //   );
+  // }
 
   if (props.currentPage === "Home") {
     return (
@@ -40,17 +37,6 @@ const Page = (props) => {
     );
   }
 
-  if (props.currentPage === "Elevate") {
-    return (
-      <ElevatePage
-        isPlaying={props.isPlaying}
-        setNewRequest={props.setNewRequest}
-        setIsPlaying={props.setIsPlaying}
-        setSongQueue={props.setSongQueue}
-      ></ElevatePage>
-    );
-  }
-
   if (props.currentPage === "Anime") {
     return (
       <AnimePage
@@ -60,21 +46,6 @@ const Page = (props) => {
         setSongQueue={props.setSongQueue}
       ></AnimePage>
     );
-  }
-
-  if (props.currentPage === "Sleep") {
-    return (
-      <SleepPage
-        isPlaying={props.isPlaying}
-        setNewRequest={props.setNewRequest}
-        setIsPlaying={props.setIsPlaying}
-        setSongQueue={props.setSongQueue}
-      ></SleepPage>
-    );
-  }
-
-  if (props.currentPage === "Docs") {
-    return <DocsPage></DocsPage>;
   }
 
   return <div></div>;

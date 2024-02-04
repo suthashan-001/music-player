@@ -328,6 +328,7 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$*/
     "Player  Player";
   height: 100vh;
   min-height: 444px;
+  margin-top: -1.2em;
 }
 .sidebar {
   grid-area: SideBar;
@@ -1104,7 +1105,7 @@ playbar-layout
   background: url(./background-images/home.png);
   background-size: cover;
   background-position: bottom;
-  padding: 125px 2em 2em 2em;
+  padding: 44px 2em 2em 2em;
 }
 .section-container {
   background: rgba(196, 196, 196, 0.33);
@@ -1231,6 +1232,7 @@ playbar-layout
   display: flex;
   flex-wrap: wrap;
   padding: 1em 0;
+  color: white;
 }
 
 /* anime-page sub songs */
@@ -1578,7 +1580,7 @@ d .doc-link {
   top: -699.3px;
 }
 
-/* Task is to fix the mobile viewports */
+/* Fixing mobile view port */
 @media screen and (max-width: 500px) {
   .mob-fs-songImg {
     width: 222px;
@@ -1728,356 +1730,837 @@ d .doc-link {
   padding-bottom: 11em;
 }
 
-/* ====================
-  Resonate Intro Page
-=======================*/
-/* ==================
-  Header Style
-=====================*/
-/* header typography */
-.intro-title {
-  font-size: 26px;
-}
-/* header layout */
-header {
-  position: relative;
-}
-.intro-logo {
-  position: absolute;
-}
-.intro-title {
-  position: absolute;
-  top: 5.5px;
-  left: 26px;
-}
-.intro-logo-shape {
-  width: 303px;
-}
-.cover-art {
-  width: 100%;
-  height: 303px;
-}
-.intro-gazersuthy-logo {
-  position: absolute;
-  bottom: 11px;
-  right: 5px;
-  width: 55px;
-}
-/* mobile header style */
-@media screen and (max-width: 380px) {
-  .intro-logo-shape {
-    width: 250px;
-  }
-  .intro-title {
-    font-size: 22px;
-    left: 22px;
-    top: 4.4px;
-  }
-  .cover-art {
-    height: 202px;
-    object-fit: fill;
-  }
-  .intro-gazersuthy-logo {
-    width: 44px;
-  }
-}
-@media screen and (min-width: 1500px) {
-  /* .cover-art {
-    object-fit: cover;
-  } */
-  .intro-logo-shape {
-    width: 333px;
-  }
-  .intro-title {
-    font-size: 33px;
-  }
-}
-
-/* ================
-  Web player section
+/* =================
+  Intro Page (landing page)
 ===================*/
-/* typography */
-.web-player-description {
-  color: black;
-  font-size: 44px;
-}
-.intro-description p {
-  color: rgb(194, 194, 194);
-}
-/* word highlight effect */
-.highlight1 {
-  color: rgb(128, 128, 128);
-}
-.highlight2 {
-  color: rgb(122, 122, 122);
-}
-.highlight3 {
-  color: rgb(94, 94, 94);
-}
-.highlight4 {
-  color: rgb(54, 54, 54);
-}
-.highlight5 {
-  color: rgb(0, 0, 0);
-}
-/* layout */
-.webplayer-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.webplayer-flex {
-  display: flex;
-  padding: 0em 3em;
-}
-.appImg {
-  width: 444px;
-  margin-top: -44px;
-  object-fit: cover;
-}
-.music-note-design {
-  display: none;
-}
-.web-player-description {
-  margin-top: -55px;
-  margin-left: -55px;
-}
+
+/* browzer was zoomed in to 140% which affected all the scaling... */
+
 .intro-button {
-  position: absolute;
-  background: black;
-  margin-top: -11px;
-  margin-left: -22px;
-  padding: 0.8em 1.6em;
-  font-size: 26px;
   border-radius: 33px;
-  background: url(./intro-page/intro-imgs/button-background.png) center;
-  font-weight: 900;
-  letter-spacing: 1px;
-  display: flex;
-  align-items: center;
-  width: 222px;
-  background-position-x: -55px;
+  border: 1px solid #fff;
+
+  background: linear-gradient(
+    90deg,
+    #e16dae 32.03%,
+    rgba(224, 108, 174, 0.99) 32.03%,
+    rgba(111, 52, 155, 0) 100%
+  );
   color: white;
-  text-decoration: none;
+  font-size: 33px;
+  padding: 0.25em 1em;
+  margin-bottom: 3em;
+  display: inline-block;
 }
 .intro-button:hover,
 .intro-button:focus {
-  transform: scale(1.1);
-  background-position-x: -10px;
+  scale: 1.15;
+  cursor: pointer;
+  filter: drop-shadow(5px 5px 5px rgba(255, 1, 145, 1));
 }
-.intro-button:hover .btn-logo,
-.intro-button:focus .btn-logo {
+.golden-highlight {
+  color: #f9ad32;
+}
+.pink-text-highlight {
+  color: #ff80c8;
+}
+.blue-text-highlight {
+  color: #4cd3f2;
+}
+.green-text-highlight {
+  color: #a7ff90;
+}
+.golden-text-highlight {
+  color: #f7cd60;
+}
+
+@media screen and (max-width: 999px) {
+  /* typgraphy */
+  .app-title {
+    font-size: 36.9px;
+  }
+  .app-title-mobile {
+    font-weight: 400;
+    font-size: 22px;
+    margin-top: 0.25em;
+    font-style: italic;
+  }
+  .intro-page {
+    background: #424242;
+  }
+  .app-desc {
+    display: none;
+  }
+  .hero-col1 {
+    display: none;
+  }
+  .hero-headings {
+    background: #000000cc;
+    width: 100%;
+    text-align: center;
+    padding: 1.5em 0em;
+  }
+  .hero-col2 {
+    padding-top: 2em;
+    background-image: url("./background-images/landingpage-mobile.png");
+    background-size: cover;
+    background-position: center;
+    height: 88vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .chibi-zen {
+    margin-top: -2em;
+    width: 275px;
+  }
+  .developer-section {
+    background: #0b0308;
+    text-align: center;
+    line-height: 1.6;
+    padding: 1em;
+    padding-left: 3em;
+    padding-right: 3em;
+  }
+  .mobile-app-desc p {
+    margin-bottom: 1em;
+    font-family: "Montserrat", sans-serif;
+  }
+  .developed {
+    margin-top: 1em;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+  }
+
+  /* developer info section */
+  .developer-section {
+    padding-top: 3em;
+  }
+  .developer-section-title {
+    margin-top: 4em;
+  }
+  .developer-icon {
+    margin-bottom: 2em;
+  }
+  .profile-pic {
+    width: 123.4px;
+  }
+  .icon-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3em;
+  }
+  /* developer icon styles */
+  .github-icon {
+    width: 111px;
+    margin-left: 10px;
+  }
+  .insta-icon {
+    width: 111px;
+    font-size: 22px;
+  }
+  .glitch-icon {
+    width: 111px;
+    margin-left: -44px;
+  }
+}
+
+/* Extremly small screen size */
+
+@media screen and (min-width: 500px) {
+  .hero-col2 {
+    background-size: calc(100%);
+    background-repeat: no-repeat;
+    background-position: center;
+    padding-top: 2em;
+  }
+  .hero {
+    background: #1c182d;
+  }
+  .chibi-zen {
+    width: 333px;
+  }
+}
+
+/* =============== 
+    Desktop style
+  ================*/
+@media screen and (min-width: 999px) {
+  /* typography */
+  .developed {
+    margin-top: 0.5em;
+    font-weight: 400;
+  }
+  .app-title {
+    font-size: 33px;
+    letter-spacing: 1.5px;
+  }
+  .app-title-mobile {
+    font-weight: 400;
+    text-align: center;
+  }
+  .mobile-app-desc {
+    display: none;
+  }
+  .developer-section-title,
+  .dev-icons {
+    color: black;
+  }
+  /* layout */
+  .character-icon {
+    display: none;
+  }
+  .hero {
+    background: #2f2f2f;
+    display: grid;
+    grid-template-columns: 1.23fr 1fr;
+  }
+  .hero-col1 {
+    background-image: url("./background-images/landingpage.png");
+    background-size: cover;
+    height: 95vh;
+  }
+  .hero-col2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3em;
+    padding-bottom: 2em;
+  }
+  .app-desc {
+    color: #bebebe;
+    line-height: 1.4;
+    margin-bottom: 2em;
+    margin-top: 1em;
+  }
+  .app-desc p {
+    margin-bottom: 2em;
+  }
+  .app-desc p:last-child {
+    margin-bottom: 3.3em;
+  }
+  .hero-headings {
+    position: relative;
+    padding-bottom: 2.2em;
+    z-index: 100;
+  }
+  .developer-section {
+    padding: 3em;
+  }
+  .flex-container {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .profile-pic {
+    width: 333px;
+  }
+  .icon-div {
+    display: flex;
+    align-items: center;
+    font-size: 22px;
+  }
+  .dev-icons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+  .github-icon {
+    width: 55px;
+  }
+  .github-icon,
+  .insta-icon,
+  .glitch-icon {
+    margin-right: 15px;
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  /* typography */
+  .app-desc {
+    font-size: 20px;
+    font-weight: 400;
+    color: #bebebe;
+    line-height: 1.4;
+    font-family: "Montserrat", sans-serif;
+    letter-spacing: -0.25px;
+  }
+  .app-title {
+    font-size: 44px;
+  }
+  .app-title-mobile {
+    color: white;
+    font-size: 22px;
+    font-style: normal;
+    letter-spacing: 1px;
+    text-align: left;
+  }
+  .developed {
+    font-style: normal;
+    letter-spacing: 1.5px;
+  }
+  /* layout */
+  .hero {
+    grid-template-columns: 0.8fr 1fr;
+  }
+  .hero-col1 {
+    background-image: url("./background-images/landingpage.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 95vh;
+  }
+  .hero-col2 {
+    padding-right: 5em;
+    padding-left: 5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding-bottom: 5em;
+    align-items: flex-start;
+  }
+  .hero-headings {
+    align-self: flex-start;
+  }
+  .cta-btn {
+    display: inline-block;
+    width: max-content;
+    height: 69px;
+    margin-top: -3em;
+  }
+  .developer-section {
+    margin-top: 5em;
+  }
+}
+
+/* =========================== 
+       Portfolio Styling 
+==============================*/
+
+/* variable styles */
+body {
+  --hero-page-colour: #eeeeeeee;
+}
+
+/* General Styles */
+.logo-img:hover {
+  scale: 1.23;
+  cursor: pointer;
+}
+
+.logo-img.dark {
   color: white;
 }
-.intro-button-link {
-  text-decoration: none;
+
+.portfolio h2,
+.portfolio h3 {
+  color: #292929;
 }
-.btn-logo {
-  font-size: 44px;
-  margin-left: 22px;
-  color: black;
+.showcase-col-1 h3 {
+  color: #545454;
+  font-weight: 500;
 }
-/* phone screen sizes */
-@media screen and (max-width: 468px) {
-  .appImg {
-    width: 303px;
-    margin-top: -22px;
-  }
-  .web-player-description {
-    font-size: 33px;
-    margin-top: -22px;
-    margin-left: -11px;
-  }
-  .intro-button {
-    font-size: 24px;
-    width: 155px;
-  }
+.portfolio p {
+  color: #212121;
 }
 
-/* Desktop view */
-@media screen and (min-width: 1500px) {
-  .webplayer-container {
-    flex-direction: row;
-    padding: 0 63.9px;
+.visit-btn {
+  cursor: pointer;
+}
+.visit-btn:focus,
+.visit-btn:hover {
+  scale: 1.234;
+}
+
+/* Mobile first approach */
+
+@media only screen and (max-width: 800px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  /* The .hero-flex element, as a child of .hero, needs its own grid area to be properly positioned and sized within the grid layout. 
+    The problem was that the children of hero was .hero-flex therfore i need to specify the column placent for .hero-flex
+  */
+
+  .hero-flex {
+    display: flex;
+    grid-area: HeroFlex;
+  }
+
+  .nav-bar {
+    display: flex;
+    grid-area: Nav;
+    padding: 1em 2em;
     justify-content: space-between;
+    align-items: center;
+    height: 77px;
   }
-  .appImg {
-    width: 555px;
-    margin-left: -22px;
+
+  /* Su-n logo left side */
+
+  .logo-text {
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    font-size: 22px;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
   }
-  .webplayer-btn-container {
+  /* right side logo */
+
+  .logo-img {
+    width: 35px;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  .text-name {
+    display: none;
+  }
+  .showcase-desc {
+    line-height: 1.5;
+  }
+  .hero-picture {
+    background-image: url(/src/images/hero-img.jpg);
+    width: 100%;
+    min-height: 55vh;
+    background-size: cover;
+    background-position: center;
     position: relative;
   }
-  .music-note-design {
-    display: block;
-  }
-  /* music note designs */
-  .music-note-container-1 {
+  .hero-picture::after {
+    content: "Suthashan Tharamarajah";
+    width: 100%;
+    background: #212b48;
     position: absolute;
-    transform: rotate(10deg);
-    bottom: -99px;
-    left: -99px;
+    bottom: 0px;
+    text-align: center;
+    color: white;
+    letter-spacing: 2px;
+    padding: 0.25em;
+    font-size: 18px;
   }
-  .music-note-container-2 {
-    position: absolute;
-    bottom: 144px;
-    left: 99px;
+
+  .hero-flex {
+    flex-direction: column-reverse;
   }
-  .music-note-container-3 {
-    position: absolute;
-    transform: rotate(-10deg);
-    bottom: -111px;
-    right: -77px;
+
+  .menu,
+  .hero-text {
+    display: none;
   }
-  .music-note-1 {
-    color: #ce394a;
-    font-size: 77px;
-  }
-  .music-note-2 {
-    color: #436b33;
-    font-size: 88px;
-  }
-  .music-note-3 {
-    color: #286a7a;
-    font-size: 88px;
-  }
-  .intro-button {
-    position: initial;
-    width: 303px;
-    background-position-x: -111.1px;
-    background-size: cover;
+
+  .skills-section {
+    background-color: #474747;
+    color: rgb(189, 189, 189);
+    padding: 3em 2em;
     display: flex;
+    align-items: center;
     justify-content: space-between;
+    letter-spacing: 0.5px;
+  }
+
+  /* ===========
+       Skill Tree 
+    ============*/
+
+  .skill-tree {
+    display: none;
+  }
+
+  .skill-tree-mobile {
+    background: #555555;
+    color: white;
+    padding: 3em 2em;
+  }
+  .skill-tree-mobile h4 {
+    color: #ffffff;
+    padding-bottom: 1em;
+    letter-spacing: 1px;
+    font-weight: 500;
+  }
+
+  /* ================= 
+        Project section
+    ==================*/
+
+  .project-showcase-1 {
+    padding-top: 3em;
+    margin-top: 2em;
+    text-align: center;
+  }
+  .proj-desc-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .project-img {
+    display: none;
+  }
+  .proj-pic-1 {
+    width: 100%;
+  }
+  .project-img-mobile {
+    width: 88%;
+  }
+  .proj-desc {
+    padding: 2em 1em;
+    width: 88%;
+    line-height: 1.6;
+    text-align: justify;
+  }
+  .proj-desc:first-child() {
+    margin-top: 1em;
+  }
+  .proj-desc p {
+    margin-bottom: 1.5em;
+  }
+  .project-headline {
+    font-weight: 700;
+    font-size: 25px;
+    margin-bottom: 1em;
+  }
+  .middle-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 1.5em;
+    margin-top: -2.2em;
+  }
+  .mobile-app {
+    width: 77%;
+  }
+  .mobile-app-pic-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+  }
+
+  .react-icon,
+  .js-icon,
+  .html-icon,
+  .css-icon {
+    width: 44px;
+    margin: 0 1em;
+    opacity: 55%;
+  }
+
+  .react-icon {
+    width: 55px;
+    opacity: 88%;
+  }
+
+  .code-showcase {
+    display: flex;
+    align-items: center;
+    padding: 2em;
+    margin-top: 2em;
+    flex-direction: column;
+  }
+
+  .mob-app-container {
+    margin-top: 0em;
+    padding-top: 0;
+  }
+
+  .mobile-app-pic-container {
+    margin-top: 0em;
+    padding-top: 1em;
+  }
+  .mobile-app {
+    border: 1px solid rgb(122, 122, 122);
+  }
+  .code-pic {
+    display: none;
+  }
+  .mob-code-pic {
+    margin-top: 1em;
+    width: 100%;
+    background-image: url("./images/codesnip_1.png");
+    height: 444px;
+    border: 1px solid rgb(162, 162, 162);
+  }
+  .showcase-desc {
+    margin-top: 2em;
+    text-align: justify;
+  }
+  .showcase-desc p {
+    margin-bottom: 1.5em;
+  }
+
+  footer {
+    display: flex;
+    flex-direction: column;
+    height: 33vh;
+  }
+}
+
+.visit-btn {
+  border: 1px solid rgb(184, 184, 184);
+  background: #6c97df;
+  color: white;
+  letter-spacing: 1.5px;
+  padding: 0.5em 1em;
+  font-weight: 600;
+  border-radius: 15px;
+  font-size: 23px;
+}
+.btn-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 2em;
+}
+
+.portfolio {
+  color: black;
+}
+
+@media screen and (min-width: 800px) {
+  /* typography */
+  .logo-text {
+    font-weight: bold;
+    letter-spacing: 3px;
+    font-size: 23px;
+  }
+  .Project {
+    color: #125ba3;
+  }
+  .Aboutme {
+    color: #996dcf;
+  }
+  .Contacts {
+    color: #008080;
+  }
+  .underscore {
     font-size: 33px;
   }
-  .btn-logo {
-    font-size: 55px;
+  .text-name {
+    letter-spacing: 1px;
+    font-size: 18px;
+    margin-top: 1.5px;
   }
-  .web-player-description {
-    margin: 0;
-    border-left: 3.3px solid black;
-    padding-left: 1em;
+  .skill-tree h4 {
+    margin-bottom: 0.5em;
+    letter-spacing: 0.5px;
+    font-weight: 400;
   }
-  .web-player-description p {
-    color: black;
+  .portfolio-hero {
+    background: var(--hero-page-colour);
   }
-  .highlight1,
-  .highlight2,
-  .highlight3,
-  .highlight4,
-  .highlight5 {
-    color: black;
+  .nav-bar {
+    display: flex;
+    height: 77px;
+    justify-content: space-between;
+    align-items: center;
+    color: rgb(24, 24, 24);
   }
-}
-@media screen and (min-width: 1800px) {
-  .appImg {
-    width: 777px;
+  .right-column-hero {
+    width: 77%;
+    padding: 3em;
   }
-  .webplayer-container {
-    padding: 0 4.4em;
-    margin-top: -22px;
+  .hero-flex {
+    display: flex;
+  }
+  .hero-picture {
+    background-image: url("./images/hero-img.jpg");
+    background-size: cover;
+    background-repeat: none;
+    background-position: center;
+    width: 100%;
+    height: 77.7vh;
+  }
+  .skill-tree-mobile,
+  .project-img-mobile {
+    display: none;
+  }
+  .logo-img {
+    width: 44px;
+    color: rgb(24, 24, 24);
+    height: fit-content;
+    margin-right: 3.3em;
+  }
+  .skill-tree {
+    margin: 2em 0;
+  }
+  .design-div {
+    display: block;
+    background: #999999;
+    width: 333px;
+    height: 1px;
+    margin-bottom: 2em;
+  }
+  .menu {
+    display: flex;
+    flex-direction: column;
+  }
+  .menu h5 {
+    margin-bottom: 1.5em;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: 16px;
+  }
+
+  .project-showcase-1 {
+    margin-top: 5em;
+    padding: 3em;
+    display: flex;
+    justify-content: center;
+  }
+
+  .project-container {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    width: 88%;
+  }
+  .project-left-container {
+    display: flex;
+  }
+
+  /* Dark theme */
+  .right-column-hero.dark {
+    background: #474747;
+  }
+
+  /* Project view section */
+  /* typography */
+  .project-headline {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 0.75em;
+  }
+  .proj-desc {
+    line-height: 2;
+  }
+  .proj-desc p {
+    margin-bottom: 1.5em;
+  }
+  .icons {
+    display: flex;
+    align-items: center;
+    height: 200px;
+  }
+  .react-icon,
+  .js-icon,
+  .html-icon,
+  .css-icon {
+    width: 55px;
+    margin: 0 1em;
+    opacity: 55%;
+  }
+  .html-icon,
+  .css-icon {
+    width: 50px;
+    opacity: 55%;
+  }
+  .react-icon {
+    width: 66px;
+    opacity: 88%;
+  }
+  .proj-desc-container {
+    width: 50%;
+    padding: 2em;
+  }
+  .project-img {
+    width: 44%;
+  }
+  .proj-pic-1 {
+    width: 100%;
+  }
+  .code-showcase {
+    display: flex;
+    width: 100%;
+    padding: 3em;
+    justify-content: center;
+    padding-top: 0em;
+  }
+  .code-container {
+    display: flex;
+    width: 88%;
+    align-items: center;
+  }
+  .showcase-desc {
+    width: 444px;
+    padding: 2em;
+  }
+  .showcase-desc p {
+    margin-bottom: 1.5em;
+    line-height: 1.6;
+  }
+  .code-pic {
+    margin-top: 1em;
+    border: 1px solid rgb(224, 224, 224);
   }
 }
 
-/* info cards */
-/* typography */
-.info-card .card-title {
-  font-size: 33px;
+footer {
+  margin-top: 4.4em;
+  background: var(--hero-page-colour);
+  padding: 2em;
+  padding-left: 4em;
+  padding-right: 4em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
-.giveHeart-icon {
-  font-size: 44px;
+
+.footer-text {
+  display: flex;
 }
-.money-icon {
-  font-size: 33px;
-}
-.cantskip-icon {
-  font-size: 33px;
-}
-.cantskip-icon::before {
-  content: "";
-}
-/* layout */
-.cards {
+.footer-cont {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin-top: 66px;
+  justify-content: center;
 }
-.info-card {
-  background: #eeeeee;
-  width: 444px;
-  padding: 1.5em 2em;
-  margin-bottom: 44px;
-}
-.info-card .card-head {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  margin-bottom: 22px;
-}
-.info-card p {
-  font-size: 20px;
-  text-align: left;
-  line-height: 1.6;
-}
-.card-1 {
-  border-top: 5px solid #ce394a;
-  color: #ce394a;
-}
-.card-1 p {
-  color: #9e2a37;
-}
-.card-2 {
-  border-top: 5px solid #45a81e;
-  color: #45a81e;
-}
-.card-2 p {
-  color: #348315;
-}
-.card-3 {
-  border-top: 5px solid #1492b0;
-  color: #1492b0;
-}
-.card-3 p {
-  color: #0f6c83;
-}
-.gazer-link {
-  color: #1f4b0d;
-}
-@media screen and (max-width: 500px) {
-  .info-card {
-    width: 295px;
-  }
-  .info-card .card-head {
-    align-items: flex-end;
-  }
-  .info-card .card-title {
-    font-size: 28px;
-  }
-  .giveHeart-icon {
-    font-size: 39.6px;
-  }
-  .money-icon {
-    font-size: 30px;
+
+@media screen and (min-width: 800px) and (max-width: 1750px) {
+  .code-pic {
+    width: 777px;
   }
 }
 
-@media screen and (min-width: 1500px) {
-  .cards {
-    flex-direction: row;
-    padding: 0 63.9px;
-    justify-content: space-between;
-    margin-top: 0;
-    align-items: flex-start;
-    margin-top: 44px;
+/* Medium size screen  */
+/* Can you tell me why this is not working? */
+@media screen and (min-width: 800px) and (max-width: 1200px) {
+  /* typography */
+  .code-showcase h3 {
+    color: #979797;
   }
-  .info-card {
-    height: 280px;
+  /* layout */
+  .code-container {
+    display: flex;
+    flex-direction: column;
   }
-}
-
-@media screen and (min-width: 1800px) {
-  .cards {
-    margin-top: 22px;
+  .project-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  .project-img,
+  .proj-desc-container {
+    width: 69%;
+  }
+  .proj-desc-container {
+    padding: 0;
+    padding-top: 3.3em;
+  }
+  .showcase-col-2 {
+    display: flex;
+    justify-content: center;
+  }
+  .showcase-desc {
+    width: 88%;
+    margin-top: 1em;
   }
 }

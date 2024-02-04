@@ -1,48 +1,49 @@
-import Rengoku_OST from "../Songs/OST/Rengoku.mp3";
-import Rengoku_img from "../Songs/OST/Ost-imgs/Rengoku_img.jpg";
+import song1_img from "../Songs/piano/song4_img.jpg";
 
-import PerfectTime from "../Songs/OST/Perfect Time.mp3";
-import PerfectTime_img from "../Songs/OST/Ost-imgs/meliodas.png";
+import Beautiful from "../Songs/black clover/Beautiful.mp3";
+import Beautiful_img from "../Songs/black clover/Asta.jpeg";
 
-import Clavar from "../Songs/OST/Clavar La Espada.mp3";
-import Clavar_img from "../Songs/Bleach/Afterdark-img.jpg";
+import Snow_Fairy from "../Songs/Snow Fairy.mp3";
+import Snow_Fairy_img from "../Songs/Snow Fairy-img.png";
 
-import Binke from "../Songs/One Piece/Binks.mp3";
-import shanksBuggy from "../Songs/One Piece/shanksbuggy.jpg";
+import DemonSlayer from "../Songs/Demon Slayer/Demon Slayer.mp3";
 
-let Ost_data = [
+import After_Dark from "../Songs/Bleach/After Dark.mp3";
+import After_Dark_img from "../Songs/Bleach/Afterdark-img.jpg";
+
+let anime_ost_data = [
   {
-    name: "Perfect Time (Now)",
-    songfile: PerfectTime,
-    id: 1,
-    songImage: PerfectTime_img,
-    artist: "Seven Deadly Sins ",
-    anime: "Seven Deadly Sins",
-  },
-  {
-    name: "Clavar La Espada",
-    songfile: Clavar,
-    id: 3,
-    songImage: Clavar_img,
-    artist: "Bleach",
-    anime: "Bleach",
-  },
-  {
-    name: "Binks no Sake",
-    songfile: Binke,
-    id: 4,
-    songImage: shanksBuggy,
-    artist: "One Piece",
-    anime: "One Piece",
-  },
-  {
-    name: "Rengoku vs Akaza",
-    songfile: Rengoku_OST,
-    id: 2,
-    songImage: Rengoku_img,
-    artist: "Demon Slayer",
+    name: "Opening 1",
+    songfile: DemonSlayer,
+    id: 29,
+    songImage: song1_img,
     anime: "Demon Slayer",
+    artist: "Demon Slayer",
+  },
+  {
+    name: "Beautiful",
+    songfile: Beautiful,
+    id: 30,
+    songImage: Beautiful_img,
+    anime: "Black Clover",
+    artist: "Black Clover",
+  },
+  {
+    name: "After Dark",
+    songfile: After_Dark,
+    id: 32,
+    songImage: After_Dark_img,
+    anime: "Bleach",
+    artist: "Bleach",
+  },
+  {
+    name: "Snow Fairy",
+    songfile: Snow_Fairy,
+    id: 33,
+    songImage: Snow_Fairy_img,
+    anime: "Fairy Tail",
+    artist: "Fairy Tail",
   },
 ];
 
-export default Ost_data;
+export default anime_ost_data;

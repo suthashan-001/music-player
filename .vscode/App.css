@@ -1,0 +1,2008 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,900;1,200;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@400;700;900&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  color: white;
+}
+
+/* ==================
+Mobile Version CSS  
+=====================*/
+.mobile-container {
+  /* main app container */
+  position: relative;
+  height: 100vh;
+  min-height: 50vh;
+  display: grid;
+  /* grid layout for app */
+  grid-template-rows: auto 108px 98px;
+}
+/* mobile page */
+.mobilePage {
+  width: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+/* mobile player */
+/* typography */
+/* layout */
+.mob-player-background {
+  background: rgb(201, 168, 148);
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  padding: 0.5em 1em;
+  align-items: center;
+  grid-column-gap: 2.2em;
+  color: rgb(39, 29, 25);
+}
+.mob-songImg-wrapper {
+  justify-self: center;
+}
+.mob-songImg {
+  width: 88px;
+  height: 88px;
+  object-fit: cover;
+}
+
+.play-button-div {
+  justify-self: center;
+  position: absolute;
+  right: 15px;
+  top: 18px;
+  color: #4b3931;
+}
+/* seekbar */
+.mob-seek-slider {
+  position: absolute;
+  top: 0;
+  width: 120%;
+}
+
+/* mobile nav */
+/* typography */
+.mob-nav-icon {
+  font-size: 44px;
+}
+.mob-sleep-icon {
+  font-size: 47px;
+}
+/* layout */
+.mob-player-nav-container {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+.mob-nav-container {
+  background: #4b3931;
+  width: 100%;
+}
+.mob-nav ul {
+  display: flex;
+  padding: 0;
+  list-style: none;
+  justify-content: space-around;
+}
+.mob-nav-link-container {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1em 2em;
+}
+.mob-nav-link-container.mob-active-page {
+  color: #ffb588;
+}
+.mob-nav-link-container:hover,
+.mob-nav-link-container:focus {
+  background: rgba(127, 97, 83, 0.7);
+}
+.mob-play-btn {
+  font-size: 55px;
+}
+.play-button-div {
+  top: 28px;
+  right: 22px;
+}
+
+/* screen size adjustments */
+@media screen and (max-width: 380px) {
+  .mob-nav-icon {
+    font-size: 22px;
+  }
+  .mob-songImg {
+    width: 55px;
+    height: 55px;
+  }
+  .mob-play-btn {
+    font-size: 44px;
+  }
+  .mob-song-name {
+    font-size: 22px;
+    letter-spacing: 1px;
+    max-width: 111px;
+  }
+  .mob-song-artist {
+    font-size: 15px;
+    max-width: 111px;
+  }
+}
+
+/* mobile homepage */
+/* typography */
+.learn-about-btn {
+  color: black;
+  font-weight: 700;
+  font-size: 22px;
+}
+/* layout */
+.mob-home-bg {
+  background: url(./background-images/mob-homepage-background.png);
+  min-height: 100%;
+  background-size: cover;
+  padding: 1em;
+  padding-bottom: 11.11em;
+}
+.learn-about-container {
+  width: 100%;
+  padding: 2em 1em;
+  display: flex;
+  justify-content: center;
+}
+.learn-about-btn {
+  display: inline-block;
+  font-family: inherit;
+  background: rgb(149, 247, 2);
+  border: none;
+  padding: 1em 2em;
+  border-radius: 12px;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+.learn-about-btn:hover,
+.learn-about-btn:focus {
+  background: rgb(149, 247, 2);
+  transform: scale(1.1);
+}
+
+/* display mobile songs */
+/* layout */
+.display-song-wrapper {
+  margin-bottom: 22px;
+}
+/* There is a grid technique that will display the maximum number of cards
+  based on the view port width */
+.mob-song-container {
+  overflow-x: scroll;
+  display: flex;
+  margin-top: 11px;
+}
+.mob-song-img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  box-shadow: rgb(253, 245, 238) 0px 5px 8px;
+}
+
+.mob-song-card {
+  padding: 1em;
+  padding-bottom: 1.5em;
+  background: #251d17;
+  margin-right: 33px;
+  text-align: center;
+  border-radius: 11px;
+}
+.mobcard-info-container {
+  height: 100%;
+}
+.mobcard-song-info {
+  height: 88px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+  padding: 0.5em;
+  padding-top: 1.5em;
+  border-radius: 5px;
+}
+.mobcard-song-name {
+  font-size: 18px;
+  letter-spacing: 1px;
+  margin-bottom: 11px;
+  font-weight: bolder;
+  color: greenyellow;
+}
+
+/* mobile full screen */
+/* layout */
+.mob-fs-bg {
+  background: url(./background-images/mob-homepage-background.png);
+  min-height: 100vh;
+  background-size: cover;
+  padding: 1em;
+  overflow-x: hidden;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  top: 0;
+  display: block;
+}
+
+.mob-song-img-container {
+  display: flex;
+  justify-content: center;
+  padding: 3.33em 0;
+  padding-bottom: 2.2em;
+}
+.mobile-fs-exit-icon-container {
+  background: rgba(255, 254, 254, 0.333);
+  padding: 0.1em;
+  width: fit-content;
+  position: fixed;
+  right: 18px;
+}
+.mobile-fs-exit-icon {
+  color: white;
+  font-size: 33px;
+}
+.mob-fs-songImg {
+  display: inline-block;
+  width: 333px;
+  height: 333px;
+  box-shadow: rgb(253, 245, 238) 0px 5px 15px;
+  object-fit: cover;
+}
+.mob-media-controls {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+/* about 432hz page */
+.mob-about-bg {
+  background: #03254a;
+  min-height: 100%;
+  padding: 1.5em;
+}
+.mob-about-container {
+  margin-bottom: 55px;
+}
+.about-underline {
+  background: white;
+  width: 100%;
+  height: 1px;
+  margin-bottom: 15px;
+}
+.about-links-container {
+  margin-bottom: 15px;
+}
+.about-link {
+  letter-spacing: 1px;
+}
+.about-link.lightblue {
+  color: rgb(99, 235, 255);
+}
+.about-link.green {
+  color: rgb(0, 255, 133);
+}
+.about-link.red {
+  color: rgb(255, 184, 0);
+}
+
+/* ======================
+      Patch Fixes
+  =======================*/
+/*  -> player goes behind the navbar at 444px (make player overlay the navbar) */
+
+/* ======================
+      Notices
+  =======================*/
+/*  -> the player is completly different */
+
+/* $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+    DESKTOP Version
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$*/
+
+/* ======================
+      General Page styling 
+  =======================*/
+.page-layout {
+  display: grid;
+  grid-template-columns: 222px auto;
+  grid-template-rows: auto 93px;
+  grid-template-areas:
+    "SideBar App"
+    "Player  Player";
+  height: 100vh;
+  min-height: 444px;
+}
+.sidebar {
+  grid-area: SideBar;
+}
+.playbar {
+  grid-area: Player;
+  z-index: 100;
+}
+.page {
+  grid-area: App;
+  min-width: 777px;
+  overflow-y: scroll;
+}
+/* custom scrollbar style */
+.page::-webkit-scrollbar {
+  width: 15px;
+}
+.page::-webkit-scrollbar-thumb {
+  background: rgba(134, 154, 175, 0.666);
+  border-radius: 33px;
+  box-shadow: inset rgba(255, 255, 255, 0.777) 0 0 2px 1px;
+}
+.page::-webkit-scrollbar-thumb:hover {
+  background: rgba(134, 154, 175, 1);
+  box-shadow: inset rgba(255, 255, 255, 1) 0 0 2px 1px;
+}
+
+/* mobile layout */
+/* Lesson: I am doing this the wrong way, I am just doing trial and error... 
+the mobile layout has to be planned first and I need to understand the styling of the webplayer
+before I can adjust for the mobile version. Study how you styled the webplayer (master css), 
+Take it one step at a time, There are level's to this shit! 
+You Are gonna fail but you are gonna learn 
+Learn it properly, have fun with it */
+
+/* ======================
+      Sidebar styling 
+  =======================*/
+/* sidebar-navigation-typography */
+.logo-title {
+  letter-spacing: 0.666px;
+  font-size: 22px;
+  font-family: "Heebo", sans-serif;
+  font-weight: 700;
+}
+.logo-colour-change {
+  color: #e0ab8a;
+}
+.sidebar-navigation li {
+  list-style-type: none;
+}
+.navigation-links {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  letter-spacing: 0.05em;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* -= sidebar-Layout =- */
+
+/* Logo */
+.resonate-logo {
+  padding: 0.33em 0.66em;
+  border-radius: 16px;
+  background: #251d17;
+  margin-top: 2.2em;
+}
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: url(./background-images/navBackground.png);
+  position: relative;
+}
+/* sidebar-navigation-layout  */
+.sidebar-navigation {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 11.625rem;
+  position: absolute;
+  left: 20px;
+  top: 125px;
+  padding: 0;
+  z-index: 1;
+}
+.navigation-links {
+  width: 11.625rem;
+  padding: 1em;
+  background: #4b3931;
+  border: none;
+}
+.active-button-link {
+  background: #866754;
+}
+.nav-link-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-areas: "Logo Link";
+}
+.nav-icon {
+  grid-area: Logo;
+  justify-self: center;
+}
+.nav-link-text {
+  grid-area: Link;
+  align-self: center;
+  margin-left: 0.69em;
+}
+/* navigation hover effects */
+.navigation-links:hover,
+.navigation-links:focus {
+  background-color: rgba(160, 148, 142, 0.5);
+}
+.navigation-links:hover .nav-icon,
+.navigation-links:focus .nav-icon {
+  transform: scale(1.369);
+}
+.active-page {
+  background: rgb(109, 94, 88);
+}
+
+/* logo link */
+.logo-link {
+  color: white;
+  text-decoration: none;
+  text-align: center;
+}
+.logo-link:hover .resonate-logo,
+.logo-link:focus .resonate-logo {
+  background: rgb(75, 57, 49);
+  transform: scale(1.05);
+}
+
+/* ======================
+      PlayBar styling 
+  =======================*/
+/* playbar-typography */
+.song-info {
+  font-family: "Montserrat", sans-serif;
+}
+.song-title {
+  font-size: 1.375rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+.song-artist {
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+.song-frequency {
+  color: #251d17;
+  font-weight: 900;
+  font-style: italic;
+  font-size: 0.938px;
+}
+.time {
+  color: rgb(180, 180, 180);
+}
+
+/* ===========
+playbar-layout  
+===============*/
+.playbar {
+  background: #4b3931;
+  padding: 0.5em;
+  width: 100%;
+}
+.playbar-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-areas: "Song-Info Media-Controls Other-Controls ";
+  align-items: center;
+}
+/* title and artist */
+.song-details-wrapper {
+  grid-area: Song-Info;
+  display: flex;
+  align-items: center;
+  margin-left: 17px;
+}
+.song-info {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 22px;
+  height: 77px;
+  align-items: center;
+  max-width: 500px;
+}
+.song-title-artist {
+  max-width: 399px;
+}
+.media-controls-wrapper {
+  grid-area: Media-Controls;
+  justify-self: flex-end;
+  display: flex;
+  align-items: center;
+  width: 515px;
+  justify-content: space-evenly;
+  position: relative;
+}
+.other-controls-wrapper {
+  grid-area: Other-Controls;
+  justify-self: flex-end;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+}
+/* playbar-icons */
+
+.outter-icons {
+  color: #e3e1e1;
+}
+.mainPlay-icon,
+.inner-icons {
+  color: #ffffff;
+}
+.playbar-icon:hover {
+  color: #e0ab8a;
+}
+.mainPlay-icon:hover {
+  transform: scale(1.11);
+}
+.volume-control {
+  margin: 0px 11px;
+  margin-left: 44px;
+  display: flex;
+}
+.slider {
+  /* removes default browser styling */
+  -webkit-appearance: none;
+  outline: none;
+  border-radius: 11px;
+  opacity: 0.7;
+}
+.slider:hover {
+  opacity: 1;
+}
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.volume-slider {
+  height: 11px;
+  margin-top: 11px;
+  margin-left: 9px;
+}
+.volume-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  background: white;
+  border-radius: 50%;
+  cursor: pointer;
+}
+/* playbar-slider hovers */
+.volume-slider:hover.volume-slider::-webkit-slider-thumb {
+  background: #e0ab8a;
+}
+.volume-slider::-webkit-slider-thumb:hover {
+  opacity: 1;
+}
+/* playbar-icons */
+.fullscreen-icon {
+  margin-left: 22px;
+  margin-right: 10px;
+  margin-top: 5px;
+}
+.queueIcon {
+  margin: 0 10px;
+}
+.other-controls-icon {
+  color: rgb(202, 202, 202);
+}
+.other-controls-icon:hover {
+  color: #e0ab8a;
+}
+.sound-icon {
+  color: rgb(202, 202, 202);
+}
+.sound-icon:hover {
+  color: #ffffff;
+}
+
+/* repeat button effects*/
+.repeat-button,
+.fs-repeat-button {
+  position: relative;
+}
+.show-repeat {
+  color: #d1a081;
+}
+.fs-repeat-circle,
+.fs-repeat-infinite,
+.repeat-circle,
+.repeat-infinite {
+  display: none;
+}
+/* adjust colour */
+.fs-repeat-circle.show,
+.fs-repeat-infinite.show,
+.repeat-circle.show,
+.repeat-infinite.show {
+  background-color: #d1a081;
+  border-radius: 50%;
+  position: absolute;
+}
+.fs-repeat-circle.show,
+.repeat-circle.show {
+  display: block;
+  width: 6px;
+  height: 6px;
+  left: 14.5px;
+}
+.fs-repeat-infinite.show,
+.repeat-infinite.show {
+  display: flex;
+  width: 15px;
+  height: 15px;
+  top: 1px;
+  right: 0;
+  color: white;
+  justify-content: center;
+  align-items: center;
+}
+.playerOffShuffle.highlight {
+  color: #d1a081;
+}
+
+/* background on seekbar */
+.playbar-decor {
+  position: absolute;
+  top: -44px;
+}
+.seekbar-wrapper {
+  position: absolute;
+  top: -39px;
+}
+.seek-slider {
+  width: 425px;
+  height: 7px;
+  opacity: 1;
+  background: rgb(222, 222, 222);
+}
+.seek-slider::-webkit-slider-thumb {
+  background: rgb(224, 171, 138);
+  height: 16px;
+  width: 16px;
+}
+.seek-slider::-webkit-slider-thumb:hover {
+  background: rgb(182, 130, 98);
+  height: 18px;
+  width: 18px;
+}
+.song-image {
+  height: 66px;
+  width: 66px;
+  object-fit: cover;
+}
+
+/* ======================
+      SongPage styling 
+  =======================*/
+/* SongPage-typography */
+.page-title {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 2.25rem;
+  line-height: 42px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+.btn {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.125rem;
+  line-height: 21px;
+  letter-spacing: 0.05em;
+}
+.play-btn {
+  color: #03254a;
+}
+.upload-btn {
+  color: #ffffff;
+}
+.heading-style {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1rem;
+  line-height: 23px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.666);
+}
+
+.songName,
+.songArtist,
+.songFrequency {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.25rem;
+  letter-spacing: 1px;
+  color: #ffffffea;
+}
+
+/* SongPage-Layout (My custom page hehe)*/
+
+/* display flex */
+.page-background,
+.page-pannel,
+.page-buttons,
+.btn {
+  display: flex;
+}
+.page-background {
+  align-items: flex-start;
+  background: #03254a;
+  padding: 0.5em 2.5em;
+}
+.page-pannel {
+  flex-direction: column;
+  background: rgba(241, 241, 241, 0.22);
+  width: 100%;
+  padding: 1em 0;
+  margin-top: 33px;
+  margin-bottom: 222px;
+}
+.pannel-header {
+  padding: 0 3em 3em 3em;
+}
+.page-title {
+  margin-bottom: 1em;
+}
+.btn {
+  align-items: center;
+  padding: 10px 44px;
+  border: none;
+  border-radius: 25px;
+  opacity: 0.88;
+  position: relative;
+  cursor: pointer;
+}
+.play-btn {
+  padding-left: 55px;
+  padding-right: 55px;
+  background: rgb(255, 255, 255);
+  margin-right: 2em;
+}
+.upload-btn {
+  background: #03254a;
+}
+.upload-icon,
+.play-icon {
+  display: none;
+  position: absolute;
+}
+/* button hovers */
+.play-btn:hover,
+.upload-btn:hover,
+.play-btn:focus,
+.upload-btn:focus {
+  transform: scale(1.12);
+  opacity: 1;
+}
+.upload-btn:hover .upload-icon,
+.upload-btn:focus .upload-icon,
+.play-btn:hover .play-icon,
+.play-btn:focus .play-icon {
+  display: block;
+  left: 55px;
+}
+.upload-btn:hover .button-text,
+.upload-btn:focus .button-text,
+.play-btn:hover .button-text,
+.play-btn:focus .button-text {
+  opacity: 0;
+}
+
+/* Display Songs */
+.displaySong-head,
+.songCard {
+  padding: 1em 0em;
+  border-bottom: 1px solid white;
+  position: relative;
+}
+.songCard:hover {
+  background: #74889e;
+}
+.songCard:hover .playSong-icon {
+  display: block;
+}
+.playSong-icon {
+  position: absolute;
+  top: 12px;
+  left: 22px;
+  color: #ffffff;
+  display: none;
+}
+.playSong-icon:hover {
+  transform: scale(1.2);
+}
+.displaySong-container {
+  display: grid;
+  padding: 0 5.5em;
+  grid-template-columns: 1.85fr 1.5fr 0.2fr;
+}
+.add-toQueue {
+  position: absolute;
+  right: 22px;
+}
+
+/*===================
+    Queue Page
+====================== */
+/* typograghy */
+
+.now-playing {
+  letter-spacing: 1px;
+  margin-bottom: 1em;
+}
+.up-next {
+  margin: 2em 0 1em 0;
+}
+/* layout */
+.queue-container {
+  margin-top: 2em;
+}
+.queue-song-container {
+  display: grid;
+  grid-template-columns: 77px 2.5fr 2.5fr 0.5fr;
+  grid-template-areas: "SongImage SongName SongArtist Frequency";
+  background-color: #74889e70;
+  padding: 0.5em 1em;
+  align-items: center;
+  margin-bottom: 0.5em;
+}
+.queue-image-container {
+  position: relative;
+  grid-area: SongImage;
+}
+.queue-play-icon {
+  position: absolute;
+  opacity: 0;
+  background: rgba(0, 0, 0, 0.777);
+  left: 0;
+  padding: 0.88em;
+  height: 77px;
+  width: 77px;
+}
+.queue-song-image {
+  height: 77px;
+  width: 77px;
+  object-fit: cover;
+}
+.queue-song-name {
+  grid-area: SongName;
+  padding-left: 2em;
+}
+.queue-song-artist {
+  grid-template-areas: SongArtists;
+}
+.queue-song-frequency {
+  grid-template-areas: Frequency;
+}
+.page-background {
+  display: block;
+}
+/* queue song hover */
+.queue-image-container:hover .queue-play-icon {
+  opacity: 1;
+}
+.queue-song-container:hover {
+  background-color: #9fb9dba2;
+}
+
+.queuePage-message {
+  display: flex;
+  align-items: baseline;
+}
+
+.queue-title {
+  margin-right: 1em;
+}
+
+/* ===================
+    FullScreen Mode Small Screens
+====================== */
+/* fs-typography */
+.fs-songTitle,
+.fs-songArtist {
+  text-transform: uppercase;
+  color: #ffffff;
+  font-weight: bold;
+}
+.fs-Time {
+  color: rgb(222, 222, 222);
+  font-style: italic;
+}
+.fs-songTitle {
+  letter-spacing: 0.1em;
+  font-size: 36px;
+  line-height: 56px;
+}
+.fs-songArtist {
+  letter-spacing: 0.05em;
+  font-size: 18px;
+  line-height: 28px;
+}
+/* fs-layout */
+.fs-background {
+  background: url(./background-images/fullscreen-background-new.png);
+  background-position: 155px;
+  height: 100vh;
+  width: 100vw;
+  display: none;
+  /* overflow-y: hidden;
+  overflow-x: hidden;
+  min-height: 555px;
+  min-width: 1330px;
+  */
+  position: absolute;
+  opacity: 1;
+  top: 0;
+  left: 0;
+}
+.fs-background.show {
+  display: block;
+}
+.fs-container {
+  position: relative;
+  top: 33px;
+  left: 66px;
+  height: 80%;
+  width: 88%;
+  min-height: 444px;
+  min-width: 888px;
+  display: grid;
+  grid-template-columns: 1.5fr 2fr 0.5fr;
+  grid-template-areas: "Col-1 Col-2 Col-3";
+}
+.fs-col-1 {
+  grid-area: Col-1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.fs-col-2 {
+  grid-area: Col-2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  padding-left: 3.3em;
+}
+.fs-col-3 {
+  grid-area: Col-3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  padding-left: 4em;
+}
+/* col-1 styling */
+.fs-songImage {
+  background: white;
+  height: 396px;
+  width: 396px;
+  object-fit: cover;
+  border-radius: 5%;
+}
+/* col-2 styling */
+.fs-title-artist {
+  margin-bottom: 4em;
+  text-align: center;
+}
+.fs-songTitle {
+  margin-bottom: 16px;
+}
+.fs-icons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 444px;
+}
+.fs-seek-slider {
+  margin-bottom: 4.4em;
+  width: 444px;
+}
+.fs-media-controls {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.fs-songTime {
+  width: 444px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+.fs-seekbar-container {
+  display: flex;
+  justify-content: center;
+}
+/* col-3 styling */
+.icon-background {
+  display: flex;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.222);
+  color: rgb(222, 222, 222);
+}
+.icon-background:hover,
+.icon-background:focus {
+  background: rgba(255, 255, 255, 0.444);
+  color: rgb(255, 255, 255);
+}
+
+.small-view-slider {
+  transform: rotate(180deg);
+}
+.fs-sound-button {
+  position: relative;
+}
+.fs-volume-slider-box {
+  transform: rotate(90deg);
+  width: 144px;
+  height: 39px;
+  background: rgba(255, 255, 255, 0.222);
+  position: absolute;
+  top: -91px;
+  left: -52px;
+  display: none;
+}
+.fs-volume-slider-box.show {
+  display: block;
+}
+.fullscreen-icon-background {
+  background: rgba(255, 255, 255, 0.222);
+  color: rgb(222, 222, 222);
+}
+.fs-exit-icon {
+  font-size: 33px;
+}
+.fs-sound-icon {
+  font-size: 33px;
+}
+
+/* ========================
+      Home Page
+  =========================*/
+
+/* typography */
+.section-title {
+  font-size: 33px;
+}
+.card-name,
+.card-artist,
+.card-frequency {
+  font-size: 16px;
+}
+/* layout */
+.homePage-background {
+  background: url(./background-images/home.png);
+  background-size: cover;
+  background-position: bottom;
+  padding: 125px 2em 2em 2em;
+}
+.section-container {
+  background: rgba(196, 196, 196, 0.33);
+  padding: 2em 3em;
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 2em;
+}
+/* Song Cards */
+.card-container {
+  padding: 1em;
+  background: #7a5d50;
+  border-radius: 15px;
+  position: relative;
+}
+.card-image {
+  width: 123px;
+  height: 123px;
+  object-fit: cover;
+}
+.songCard-info {
+  display: flex;
+  flex-direction: column;
+  height: 66px;
+  justify-content: space-around;
+}
+.songCard_PlayIcon {
+  color: white;
+  font-size: 55px;
+}
+.hover-container {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.666);
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 15px;
+  display: none;
+}
+
+/* card hover effect */
+.card-container:hover .hover-container {
+  display: flex;
+  justify-content: center;
+}
+.card-container:hover .songCard_PlayIcon {
+  margin-top: 40%;
+}
+
+/* =====================
+    Anime Page
+  ======================*/
+/* typography */
+.pannel-title {
+  font-size: 22px;
+}
+.sub-heading {
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+.opening-name,
+.opening-anime {
+  font-weight: 400;
+}
+/* anime-page layout */
+.anime-page {
+  padding-top: 3.3em;
+}
+.dub-pannel {
+  margin-bottom: 55px;
+}
+.dub-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 1em 0;
+}
+.Dub-card {
+  position: relative;
+  padding: 2em;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding-bottom: 1em;
+}
+.dubcard-name {
+  font-size: 22px;
+  text-align: center;
+  padding-top: 1.1em;
+}
+
+.anime-dub-img {
+  height: 144px;
+  width: 144px;
+}
+
+.dubCard-hoverEffect {
+  position: absolute;
+  background: black;
+  height: 100%;
+  width: 100%;
+  top: -1px;
+  left: -1px;
+  opacity: 0.7;
+  display: none;
+}
+.play-dub-song {
+  width: 66px;
+  height: 66px;
+  color: white;
+  display: none;
+}
+.Dub-card:hover .dubCard-hoverEffect {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Dub-card:hover .play-dub-song {
+  display: block;
+}
+.sub-card {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1em 0;
+}
+
+/* anime-page sub songs */
+.anime-opening-pannel {
+  margin-bottom: 3em;
+}
+.anime-page-buttons {
+  padding: 1em;
+}
+.sub-card {
+  display: grid;
+  grid-template-columns: 0.5fr 1fr 1fr;
+  align-items: center;
+  padding-left: 2.2em;
+}
+.anime-heading-title {
+  margin-left: 5em;
+}
+.opening-name {
+  margin-left: 2em;
+}
+.opening-anime {
+  margin-left: 5em;
+}
+.opening-img {
+  height: 100px;
+  width: 100px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+.sub-heading {
+  display: flex;
+  padding: 1em 0em;
+  border-bottom: 1px solid white;
+  margin: 2em 0;
+  justify-content: space-around;
+}
+
+/* sub opening cards */
+.col-A {
+  position: relative;
+}
+.play-hoverEffect-sub {
+  position: absolute;
+  background: black;
+  height: 100px;
+  width: 100px;
+  top: 0;
+  opacity: 0.666;
+  display: none;
+}
+.play-sub-song {
+  color: white;
+  font-size: 55px;
+  position: absolute;
+  left: 20px;
+  bottom: 25px;
+}
+/* sub opening hover */
+.sub-card:hover {
+  background: #74889e;
+}
+.sub-card:hover .play-hoverEffect-sub {
+  display: block;
+}
+
+/* Sleep page */
+.sleep-card {
+  background: white;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  text-align: center;
+}
+.sleep-img {
+  height: 169px;
+  width: 169px;
+  margin-bottom: 0.5em;
+}
+.music-link {
+  display: inline-block;
+  background: white;
+  margin: 0.5em;
+  font-size: 16px;
+}
+.sleep-pannel {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+/* Elevate page */
+.elevate-title {
+  font-size: 30px;
+  margin: 1.4em 0;
+}
+
+.elevate-page-pannel {
+  margin-bottom: 4.4em;
+}
+
+/* =====================
+    Viewport edits
+  ======================*/
+
+/* large screen edits: pixel range (1500) */
+@media screen and (min-width: 1500px) {
+  /* adjusts the width and height of the sidebar and player (they take up full space of grid column/row) */
+  .page-layout {
+    grid-template-columns: 240px auto;
+    grid-template-rows: auto 101px;
+  }
+
+  /* sidebar */
+  .navigation-links {
+    width: 200px;
+    padding: 1em;
+    font-size: 20px;
+  }
+  .logo-title {
+    font-size: 27px;
+  }
+  /* nav icon adjustments */
+  .home-icon,
+  .elevate-icon,
+  .anime-icon {
+    font-size: 33px;
+  }
+  .sleep-icon,
+  .docs-icon {
+    font-size: 36px;
+  }
+
+  /* home page */
+  .section-container {
+    margin-bottom: 4em;
+    justify-content: space-around;
+  }
+  /* front card edits */
+  .card-image {
+    height: 169px;
+    width: 169px;
+  }
+  .card-name {
+    font-size: 22px;
+  }
+  .card-artist {
+    font-size: 18px;
+  }
+  .songCard-info {
+    height: 99px;
+    justify-content: space-evenly;
+  }
+
+  /* playbar */
+  .playbar-wrapper {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .other-controls-wrapper {
+    justify-content: flex-end;
+    margin-right: 3em;
+  }
+  .fullscreen-icon {
+    margin-left: 30px;
+  }
+
+  /* fullscreen edits  */
+  .fs-songImage {
+    width: 444px;
+    height: 444px;
+    margin-left: 4.4em;
+  }
+  .fs-songTitle {
+    font-size: 44px;
+  }
+  .fs-songArtist {
+    font-size: 20px;
+  }
+  .fs-col-3 {
+    padding: 5em 4em;
+  }
+  .icon-background {
+    padding: 1em;
+  }
+  .fs-exit-icon {
+    font-size: 44px;
+  }
+  .fs-sound-icon {
+    font-size: 44px;
+  }
+}
+
+/* =============
+  Pop up message
+  ==============*/
+.dark-overlay {
+  position: absolute;
+  background: rgb(44, 44, 44);
+  z-index: 100;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Popup-container {
+  background: white;
+  color: black;
+  font-size: 22px;
+  font-weight: bold;
+  padding: 2em;
+  z-index: 100;
+  width: 85%;
+  position: relative;
+}
+.popup-x {
+  position: absolute;
+  font-size: 44px;
+  color: white;
+  top: -28px;
+  right: -28px;
+}
+.chibi-asta {
+  position: absolute;
+  height: 333px;
+  top: -260px;
+  left: 0;
+}
+.popup-highlight {
+  color: rgb(81, 124, 6);
+}
+.gazersuthy-link {
+  display: inline-block;
+  padding: 0.5em 1em;
+  background: black;
+  text-decoration: none;
+  color: white;
+  margin-top: 22px;
+  border-radius: 5px;
+}
+.gazersuthy-link:focus,
+.gazersuthy-link:hover {
+  background: rgb(81, 124, 6);
+  color: black;
+}
+
+/* About 432hz */
+.doc-head {
+  margin-left: 9px;
+  color: cyan;
+}
+.doc-blog-link {
+  color: white;
+  padding: 1em;
+}
+d .doc-link {
+  background: white;
+  width: fit-content;
+}
+.doc-card {
+  align-items: center;
+}
+.doc-img {
+  width: 222px;
+}
+.video-doc-head {
+  color: yellow;
+  display: flex;
+  align-items: center;
+  font-size: 33px;
+}
+
+/* ================
+  Mobile Styles
+====================*/
+/* mobile fullscreen song name and artist */
+.mobile-song-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  margin-top: 11.11px;
+  margin-bottom: 44.44px;
+}
+.mobile-song-name {
+  font-size: 33px;
+  max-width: 333px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  padding-bottom: 0.5em;
+}
+.mobile-song-artist {
+  letter-spacing: 0.25px;
+}
+/* Mobile Seek Slider */
+.mob-seekbar-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 22px;
+}
+.mobile-seek-slider {
+  margin-top: 22px;
+  height: 22px;
+}
+.mobile-seek-slider::-webkit-slider-thumb {
+  background: rgb(224, 171, 138);
+  height: 33px;
+  width: 33px;
+}
+@media screen and (max-width: 444px) {
+  .mobile-seek-slider::-webkit-slider-thumb {
+    display: none;
+    background: transparent;
+  }
+}
+.mobile-seek-slider::-webkit-slider-thumb:hover {
+  background: rgb(182, 130, 98);
+  height: 44px;
+  width: 44px;
+}
+.display-mobile-time {
+  display: flex;
+  width: 425px;
+  justify-content: space-between;
+  margin-top: 11.11px;
+}
+.mobile-time {
+  color: rgb(44, 44, 44);
+  font-size: 22px;
+}
+.mob-player-icon:hover,
+.mob-player-icon:focus {
+  color: white;
+  transform: scale(1.1);
+}
+.mob-fs-exit-icon {
+  color: white;
+  font-size: 33px;
+  background: rgba(255, 255, 255, 0.222);
+  position: absolute;
+  right: 22px;
+  z-index: 1000;
+  top: -699.3px;
+}
+
+/* Fixing mobile view port */
+@media screen and (max-width: 500px) {
+  .mob-fs-songImg {
+    width: 222px;
+    height: 222px;
+  }
+  .mob-song-img-container {
+    padding-bottom: 11px;
+  }
+  .mobile-song-name {
+    padding-bottom: 0.333em;
+  }
+  .mobile-seek-slider {
+    width: 285px;
+  }
+  .display-mobile-time {
+    width: 285px;
+  }
+}
+
+@media screen and (max-width: 345px) {
+  .mobile-song-details {
+    margin-bottom: 11px;
+  }
+  .mob-seekbar-wrapper {
+    margin-top: 0;
+  }
+  .mob-song-img-container {
+    padding-top: 2.2em;
+  }
+}
+
+/* mobile anime page */
+.mob-animepg-bg {
+  background: #03254a;
+  min-height: 100vh;
+  padding: 0.5em;
+  padding-top: 2em;
+}
+.mob-anime-head {
+  margin-bottom: 22px;
+}
+.mob-page-pannel {
+  background: rgba(255, 255, 255, 0.233);
+  padding: 1em;
+}
+.anime-page-btns {
+  display: flex;
+  margin-bottom: 11px;
+}
+
+@media screen and (max-width: 380px) {
+  .btn {
+    width: 111px;
+  }
+  .button-text {
+    margin-left: -18px;
+  }
+  .mob-anime-icon {
+    font-size: 33px;
+    margin-left: -11px;
+  }
+}
+
+/* sleep page */
+.mobile-sleep-card {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 22px;
+}
+.mobile-music-link {
+  display: inline-block;
+}
+.mob-sleep-pannel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.mobile-logo-link {
+  display: inline-block;
+  margin-bottom: 33px;
+}
+.mobile-logo-link-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.281);
+  margin-bottom: 33px;
+}
+
+/* mobile about page */
+.mob-about-bg {
+  padding-bottom: 11em;
+}
+.resonate-logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid white;
+  border-radius: 22.22px;
+  padding: 11px;
+  color: white;
+  text-decoration: none;
+}
+.resonate-logo-container:hover,
+.resonate-logo-container:focus {
+  background: rgba(255, 255, 255, 0.11);
+}
+.mobile-logo {
+  width: 111.1px;
+  margin-right: 11px;
+}
+.mob-highlight {
+  color: gold;
+}
+.video-link-container {
+  display: flex;
+  flex-direction: column;
+}
+.video-link-title {
+  margin-top: 33px;
+  color: gold;
+}
+.about-underline {
+  background: gold;
+}
+.mobile-link-container {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.178);
+  margin-top: 22px;
+  text-align: center;
+  color: gold;
+  margin: 22px auto;
+}
+.mobile-link-container:hover,
+.mobile-link-container:focus {
+  background: rgba(255, 255, 255, 0.333);
+}
+.mob-chibiluffy {
+  width: 333px;
+}
+@media screen and (max-width: 444px) {
+  .mob-chibiluffy {
+    width: 222px;
+  }
+}
+.mob-animepg-bg {
+  padding-bottom: 11em;
+}
+
+/* =================
+  Intro Page (landing page)
+===================*/
+
+/* browzer was zoomed in to 140% which affected all the scaling... */
+
+.intro-button {
+  border-radius: 33px;
+  border: 1px solid #fff;
+
+  background: linear-gradient(
+    90deg,
+    #e16dae 32.03%,
+    rgba(224, 108, 174, 0.99) 32.03%,
+    rgba(111, 52, 155, 0) 100%
+  );
+  color: white;
+  font-size: 33px;
+  padding: 0.25em 1em;
+  margin-bottom: 3em;
+  display: inline-block;
+}
+.intro-button:hover,
+.intro-button:focus {
+  scale: 1.15;
+  cursor: pointer;
+  filter: drop-shadow(5px 5px 5px rgba(255, 1, 145, 1));
+}
+.golden-highlight {
+  color: #f9ad32;
+}
+.pink-text-highlight {
+  color: #ff80c8;
+}
+.blue-text-highlight {
+  color: #4cd3f2;
+}
+.green-text-highlight {
+  color: #a7ff90;
+}
+.golden-text-highlight {
+  color: #f7cd60;
+}
+
+@media screen and (max-width: 999px) {
+  /* typgraphy */
+  .app-title {
+    font-size: 36.9px;
+  }
+  .app-title-mobile {
+    font-weight: 400;
+    font-size: 22px;
+    margin-top: 0.25em;
+    font-style: italic;
+  }
+  .intro-page {
+    background: #424242;
+  }
+  .app-desc {
+    display: none;
+  }
+  .hero-col1 {
+    display: none;
+  }
+  .hero-headings {
+    background: #000000cc;
+    width: 100%;
+    text-align: center;
+    padding: 1.5em 0em;
+  }
+  .hero-col2 {
+    padding-top: 2em;
+    background-image: url("./background-images/landingpage-mobile.png");
+    background-size: cover;
+    background-position: center;
+    height: 88vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .chibi-zen {
+    margin-top: -2em;
+    width: 275px;
+  }
+  .developer-section {
+    background: #0b0308;
+    text-align: center;
+    line-height: 1.6;
+    padding: 1em;
+    padding-left: 3em;
+    padding-right: 3em;
+  }
+  .mobile-app-desc p {
+    margin-bottom: 1em;
+    font-family: "Montserrat", sans-serif;
+  }
+  .developed {
+    margin-top: 1em;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+  }
+
+  /* developer info section */
+  .developer-section {
+    padding-top: 3em;
+  }
+  .developer-section-title {
+    margin-top: 4em;
+  }
+  .developer-icon {
+    margin-bottom: 2em;
+  }
+  .profile-pic {
+    width: 123.4px;
+  }
+  .icon-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3em;
+  }
+  /* developer icon styles */
+  .github-icon {
+    width: 111px;
+    margin-left: 10px;
+  }
+  .insta-icon {
+    width: 111px;
+    font-size: 22px;
+  }
+  .glitch-icon {
+    width: 111px;
+    margin-left: -44px;
+  }
+}
+
+/* Extremly small screen size */
+
+@media screen and (min-width: 500px) {
+  .hero-col2 {
+    background-size: calc(100%);
+    background-repeat: no-repeat;
+    background-position: center;
+    padding-top: 2em;
+  }
+  .hero {
+    background: #1c182d;
+  }
+  .chibi-zen {
+    width: 333px;
+  }
+}
+
+/* =============== 
+    Desktop style
+  ================*/
+@media screen and (min-width: 999px) {
+  /* typography */
+  .developed {
+    margin-top: 0.5em;
+    font-weight: 400;
+  }
+  .app-title {
+    font-size: 33px;
+    letter-spacing: 1.5px;
+  }
+  .app-title-mobile {
+    font-weight: 400;
+    text-align: center;
+  }
+  .mobile-app-desc {
+    display: none;
+  }
+  .developer-section-title,
+  .dev-icons {
+    color: black;
+  }
+  /* layout */
+  .character-icon {
+    display: none;
+  }
+  .hero {
+    background: #2f2f2f;
+    display: grid;
+    grid-template-columns: 1.23fr 1fr;
+  }
+  .hero-col1 {
+    background-image: url("./background-images/landingpage.png");
+    background-size: cover;
+    height: 95vh;
+  }
+  .hero-col2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3em;
+    padding-bottom: 2em;
+  }
+  .app-desc {
+    color: #bebebe;
+    line-height: 1.4;
+    margin-bottom: 2em;
+    margin-top: 1em;
+  }
+  .app-desc p {
+    margin-bottom: 2em;
+  }
+  .app-desc p:last-child {
+    margin-bottom: 3.3em;
+  }
+  .hero-headings {
+    position: relative;
+    padding-bottom: 2.2em;
+    z-index: 100;
+  }
+  .developer-section {
+    padding: 3em;
+  }
+  .flex-container {
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  /* typography */
+  .app-desc {
+    font-size: 20px;
+    font-weight: 400;
+    color: #bebebe;
+    line-height: 1.4;
+    font-family: "Montserrat", sans-serif;
+    letter-spacing: -0.25px;
+  }
+  .app-title {
+    font-size: 44px;
+  }
+  .app-title-mobile {
+    color: white;
+    font-size: 22px;
+    font-style: normal;
+    letter-spacing: 1px;
+    text-align: left;
+  }
+  .developed {
+    font-style: normal;
+    letter-spacing: 1.5px;
+  }
+  /* layout */
+  .hero {
+    grid-template-columns: 0.8fr 1fr;
+  }
+  .hero-col1 {
+    background-image: url("./background-images/landingpage.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 95vh;
+  }
+  .hero-col2 {
+    padding-right: 5em;
+    padding-left: 5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding-bottom: 5em;
+    align-items: flex-start;
+  }
+  .hero-headings {
+    align-self: flex-start;
+  }
+  .cta-btn {
+    display: inline-block;
+    width: max-content;
+    height: 69px;
+    margin-top: -3em;
+  }
+}

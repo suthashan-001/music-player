@@ -15,7 +15,7 @@ const FullScreen = (props) => {
   var repeatCircle = document.querySelector(".repeat-circle");
   var repeatInfinite = document.querySelector(".repeat-infinite");
 
-  // full screen repeat icon
+  // full screen repeat icon (fs = fullscreen)
   var fs_repeatIcon = document.querySelector(".fs-repeat-icon");
   var fs_repeatCircle = document.querySelector(".fs-repeat-circle");
   var fs_repeatInfinite = document.querySelector(".fs-repeat-infinite");

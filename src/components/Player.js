@@ -1,4 +1,6 @@
 import React from "react";
+
+// import icons
 import { Icon } from "@iconify/react";
 import skipBackIcon from "@iconify/icons-ph/skip-back";
 import playButtonIcon from "@iconify/icons-gg/play-button-o";
@@ -11,35 +13,12 @@ import pauseButtonIcon from "@iconify/icons-ant-design/pause-circle-outlined";
 import image from "../background-images/decor.png";
 import FullScreen from "./FullScreen";
 
-const Player = (props) => {
-  if (props.isPlaying === true) {
-    return (
-      <PlayerOn
-        songQueue={props.songQueue}
-        setIsPlaying={props.setIsPlaying}
-        newRequest={props.newRequest}
-        setNewRequest={props.setNewRequest}
-        displayQueue={props.displayQueue}
-        setDisplayQueue={props.setDisplayQueue}
-        queueIndex={props.queueIndex}
-        setQueueIndex={props.setQueueIndex}
-      ></PlayerOn>
-    );
-  } else {
-    return (
-      <PlayerOff
-        shuffle={props.shuffleOn}
-        setShuffle={props.setShuffleOn}
-      ></PlayerOff>
-    );
-  }
-};
-
 /* ======================
       Player On
   =======================*/
 
 const PlayerOn = ({
+  // states are used for data that changes over time and causes a 'rerender' when it does change
   songQueue,
   setIsPlaying,
   newRequest,
@@ -63,22 +42,23 @@ const PlayerOn = ({
   const [repeatSong, setRepeatSong] = React.useState(false);
 
   /* 
-        https://reactjs.org/docs/refs-and-the-dom.html
-        we want a ref for the audio because audio element is part of the DOM, media playbacks 
+        We want a ref for the audio because audio element is part of the DOM, media playbacks 
         (such as timestamps "where the song is paused") are kept seperatly from React,
-        and we don't want to rerender everytime user hits pause and play. 
-    */
+        and we don't want to rerender everytime user hits pause and play.  -> read more on lessons.md
+  */
 
   const audioRef = React.useRef();
 
   /* ======
   Audio Functions
   =========*/
-  // user invokes a playback request
+
+  // user invokes a playback request [to play the song at the current time stamp]
   function setPlayback() {
     setPlaybackTriggered(true);
     setPause(!pause);
   }
+
   // helper function to convert time from seconds to minutes
   function convertTime(time) {
     if (!isNaN(time)) {
@@ -89,6 +69,7 @@ const PlayerOn = ({
       return "--:--";
     }
   }
+
   function handleVolume(e) {
     setVolume(e.target.value / 100);
   }
@@ -98,11 +79,12 @@ const PlayerOn = ({
     setIsSeeking(false);
   }
 
-  // in a playlist, the player will automatically go to next song
+  // in a playlist, the player will automatically go to next song when the current song is finished playing
   function nextQueueSong() {
     if (queueIndex !== songQueue.length - 1) {
       setQueueIndex(queueIndex + 1);
     } else if (queueIndex === songQueue.length - 1 && repeatQueue === true) {
+      //loops back to the start position in queue if user wants to repeat through the queue
       setQueueIndex(0);
     } else {
       setIsPlaying(false);
@@ -117,7 +99,8 @@ const PlayerOn = ({
       setQueueIndex(queueIndex + 1);
     }
   }
-  //user manually wants preivous song in queue
+
+  //user manually wants to go to the previous song in queue
   function previousSong() {
     if (queueIndex !== 0) {
       setQueueIndex(queueIndex - 1);
@@ -126,16 +109,10 @@ const PlayerOn = ({
     }
   }
 
-  // 4 useEffects, when unmounted "what does that mean" they still run which causes memory
-  // leaks which leads to bugs
-
-  /* The memory leak will happen if the API server or host took some time to respond 
-  and the component was unmounted before the response was received. 
-  (why songQueue became undefined) because of a memory leak */
-
   /* =============
   Manipulating Dom Audio element
   ================*/
+
   React.useEffect(() => {
     audioRef.current.src = songQueue[queueIndex].songfile;
 
@@ -150,12 +127,12 @@ const PlayerOn = ({
       setNewRequest(false);
     }
 
-    // delay to playing song
+    // there is a start delay to playing a song.
     setTimeout(() => {
       audioRef.current.play();
     }, 2000);
 
-    /* goal is to clean up this useEffect to prevent memory leaks {Work in Progress} */
+    /* goal is to clean up this useEffect to prevent memory leaks {Work in Progress} 
 
     // return function cleanUp() {
     //   console.log(copy_node);
@@ -170,19 +147,6 @@ const PlayerOn = ({
     // };
   }, [queueIndex, newRequest, setNewRequest, songQueue]);
 
-  //playback useEffect
-  React.useEffect(() => {
-    if (playBackTriggered) {
-      if (pause) {
-        audioRef.current.pause();
-      } else {
-        audioRef.current.play();
-      }
-      // we only want this useEffect to trigger if the user makes a playback request
-      setPlaybackTriggered(false);
-    }
-  }, [pause, setNewRequest, songQueue, playBackTriggered]);
-
   // loop a song
   React.useEffect(() => {
     if (repeatSong === true) {
@@ -196,6 +160,19 @@ const PlayerOn = ({
   React.useEffect(() => {
     audioRef.current.volume = volume;
   }, [volume]);
+
+  //playback useEffect
+  React.useEffect(() => {
+    if (playBackTriggered) {
+      if (pause) {
+        audioRef.current.pause();
+      } else {
+        audioRef.current.play();
+      }
+      //only want this useEffect to trigger if the user makes a playback request
+      setPlaybackTriggered(false);
+    }
+  }, [pause, setNewRequest, songQueue, playBackTriggered]);
 
   return (
     <div className="playbar">
@@ -531,7 +508,7 @@ const OtherControls = ({ volume, handleVolume }) => {
 };
 
 /* ======================
-      Player Off 
+      Player Off - when no song is currently playing (aesethic design)
   =======================*/
 
 const PlayerOff = () => {
@@ -671,6 +648,30 @@ const OtherControlsOFF = () => {
       />
     </div>
   );
+};
+
+const Player = (props) => {
+  if (props.isPlaying === true) {
+    return (
+      <PlayerOn
+        songQueue={props.songQueue}
+        setIsPlaying={props.setIsPlaying}
+        newRequest={props.newRequest}
+        setNewRequest={props.setNewRequest}
+        displayQueue={props.displayQueue}
+        setDisplayQueue={props.setDisplayQueue}
+        queueIndex={props.queueIndex}
+        setQueueIndex={props.setQueueIndex}
+      ></PlayerOn>
+    );
+  } else {
+    return (
+      <PlayerOff
+        shuffle={props.shuffleOn}
+        setShuffle={props.setShuffleOn}
+      ></PlayerOff>
+    );
+  }
 };
 
 export default Player;

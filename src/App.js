@@ -4,27 +4,17 @@ import SideBar from "./components/SideBar";
 import Player from "./components/Player";
 import Page from "./components/Page";
 
-import MobilePage from "./mobile/components/mobile-page";
-import MobilePlayer from "./mobile/components/mobile-player";
-import MobileNav from "./mobile/components/mobile-nav";
+// import MobilePage from "./mobile/components/mobile-page";
+// import MobilePlayer from "./mobile/components/mobile-player";
+// import MobileNav from "./mobile/components/mobile-nav";
 
 import { ErrorBoundary } from "./errorBoundary";
 
 import IntroPage from "./intro-page/introPage";
+import Portfolio from "./portfolio/portfolio";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
-/* ======================
-    GOAL: Mobile Version
-   ======================
-*/
-
-/* 
-  Don't be afraid of trying, you are gonna fail but you are gonna learn! 
-  Don't let failure get to your heart and success get to your head 
-    
-  - Ralph Smart ❤️  
-*/
-
+// This is the main react tree
 function App() {
   return (
     <>
@@ -32,10 +22,14 @@ function App() {
       <BrowserRouter>
         <Switch>
           <Route path="/player">
+            {/* calls function we created below called MusicApp */}
             <MusicApp></MusicApp>
           </Route>
-          <Route path="/">
+          <Route path="/musicapp">
             <IntroPage></IntroPage>
+          </Route>
+          <Route path="/">
+            <Portfolio></Portfolio>
           </Route>
         </Switch>
       </BrowserRouter>
@@ -55,7 +49,7 @@ function MusicApp() {
   const [desktopMode, setDesktopMode] = React.useState(true);
   const [modeChanged, setModeChanged] = React.useState(false);
 
-  // inital render
+  // inital render - we determine if the application is opened on a desktop or mobile application
   if (window.innerWidth <= 1000 && desktopMode === true) {
     setDesktopMode(false);
   } else if (window.innerWidth >= 1000 && desktopMode === false) {
@@ -79,7 +73,7 @@ function MusicApp() {
     };
   });
 
-  // reload useEffect
+  // reload useEffect when user changes browser viewport (purpose to change to mobile mode if screen size changes)
   React.useEffect(() => {
     if (modeChanged === true) {
       window.location.reload();
@@ -89,75 +83,112 @@ function MusicApp() {
   return (
     <>
       <ErrorBoundary>
-        {desktopMode === false ? (
-          // ==== Mobile Version ====
-          <div className="mobile-container">
-            <MobilePage
-              currentPage={currentPage}
-              setCurrentPage={setCurrentPage}
-              songQueue={songQueue}
-              setSongQueue={setSongQueue}
-              queueIndex={queueIndex}
-              setQueueIndex={setQueueIndex}
-              setNewRequest={setNewRequest}
-              setIsPlaying={setIsPlaying}
-            ></MobilePage>
-            <section className="mob-player-nav-container">
-              {isPlaying === true ? (
-                <MobilePlayer
-                  isPlaying={isPlaying}
-                  newRequest={newRequest}
-                  setNewRequest={setNewRequest}
-                  setIsPlaying={setIsPlaying}
-                  songQueue={songQueue}
-                  displayQueue={displayQueue}
-                  setDisplayQueue={setDisplayQueue}
-                  queueIndex={queueIndex}
-                  setQueueIndex={setQueueIndex}
-                ></MobilePlayer>
-              ) : (
-                ""
-              )}
-              <MobileNav
-                currentPage={currentPage}
-                setCurrentPage={setCurrentPage}
-              ></MobileNav>
-            </section>
-          </div>
-        ) : (
-          // ==== Desktop Version ====
-          <div className="page-layout">
-            <SideBar
-              currentPage={currentPage}
-              setCurrentPage={setCurrentPage}
-            ></SideBar>
-            <Page
-              currentPage={currentPage}
-              isPlaying={isPlaying}
-              setNewRequest={setNewRequest}
-              setIsPlaying={setIsPlaying}
-              setSongQueue={setSongQueue}
-              displayQueue={displayQueue}
-              songQueue={songQueue}
-              queueIndex={queueIndex}
-              setQueueIndex={setQueueIndex}
-            ></Page>
-            <Player
-              isPlaying={isPlaying}
-              newRequest={newRequest}
-              setNewRequest={setNewRequest}
-              setIsPlaying={setIsPlaying}
-              songQueue={songQueue}
-              displayQueue={displayQueue}
-              setDisplayQueue={setDisplayQueue}
-              queueIndex={queueIndex}
-              setQueueIndex={setQueueIndex}
-            ></Player>
-          </div>
-        )}
+        // ==== Desktop Version ====
+        <div className="page-layout">
+          <SideBar
+            currentPage={currentPage}
+            setCurrentPage={setCurrentPage}
+          ></SideBar>
+          <Page
+            currentPage={currentPage}
+            isPlaying={isPlaying}
+            setNewRequest={setNewRequest}
+            setIsPlaying={setIsPlaying}
+            setSongQueue={setSongQueue}
+            displayQueue={displayQueue}
+            songQueue={songQueue}
+            queueIndex={queueIndex}
+            setQueueIndex={setQueueIndex}
+          ></Page>
+          <Player
+            isPlaying={isPlaying}
+            newRequest={newRequest}
+            setNewRequest={setNewRequest}
+            setIsPlaying={setIsPlaying}
+            songQueue={songQueue}
+            displayQueue={displayQueue}
+            setDisplayQueue={setDisplayQueue}
+            queueIndex={queueIndex}
+            setQueueIndex={setQueueIndex}
+          ></Player>
+        </div>
       </ErrorBoundary>
     </>
   );
+
+  // // We return either the mobile version or the desktop version  based on the state "desktop mode"
+  // return (
+  //   <>
+  //     <ErrorBoundary>
+  //       {desktopMode === false ? (
+  //         // ==== Mobile Version ====
+  //         <div className="mobile-container">
+  //           <MobilePage
+  //             currentPage={currentPage}
+  //             setCurrentPage={setCurrentPage}
+  //             songQueue={songQueue}
+  //             setSongQueue={setSongQueue}
+  //             queueIndex={queueIndex}
+  //             setQueueIndex={setQueueIndex}
+  //             setNewRequest={setNewRequest}
+  //             setIsPlaying={setIsPlaying}
+  //           ></MobilePage>
+  //           <section className="mob-player-nav-container">
+  //             {isPlaying === true ? (
+  //               <MobilePlayer
+  //                 isPlaying={isPlaying}
+  //                 newRequest={newRequest}
+  //                 setNewRequest={setNewRequest}
+  //                 setIsPlaying={setIsPlaying}
+  //                 songQueue={songQueue}
+  //                 displayQueue={displayQueue}
+  //                 setDisplayQueue={setDisplayQueue}
+  //                 queueIndex={queueIndex}
+  //                 setQueueIndex={setQueueIndex}
+  //               ></MobilePlayer>
+  //             ) : (
+  //               ""
+  //             )}
+  //             <MobileNav
+  //               currentPage={currentPage}
+  //               setCurrentPage={setCurrentPage}
+  //             ></MobileNav>
+  //           </section>
+  //         </div>
+  //       ) : (
+  //   // ==== Desktop Version ====
+  //   <div className="page-layout">
+  //     <SideBar
+  //       currentPage={currentPage}
+  //       setCurrentPage={setCurrentPage}
+  //     ></SideBar>
+  //     <Page
+  //       currentPage={currentPage}
+  //       isPlaying={isPlaying}
+  //       setNewRequest={setNewRequest}
+  //       setIsPlaying={setIsPlaying}
+  //       setSongQueue={setSongQueue}
+  //       displayQueue={displayQueue}
+  //       songQueue={songQueue}
+  //       queueIndex={queueIndex}
+  //       setQueueIndex={setQueueIndex}
+  //     ></Page>
+  //     <Player
+  //       isPlaying={isPlaying}
+  //       newRequest={newRequest}
+  //       setNewRequest={setNewRequest}
+  //       setIsPlaying={setIsPlaying}
+  //       songQueue={songQueue}
+  //       displayQueue={displayQueue}
+  //       setDisplayQueue={setDisplayQueue}
+  //       queueIndex={queueIndex}
+  //       setQueueIndex={setQueueIndex}
+  //     ></Player>
+  //   </div>
+  // )}
+  //     </ErrorBoundary>
+  //   </>
+  // );
 }
 
 export default App;

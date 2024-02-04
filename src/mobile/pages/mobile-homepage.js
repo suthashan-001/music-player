@@ -1,5 +1,7 @@
 import React from "react";
 
+/* Hold of on mobile for now */
+
 import mobElevateSongs from "../../music-file/elevate-music";
 import mobAnimeDubSongs from "../../music-file/anime-dub-home";
 import mobRecentSongs from "../../music-file/recent-home";
