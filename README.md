@@ -78,19 +78,6 @@ Open your browser and navigate to:
 http://localhost:3000
 
 
-🗂 Project Structure
-
-music-player/
-├── public/                # HTML template
-│   └── index.html
-├── src/                   # Source code
-│   ├── assets/            # Audio files
-│   ├── components/        # React components
-│   ├── styles/            # CSS styles
-│   ├── App.js             # Main App logic
-│   └── index.js           # App entry point
-├── package.json           # Project dependencies
-└── README.md              # Project documentation
 
 
 🤝 Contributing
